@@ -1,0 +1,19 @@
+{
+  "title": "業界地図",
+  "sectors": [
+    {
+      "id": "cosmetics",
+      "name": "化粧品",
+      "icon": "💄",
+      "category": "生活・消費財",
+      "description": "資生堂・コーセー・花王と、ロレアルなど海外大手"
+    },
+    {
+      "id": "gyudon",
+      "name": "牛丼",
+      "icon": "🍚",
+      "category": "外食",
+      "description": "すき家・吉野家・松屋の3強と周辺業態"
+    }
+  ]
+}

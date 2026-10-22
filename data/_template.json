@@ -1,0 +1,60 @@
+{
+  "name": "業界名（例：コンビニ）",
+  "icon": "🏪",
+  "category": "大分類（例：小売）",
+  "updated": "2026-10-22",
+  "summary": "業界をざっくり説明する文章。1段落目はヘッダーにも表示されます。\n改行（\\n）で段落を分けられます。",
+  "market": {
+    "jp": { "label": "国内市場", "value": "12兆円", "period": "2025年度", "note": "補足", "source": "出典名", "url": "https://example.com" },
+    "global": { "label": "世界市場", "value": "…", "period": "2025年", "note": "「世界」表示のときだけ出ます" }
+  },
+  "metrics": [
+    { "key": "revenue", "label": "売上高", "unit": "億円" },
+    { "key": "op", "label": "営業利益", "unit": "億円" },
+    { "key": "stores", "label": "店舗数", "unit": "店" }
+  ],
+  "sizeBy": "revenue",
+  "rankBy": "revenue",
+  "groups": [
+    { "id": "big", "name": "大手", "color": "pink", "description": "グループの説明（省略可）" },
+    { "id": "global", "name": "海外大手", "color": "navy", "sizeBy": "revenue" }
+  ],
+  "companies": [
+    {
+      "id": "company_a",
+      "name": "A社ホールディングス",
+      "short": "A社",
+      "group": "big",
+      "region": "jp",
+      "country": "日本",
+      "code": "1234",
+      "fy": "2026年3月期",
+      "tagline": "タイルに出る短い一言",
+      "description": "詳細パネルに出る説明",
+      "metrics": {
+        "revenue": 12345,
+        "op": { "value": 678, "note": "前期比+5%" },
+        "stores": { "value": 1000, "approx": true, "period": "2026年3月末" }
+      },
+      "brands": ["ブランド1", "ブランド2"],
+      "points": ["ポイント1", "ポイント2"],
+      "facts": [{ "label": "項目", "value": "内容" }],
+      "url": "https://example.com"
+    },
+    {
+      "id": "company_b",
+      "name": "B社",
+      "group": "global",
+      "region": "overseas",
+      "country": "米国",
+      "metrics": { "revenue": { "value": 30000, "approx": true, "note": "200億ドルを1ドル=150円で換算" } }
+    }
+  ],
+  "relations": [
+    { "from": "company_a", "to": "company_b", "type": "equity", "label": "20%出資" }
+  ],
+  "trends": [{ "title": "トレンドの見出し", "text": "説明" }],
+  "timeline": [{ "date": "2026", "text": "出来事" }],
+  "notes": ["メモ"],
+  "sources": [{ "title": "出典名", "url": "https://example.com" }]
+}

@@ -1,0 +1,519 @@
+{
+  "name": "化粧品",
+  "icon": "💄",
+  "category": "生活・消費財",
+  "updated": "2026-10-22",
+  "summary": "国内は資生堂が首位で、コーセー・花王（カネボウ）が続く「大手3社」に、ポーラ・オルビスなどの訪販・通販系、ドラッグストア向けのマス系が並ぶ構図。世界ではロレアルが圧倒的な首位で、資生堂でも規模は数分の一。\n2025年は中国・免税（トラベルリテール）の低迷で大手が苦戦する一方、韓国コスメの台頭、ドラッグストア再編、M&A・非上場化（キリンのファンケル買収、マンダムのMBO）など業界の組み替えが進んでいる。",
+  "market": {
+    "jp": {
+      "label": "国内市場",
+      "value": "2兆6,430億円",
+      "period": "2025年度",
+      "note": "メーカー出荷金額ベース・前年度比+2.4%（高単価化とインバウンド回復）",
+      "source": "矢野経済研究所",
+      "url": "https://www.yano.co.jp/press-release/show/press_id/4207"
+    },
+    "global": {
+      "label": "世界の美容大手100社",
+      "value": "約2,589億ドル",
+      "period": "2025年",
+      "note": "WWD「Beauty Inc Top 100」掲載企業の美容売上の合計（約39兆円）"
+    }
+  },
+  "metrics": [
+    { "key": "revenue", "label": "売上高", "unit": "億円", "description": "化粧品以外の事業を含む会社もあります（各社の注記を参照）。海外企業は円換算の概算。" },
+    { "key": "op", "label": "営業利益", "unit": "億円", "description": "資生堂はコア営業利益。海外企業は円換算の概算。" }
+  ],
+  "sizeBy": "revenue",
+  "groups": [
+    { "id": "major", "name": "大手総合メーカー", "color": "pink", "description": "百貨店・専門店向けの高価格帯からドラッグストア向けまで幅広く持つ大手" },
+    { "id": "direct", "name": "訪問販売・通販系", "color": "lavender", "description": "自社の販売員や通販・直営店で売るビジネスモデル" },
+    { "id": "mass", "name": "マス・ドラッグストア系", "color": "sky", "description": "ドラッグストアやバラエティショップで買える価格帯が中心" },
+    { "id": "global", "name": "海外大手（欧米）", "color": "navy", "description": "世界の化粧品市場の上位。日本でも外資系ブランドとして存在感" },
+    { "id": "kbeauty", "name": "韓国コスメ（K-Beauty）", "color": "rose", "description": "日本のドラッグストア・EC・バラエティショップで急速にシェアを拡大" },
+    { "id": "acquired", "name": "日本企業が買収した海外ブランド", "color": "peach", "description": "海外成長のために買収したブランド。成否が分かれている" },
+    { "id": "related", "name": "親会社・関連会社", "color": "gray", "description": "異業種の親会社や、大手から切り出された会社" },
+    { "id": "channel", "name": "主な販売チャネル", "color": "sage", "description": "化粧品の売り場を握る小売・プラットフォーム" }
+  ],
+  "companies": [
+    {
+      "id": "shiseido",
+      "name": "資生堂",
+      "group": "major",
+      "region": "jp",
+      "country": "日本",
+      "code": "4911",
+      "fy": "2025年12月期",
+      "tagline": "国内首位・世界でも上位の総合化粧品メーカー",
+      "description": "1872年創業の国内最大手。高価格帯（プレステージ）を軸に、中国・アジア・米州・欧州で展開する。",
+      "metrics": {
+        "revenue": 9699,
+        "op": { "value": 445, "note": "コア営業利益（前期比+22.4%）" }
+      },
+      "brands": ["SHISEIDO", "クレ・ド・ポー ボーテ", "NARS", "エリクシール", "アネッサ", "IPSA", "マキアージュ", "dプログラム"],
+      "points": [
+        "中国・トラベルリテール（免税）の消費低下と、米国ドランク エレファントの不振で減収（前期比-2.1%）",
+        "構造改革とコスト管理でコア営業利益は4期ぶりに期初計画を達成",
+        "一方で最終損益は▲406億円と2期連続の赤字"
+      ],
+      "facts": [
+        { "label": "営業損益", "value": "▲287億円（2025年12月期）" },
+        { "label": "最終損益", "value": "▲406億円（2025年12月期）" }
+      ],
+      "url": "https://corp.shiseido.com/jp/"
+    },
+    {
+      "id": "kose",
+      "name": "コーセーホールディングス",
+      "short": "コーセーHD",
+      "group": "major",
+      "region": "jp",
+      "country": "日本",
+      "code": "4922",
+      "fy": "2025年12月期",
+      "tagline": "デコルテ・雪肌精の国内2位グループ",
+      "description": "1946年創業。2026年1月に持株会社体制へ移行し、コーセーホールディングスに商号変更。アルビオンや米国のtarteをグループに持つ。",
+      "metrics": {
+        "revenue": 3302,
+        "op": 185
+      },
+      "brands": ["コスメデコルテ", "雪肌精", "エスプリーク", "ADDICTION", "ジルスチュアート ビューティ", "tarte", "アルビオン"],
+      "points": [
+        "コスメデコルテが3期連続で過去最高売上",
+        "国内はインバウンド需要の低迷とメイクの苦戦で計画未達、アジアは中国ECが好調",
+        "2026年3月、創業家以外から初めての社長が就任"
+      ],
+      "url": "https://koseholdings.co.jp/"
+    },
+    {
+      "id": "kao",
+      "name": "花王（化粧品事業）",
+      "short": "花王",
+      "group": "major",
+      "region": "jp",
+      "country": "日本",
+      "code": "4452",
+      "fy": "2025年12月期",
+      "tagline": "トイレタリー大手の化粧品部門。カネボウを傘下に",
+      "description": "日用品大手・花王の化粧品セグメント。2006年にカネボウ化粧品を買収。花王全体の売上高は1兆6,886億円。",
+      "metrics": {
+        "revenue": { "value": 2616, "note": "化粧品事業セグメント" },
+        "op": { "value": 104, "note": "化粧品事業セグメント（前期から141億円改善）" }
+      },
+      "brands": ["KANEBO", "SENSAI", "KATE", "est", "ソフィーナ"],
+      "points": [
+        "化粧品事業は前期比+7.2%の増収で、営業黒字に転換",
+        "2026年は海外展開とEC・ドラッグストアのセルフ売り場強化で2,715億円を計画"
+      ],
+      "facts": [
+        { "label": "花王 全社", "value": "売上高1兆6,886億円・営業利益1,641億円（2025年12月期）" }
+      ],
+      "url": "https://www.kao.com/jp/"
+    },
+    {
+      "id": "kanebo",
+      "name": "カネボウ化粧品",
+      "short": "カネボウ",
+      "group": "major",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "花王の子会社（2006年〜）",
+      "description": "旧カネボウの化粧品事業。2006年に花王が買収し、花王グループの化粧品事業の中核に。",
+      "brands": ["KANEBO", "SENSAI", "KATE", "ルナソル", "suisai"]
+    },
+    {
+      "id": "albion",
+      "name": "アルビオン",
+      "group": "major",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "コーセーの連結子会社。百貨店の高級スキンケア",
+      "description": "乳液を先に使う「乳液先行型」で知られる高級化粧品メーカー。コーセーグループの一員。",
+      "brands": ["ALBION", "エクシア", "アンフィネス"]
+    },
+    {
+      "id": "pola",
+      "name": "ポーラ・オルビスホールディングス",
+      "short": "ポーラ・オルビス",
+      "group": "direct",
+      "region": "jp",
+      "country": "日本",
+      "code": "4927",
+      "fy": "2025年12月期",
+      "tagline": "訪販のPOLAと通販のORBIS",
+      "description": "委託販売員（ポーラレディ）で売るPOLAと、通販・直営店のORBISが2本柱。",
+      "metrics": {
+        "revenue": 1703,
+        "op": { "value": 157, "note": "前期比+13.6%" }
+      },
+      "brands": ["POLA", "ORBIS", "DECENCIA", "Jurlique"],
+      "points": [
+        "売上はほぼ横ばい（POLAが減収、ORBISが増益）",
+        "豪州ジュリークの損失改善で増益",
+        "2026年12月期は売上高1,730億円・営業利益173億円を計画"
+      ],
+      "url": "https://www.po-holdings.co.jp/"
+    },
+    {
+      "id": "fancl",
+      "name": "ファンケル",
+      "group": "direct",
+      "region": "jp",
+      "country": "日本",
+      "fy": "2024年3月期",
+      "tagline": "無添加化粧品とサプリ。2024年にキリン傘下へ",
+      "description": "無添加化粧品と健康食品（サプリメント）が2本柱。2024年9月にキリンHDが完全子会社化し、上場廃止。",
+      "metrics": {
+        "revenue": { "value": 1109, "note": "化粧品＋健康食品（上場時の最終通期実績）" },
+        "op": 126
+      },
+      "brands": ["ファンケル", "アテニア"],
+      "points": ["キリンの「ヘルスサイエンス」強化の中核として買収された"],
+      "url": "https://www.fancl.co.jp/"
+    },
+    {
+      "id": "noevir",
+      "name": "ノエビアホールディングス",
+      "short": "ノエビアHD",
+      "group": "direct",
+      "region": "jp",
+      "country": "日本",
+      "code": "4928",
+      "fy": "2025年9月期",
+      "tagline": "訪問販売の化粧品が中心",
+      "metrics": {
+        "revenue": { "value": 647, "note": "全社。うち化粧品セグメント505億円" }
+      },
+      "brands": ["ノエビア", "なめらか本舗", "excel"]
+    },
+    {
+      "id": "mandom",
+      "name": "マンダム",
+      "group": "mass",
+      "region": "jp",
+      "country": "日本",
+      "code": "4917",
+      "fy": "2025年3月期",
+      "tagline": "男性化粧品の最大手。2026年にMBOで非上場化",
+      "description": "ギャツビーなど男性用化粧品の大手。創業家側によるMBO（経営陣による買収）が2026年2月に成立し、上場廃止へ。",
+      "metrics": {
+        "revenue": 762
+      },
+      "brands": ["GATSBY", "ビフェスタ", "ルシード", "ルシードエル"],
+      "points": [
+        "MBOには投資家の株買い集めや対抗提案が入り、TOB価格は1株1,960円→3,105円まで引き上げ"
+      ],
+      "facts": [
+        { "label": "MBO", "value": "カロンホールディングスによるTOBが2026年2月に成立" }
+      ],
+      "url": "https://www.mandom.co.jp/"
+    },
+    {
+      "id": "rohto",
+      "name": "ロート製薬",
+      "short": "ロート",
+      "group": "mass",
+      "region": "jp",
+      "country": "日本",
+      "code": "4527",
+      "fy": "2025年3月期",
+      "tagline": "目薬発のスキンケア大手（肌ラボ・メラノCC）",
+      "description": "目薬・医薬品メーカーだが、売上の大きな部分をスキンケアが占める。",
+      "metrics": {
+        "revenue": { "value": 3086, "note": "全社（医薬品などを含む）・過去最高" }
+      },
+      "brands": ["肌ラボ", "メラノCC", "OXY", "デオコ"],
+      "url": "https://www.rohto.co.jp/"
+    },
+    {
+      "id": "ine",
+      "name": "I-ne（アイエヌイー）",
+      "short": "I-ne",
+      "group": "mass",
+      "region": "jp",
+      "country": "日本",
+      "code": "4933",
+      "tagline": "BOTANISTなどSNS発のD2C系",
+      "description": "ヘアケアのBOTANISTや美容家電SALONIAなど、SNS・ECを起点にドラッグストアへ広げるブランドを展開。",
+      "brands": ["BOTANIST", "YOLU", "SALONIA"]
+    },
+    {
+      "id": "loreal",
+      "name": "ロレアル",
+      "group": "global",
+      "region": "overseas",
+      "country": "フランス",
+      "code": "OR",
+      "fy": "2025年12月期",
+      "tagline": "世界首位。資生堂の約8倍の規模",
+      "description": "世界最大の化粧品会社。高級（ランコム・YSL）から皮膚科学（ラ ロッシュ ポゼ・セラヴィ）まで幅広い。",
+      "metrics": {
+        "revenue": { "value": 74900, "approx": true, "note": "440.5億ユーロ（1ユーロ=170円で換算）" },
+        "op": { "value": 15100, "approx": true, "note": "営業利益率20.2%から概算" }
+      },
+      "brands": ["ランコム", "イヴ・サンローラン", "キールズ", "シュウ ウエムラ", "メイベリン", "ラ ロッシュ ポゼ", "セラヴィ", "イソップ"],
+      "points": [
+        "2025年は同一基準で+4.0%成長、ECが売上の3割超",
+        "2023年にイソップ（豪）を買収",
+        "創業家（ベタンクール家）とネスレが大株主"
+      ],
+      "url": "https://www.loreal.com/"
+    },
+    {
+      "id": "pg",
+      "name": "P&G（ビューティ部門）",
+      "short": "P&G",
+      "group": "global",
+      "region": "overseas",
+      "country": "米国",
+      "code": "PG",
+      "fy": "2026年6月期",
+      "tagline": "SK-IIを持つ日用品世界最大手",
+      "description": "日用品の世界最大手。ビューティ部門はスキンケアに加えヘアケア・ボディケアを含む。",
+      "metrics": {
+        "revenue": { "value": 24000, "approx": true, "note": "160億ドル（ヘア・パーソナルケア含む、1ドル=150円で換算）" }
+      },
+      "brands": ["SK-II", "オレイ", "パンテーン", "h&s"],
+      "points": ["SK-IIはもともと日本発（マックスファクター）のブランド。中国の低迷から回復基調"],
+      "url": "https://us.pg.com/"
+    },
+    {
+      "id": "estee",
+      "name": "エスティ ローダー",
+      "group": "global",
+      "region": "overseas",
+      "country": "米国",
+      "code": "EL",
+      "fy": "2026年6月期",
+      "tagline": "高級化粧品の大手。4年ぶりの増収",
+      "description": "百貨店・免税店チャネルが強い高級化粧品グループ。",
+      "metrics": {
+        "revenue": { "value": 22600, "approx": true, "note": "150.5億ドル（前期比+5%、1ドル=150円で換算）" },
+        "op": { "value": 1170, "approx": true, "note": "7.8億ドル（前期は赤字）" }
+      },
+      "brands": ["エスティ ローダー", "クリニーク", "M·A·C", "ドゥ・ラ・メール", "トム フォード ビューティ", "ル ラボ", "ジ オーディナリー"],
+      "points": ["中国・免税の不振で落ち込んだが、2026年6月期は香水と中国の回復で増収に転じた"],
+      "url": "https://www.elcompanies.com/"
+    },
+    {
+      "id": "unilever",
+      "name": "ユニリーバ（ビューティ＆ウェルビーイング）",
+      "short": "ユニリーバ",
+      "group": "global",
+      "region": "overseas",
+      "country": "英国",
+      "code": "ULVR",
+      "fy": "2025年12月期",
+      "tagline": "ヘアケア・スキンケア・高級美容",
+      "description": "英国の日用品大手。ビューティ＆ウェルビーイング部門の数値（Dove等のパーソナルケア部門132億ユーロは別）。",
+      "metrics": {
+        "revenue": { "value": 21800, "approx": true, "note": "128億ユーロ（1ユーロ=170円で換算）" },
+        "op": { "value": 4250, "approx": true, "note": "基礎的営業利益25億ユーロ" }
+      },
+      "brands": ["TRESemmé", "ポンズ", "ヴァセリン", "ダーマロジカ", "TATCHA", "Hourglass"],
+      "url": "https://www.unilever.com/"
+    },
+    {
+      "id": "beiersdorf",
+      "name": "バイヤスドルフ",
+      "group": "global",
+      "region": "overseas",
+      "country": "ドイツ",
+      "code": "BEI",
+      "fy": "2025年12月期",
+      "tagline": "NIVEA（ニベア）の会社",
+      "description": "ドイツのスキンケア大手。日本では花王との合弁「ニベア花王」でニベアを展開。",
+      "metrics": {
+        "revenue": { "value": 13900, "approx": true, "note": "コンシューマー部門82億ユーロ（グループ全体は99億ユーロ）" }
+      },
+      "brands": ["NIVEA", "Eucerin", "La Prairie", "Aquaphor"],
+      "url": "https://www.beiersdorf.com/"
+    },
+    {
+      "id": "lvmh",
+      "name": "LVMH（香水・化粧品部門）",
+      "short": "LVMH",
+      "group": "global",
+      "region": "overseas",
+      "country": "フランス",
+      "code": "MC",
+      "fy": "2025年12月期",
+      "tagline": "ディオールなどラグジュアリー美容",
+      "description": "ルイ・ヴィトンなどの高級ブランド複合企業の香水・化粧品部門。セフォラ（小売）は別部門。",
+      "metrics": {
+        "revenue": { "value": 13900, "approx": true, "note": "81.7億ユーロ（前期比-3%）" },
+        "op": { "value": 1240, "approx": true, "note": "7.3億ユーロ（前期比+8%）" }
+      },
+      "brands": ["ディオール", "ゲラン", "ジバンシイ", "フェンティ ビューティ", "ベネフィット"],
+      "url": "https://www.lvmh.com/"
+    },
+    {
+      "id": "amorepacific",
+      "name": "アモーレパシフィック",
+      "group": "kbeauty",
+      "region": "overseas",
+      "country": "韓国",
+      "code": "002790",
+      "fy": "2025年12月期",
+      "tagline": "韓国最大手。COSRXを買収し北米・日本で伸長",
+      "description": "韓国の化粧品最大手グループ（持株会社ベースの数値）。",
+      "metrics": {
+        "revenue": { "value": 4850, "approx": true, "note": "4兆6,232億ウォン（前期比+8.5%、100ウォン=10.5円で換算）" },
+        "op": { "value": 386, "approx": true, "note": "3,680億ウォン（前期比+47.6%）" }
+      },
+      "brands": ["雪花秀", "ラネージュ", "イニスフリー", "COSRX", "エチュード"],
+      "url": "https://www.apgroup.com/"
+    },
+    {
+      "id": "lghh",
+      "name": "LG生活健康（化粧品部門）",
+      "short": "LG生活健康",
+      "group": "kbeauty",
+      "region": "overseas",
+      "country": "韓国",
+      "code": "051900",
+      "fy": "2025年12月期",
+      "tagline": "高級漢方コスメ「后（フー）」",
+      "description": "LGグループの日用品・化粧品会社。化粧品部門は免税・中国の不振で赤字に。",
+      "metrics": {
+        "revenue": { "value": 2470, "approx": true, "note": "化粧品部門2兆3,500億ウォン（前期比-16.5%）" },
+        "op": { "value": -102, "approx": true, "note": "化粧品部門は▲976億ウォンの営業赤字" }
+      },
+      "brands": ["后（The Whoo）", "SU:M37°", "CNP", "belif"],
+      "url": "https://www.lghnh.com/"
+    },
+    {
+      "id": "nars",
+      "name": "NARS",
+      "group": "acquired",
+      "region": "overseas",
+      "country": "米国",
+      "tagline": "資生堂が2000年に買収",
+      "description": "1994年にニューヨークで生まれたメイクアップブランド。資生堂の海外買収の成功例とされる。"
+    },
+    {
+      "id": "drunk_elephant",
+      "name": "ドランク エレファント",
+      "group": "acquired",
+      "region": "overseas",
+      "country": "米国",
+      "tagline": "資生堂が2019年に約8.45億ドルで買収",
+      "description": "米国のクリーン系スキンケアブランド。近年は米国で販売不振が続き、資生堂の業績の重荷に。"
+    },
+    {
+      "id": "tarte",
+      "name": "tarte（タルト）",
+      "group": "acquired",
+      "region": "overseas",
+      "country": "米国",
+      "tagline": "コーセーが2014年に買収",
+      "description": "米国のメイクアップブランド。コーセーの米州事業の柱。"
+    },
+    {
+      "id": "kirin",
+      "name": "キリンホールディングス",
+      "short": "キリンHD",
+      "group": "related",
+      "region": "jp",
+      "country": "日本",
+      "code": "2503",
+      "tagline": "ビール大手。ファンケルの親会社",
+      "description": "酒類・飲料・医薬に加え「ヘルスサイエンス」を第3の柱に育てるため、2024年にファンケルを完全子会社化。"
+    },
+    {
+      "id": "finetoday",
+      "name": "ファイントゥデイ",
+      "group": "related",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "資生堂の旧日用品事業（TSUBAKI・専科）",
+      "description": "2021年に資生堂がパーソナルケア事業を投資ファンドのCVCへ売却して誕生。資生堂も出資。",
+      "brands": ["TSUBAKI", "専科", "uno", "マシェリ"]
+    },
+    {
+      "id": "tsuruha",
+      "name": "ツルハホールディングス",
+      "short": "ツルハHD",
+      "group": "channel",
+      "region": "jp",
+      "country": "日本",
+      "code": "3391",
+      "tagline": "ウエルシアと統合した国内最大のドラッグストア",
+      "description": "2025年12月にウエルシアHDを株式交換で完全子会社化し、売上高2兆円超の国内最大ドラッグストアに。イオンが筆頭株主。",
+      "brands": ["ツルハドラッグ", "ウエルシア"]
+    },
+    {
+      "id": "matsukiyo",
+      "name": "マツキヨココカラ&カンパニー",
+      "short": "マツキヨココカラ",
+      "group": "channel",
+      "region": "jp",
+      "country": "日本",
+      "code": "3088",
+      "tagline": "都市型ドラッグストア。化粧品に強い",
+      "brands": ["マツモトキヨシ", "ココカラファイン"]
+    },
+    {
+      "id": "istyle",
+      "name": "アイスタイル（@cosme）",
+      "short": "@cosme",
+      "group": "channel",
+      "region": "jp",
+      "country": "日本",
+      "code": "3660",
+      "tagline": "口コミサイト・旗艦店の@cosme",
+      "brands": ["@cosme", "@cosme TOKYO"]
+    }
+  ],
+  "relations": [
+    { "from": "kao", "to": "kanebo", "type": "subsidiary", "label": "2006年買収" },
+    { "from": "kose", "to": "albion", "type": "subsidiary", "label": "連結子会社" },
+    { "from": "kirin", "to": "fancl", "type": "subsidiary", "label": "2024年 完全子会社化" },
+    { "from": "shiseido", "to": "finetoday", "type": "equity", "label": "2021年 事業譲渡・出資" },
+    { "from": "shiseido", "to": "nars", "type": "subsidiary", "label": "2000年買収" },
+    { "from": "shiseido", "to": "drunk_elephant", "type": "subsidiary", "label": "2019年買収" },
+    { "from": "kose", "to": "tarte", "type": "subsidiary", "label": "2014年買収" },
+    { "from": "beiersdorf", "to": "kao", "type": "alliance", "label": "合弁「ニベア花王」" }
+  ],
+  "trends": [
+    { "title": "中国・免税の失速", "text": "大手の成長を支えた中国本土とトラベルリテール（空港免税）が低迷。資生堂・コーセー・エスティ ローダー・LG生活健康などが打撃を受けた。" },
+    { "title": "韓国コスメの台頭", "text": "手頃な価格とSNSでの話題性で、日本のドラッグストア・EC・バラエティショップで存在感を拡大。" },
+    { "title": "国内は高単価化＋インバウンド", "text": "国内市場は2025年度に2兆6,430億円（+2.4%）。値上げと訪日客の回復が下支え。" },
+    { "title": "業界再編・非上場化", "text": "キリンのファンケル買収、マンダムのMBO、コーセーの持株会社化、ツルハとウエルシアの統合など、メーカー・小売の両方で組み替えが進む。" },
+    { "title": "海外買収ブランドの明暗", "text": "資生堂のNARSは成功例とされる一方、ドランク エレファントは不振。買収で海外を伸ばす戦略の難しさが表面化。" }
+  ],
+  "timeline": [
+    { "date": "1872", "text": "資生堂が東京・銀座で創業" },
+    { "date": "1887", "text": "花王の前身・長瀬商店が創業" },
+    { "date": "1929", "text": "ポーラ創業" },
+    { "date": "1946", "text": "コーセー創業" },
+    { "date": "2000", "text": "資生堂が米NARSを買収" },
+    { "date": "2006", "text": "花王がカネボウ化粧品を買収" },
+    { "date": "2014", "text": "コーセーが米tarteを買収" },
+    { "date": "2019", "text": "資生堂が米ドランク エレファントを買収" },
+    { "date": "2021", "text": "資生堂が日用品事業を売却（ファイントゥデイ誕生）" },
+    { "date": "2023", "text": "ロレアルがイソップを買収" },
+    { "date": "2024.9", "text": "キリンHDがファンケルを完全子会社化" },
+    { "date": "2025.12", "text": "ツルハHDとウエルシアHDが経営統合" },
+    { "date": "2026.1", "text": "コーセーが持株会社体制へ（コーセーホールディングス）" },
+    { "date": "2026.2", "text": "マンダムのMBOが成立" }
+  ],
+  "notes": [
+    "売上高・営業利益は各社の直近の通期決算（決算期は会社ごとに異なる）。",
+    "海外企業は 1ドル=150円・1ユーロ=170円・100ウォン=10.5円 で円に換算した概算です。",
+    "花王・P&G・ユニリーバ・LVMH・LG生活健康は化粧品関連の部門の数値です。"
+  ],
+  "sources": [
+    { "title": "矢野経済研究所：化粧品市場に関する調査（2026年）", "url": "https://www.yano.co.jp/press-release/show/press_id/4207" },
+    { "title": "FASHIONSNAP：資生堂 2025年12月期決算", "url": "https://www.fashionsnap.com/article/2026-02-10/shiseido-2025-report/" },
+    { "title": "FASHIONSNAP：花王 2025年12月期決算", "url": "https://www.fashionsnap.com/article/2026-02-06/kao-2025/" },
+    { "title": "FASHIONSNAP：ポーラ・オルビスHD 2025年12月期決算", "url": "https://www.fashionsnap.com/article/2026-02-16/pola-orbis-2025/" },
+    { "title": "WWDJAPAN：コーセー 2025年12月期決算", "url": "https://www.wwdjapan.com/?p=2323177" },
+    { "title": "日本M&Aセンター：マンダムのTOB成立", "url": "https://www.nihon-ma.co.jp/news/20260226_4917-11/" },
+    { "title": "L'Oréal 2025 sales（Cosmetics Design Europe）", "url": "https://www.cosmeticsdesign-europe.com/Article/2026/02/16/loreal-outperforms-the-beauty-market-with-44bn-in-2025-sales" },
+    { "title": "The Estée Lauder Companies：Fiscal 2026 Results", "url": "https://www.elcompanies.com/en/news-and-media/newsroom/press-releases/2026/08-19-2026-110037466" },
+    { "title": "LVMH：2025 annual results", "url": "https://www.lvmh.com/en/publications/solid-performance-in-a-disrupted-global-economic-and-geopolitical-environment" },
+    { "title": "Beiersdorf：Full year results 2025", "url": "https://www.beiersdorf.com/newsroom/press-information/all-press-releases/2026/03/02-full-year-results-2025-beiersdorf-grows-in-a-slowing-market-derma-outperforms" },
+    { "title": "Amorepacific：2025年 経営実績", "url": "https://www.apgroup.com/int/ko/news/2026-02-06-1.html" }
+  ]
+}
