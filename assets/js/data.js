@@ -104,7 +104,8 @@ export function normalizeSector(raw, meta) {
     if (groupMap.has(g.id)) { warnings.push(`グループ id「${g.id}」が重複しています`); return; }
     const sb = g.sizeBy && metricMap.has(g.sizeBy) ? g.sizeBy : null;
     if (g.sizeBy && !sb) warnings.push(`グループ「${g.id}」の sizeBy「${g.sizeBy}」は metrics にありません`);
-    const group = { id: String(g.id), name: g.name || g.id, description: g.description || '', color: resolveColor(g.color, i), sizeBy: sb };
+    const scale = typeof g.scale === 'number' && g.scale > 0 && g.scale <= 1 ? g.scale : 1;
+    const group = { id: String(g.id), name: g.name || g.id, short: g.short || '', section: g.section || '', description: g.description || '', color: resolveColor(g.color, i), sizeBy: sb, scale };
     groups.push(group);
     groupMap.set(group.id, group);
   });
@@ -123,7 +124,7 @@ export function normalizeSector(raw, meta) {
       if (groupId) warnings.push(`「${c.name || id}」のグループ「${groupId}」が groups にありません（「その他」に表示）`);
       groupId = '__other';
       if (!groupMap.has(groupId)) {
-        const g = { id: groupId, name: 'その他', description: '', color: resolveColor('gray'), sizeBy: null };
+        const g = { id: groupId, name: 'その他', short: '', section: '', description: '', color: resolveColor('gray'), sizeBy: null, scale: 1 };
         groups.push(g);
         groupMap.set(groupId, g);
       }
@@ -197,6 +198,17 @@ export function normalizeSector(raw, meta) {
     companies,
     companyMap,
     relations,
+    breakdowns: (Array.isArray(raw.breakdowns) ? raw.breakdowns : [])
+      .filter((b) => b && Array.isArray(b.items) && b.items.length)
+      .map((b) => ({
+        title: b.title || '内訳',
+        unit: b.unit ?? '',
+        period: b.period || '',
+        note: b.note || '',
+        source: b.source || '',
+        url: b.url || '',
+        items: b.items.filter((it) => it && it.label && typeof it.value === 'number').map((it) => ({ label: it.label, value: it.value, share: typeof it.share === 'number' ? it.share : null, note: it.note || '' })),
+      })),
     trends: (Array.isArray(raw.trends) ? raw.trends : []).map((t) => (typeof t === 'string' ? { title: t, text: '' } : t)).filter((t) => t && t.title),
     timeline: (Array.isArray(raw.timeline) ? raw.timeline : []).filter((t) => t && t.text),
     notes: Array.isArray(raw.notes) ? raw.notes.filter(Boolean) : [],

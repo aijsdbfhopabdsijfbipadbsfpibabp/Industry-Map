@@ -24,6 +24,7 @@ const state = {
   showLines: store.get('allLines', false) === true, // 「線をすべて表示」
   sizeMetric: {},
   rankMetric: {},
+  rankGroup: {},
 };
 
 let sheetPushed = false; // 詳細を開いたときに履歴を積んだか（戻るボタンで閉じるため）
@@ -201,6 +202,10 @@ function viewContext() {
     },
     onRankMetric: (key) => {
       state.rankMetric[state.sector.id] = key;
+      renderView();
+    },
+    onRankGroup: (groupId) => {
+      state.rankGroup[state.sector.id] = groupId;
       renderView();
     },
     onToggleLines: () => {

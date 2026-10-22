@@ -3,7 +3,7 @@
   "icon": "🍚",
   "category": "外食",
   "updated": "2026-10-22",
-  "summary": "すき家（ゼンショー）・吉野家・松屋の大手3社で市場の8割超を占める寡占市場。店舗数はすき家が首位で、吉野家・松屋が続く。\n3社とも牛丼だけに頼らず、ゼンショーは回転寿司（はま寿司）や海外の寿司、吉野家はラーメン、松屋はとんかつ（松のや）へと多角化。コメ・牛肉の値上がりと円安の中で、並盛の価格設定が各社の戦略の違いとして表れている。",
+  "summary": "すき家（ゼンショー）・吉野家・松屋の大手3社で市場の8割超を占める寡占市場。店舗数はすき家が首位で、吉野家・松屋が続く。\n3社とも牛丼だけに頼らず、ゼンショーは回転寿司（はま寿司）や海外のテイクアウト寿司、吉野家はうどん・ラーメン、松屋はとんかつ（松のや）へと多角化。米国産牛肉が1年で約4割上がり、コメ高・円安も重なる中で、並盛の価格設定が各社の戦略の違いとして表れている。",
   "market": {
     "jp": {
       "label": "国内市場（推計）",
@@ -20,18 +20,88 @@
     }
   },
   "metrics": [
-    { "key": "stores", "label": "店舗数", "unit": "店", "description": "チェーンは牛丼業態の店舗数（国内／海外は別のタイルで表示）。" },
-    { "key": "revenue", "label": "売上高", "unit": "億円", "description": "運営会社（ホールディングス）全体の連結売上高。牛丼以外の業態も含みます。" },
-    { "key": "op", "label": "営業利益", "unit": "億円", "description": "運営会社（ホールディングス）全体の連結営業利益。" },
-    { "key": "price", "label": "並盛の価格", "unit": "円", "order": "asc", "description": "牛丼（松屋は牛めし）並盛の店内価格（税込）。時期により変わります。" }
+    {
+      "key": "stores",
+      "label": "店舗数",
+      "unit": "店",
+      "description": "チェーンは牛丼業態の店舗数（国内／海外は別のタイルで表示）。"
+    },
+    {
+      "key": "revenue",
+      "label": "売上高",
+      "unit": "億円",
+      "description": "運営会社（ホールディングス）全体の連結売上高。牛丼以外の業態も含みます。"
+    },
+    {
+      "key": "op",
+      "label": "営業利益",
+      "unit": "億円",
+      "description": "運営会社（ホールディングス）全体の連結営業利益。"
+    },
+    {
+      "key": "price",
+      "label": "並盛の価格",
+      "unit": "円",
+      "order": "asc",
+      "description": "牛丼（松屋は牛めし）並盛の店内価格（税込）。時期により変わります。"
+    }
   ],
   "sizeBy": "stores",
   "rankBy": "stores",
   "groups": [
-    { "id": "chains", "name": "牛丼チェーン（国内）", "color": "pink", "sizeBy": "stores", "description": "大手3社＋なか卯。タイルの大きさは国内の店舗数" },
-    { "id": "parents", "name": "運営会社（上場）", "color": "navy", "sizeBy": "revenue", "description": "牛丼以外の業態も持つホールディングス。大きさは連結売上高" },
-    { "id": "rivals", "name": "周辺で競合する業態", "color": "gray", "description": "昼食・ファストフードの客を取り合う、丼・定食・うどん・バーガーのチェーン" },
-    { "id": "overseas", "name": "海外展開", "color": "sky", "sizeBy": "stores", "description": "日系チェーンの海外店舗と現地パートナー。大きさは海外の店舗数" }
+    {
+      "id": "chains",
+      "section": "牛丼チェーン",
+      "name": "牛丼チェーン（国内）",
+      "short": "牛丼チェーン",
+      "color": "pink",
+      "sizeBy": "stores",
+      "description": "大手3社＋なか卯。タイルの大きさは国内の店舗数"
+    },
+    {
+      "id": "others",
+      "section": "牛丼チェーン",
+      "name": "その他の牛丼・丼チェーン",
+      "short": "その他の丼",
+      "color": "rose",
+      "sizeBy": "stores",
+      "description": "焼き牛丼・すた丼など、大手3社以外の丼チェーン"
+    },
+    {
+      "id": "parents",
+      "section": "運営会社とグループの業態",
+      "name": "運営会社（上場）",
+      "short": "運営会社",
+      "color": "navy",
+      "sizeBy": "revenue",
+      "description": "牛丼以外の業態も持つホールディングス。大きさは連結売上高"
+    },
+    {
+      "id": "sister",
+      "section": "運営会社とグループの業態",
+      "name": "グループの他業態・子会社",
+      "short": "グループ業態",
+      "color": "lavender",
+      "sizeBy": "stores",
+      "description": "各社が牛丼の次の柱として育てる業態や、M&Aで加えた会社。大きさは店舗数"
+    },
+    {
+      "id": "rivals",
+      "section": "まわりの競合・海外",
+      "name": "周辺で競合する業態",
+      "short": "周辺の競合",
+      "color": "gray",
+      "description": "昼食・ファストフードの客を取り合う、丼・定食・うどん・バーガーのチェーン"
+    },
+    {
+      "id": "overseas",
+      "section": "まわりの競合・海外",
+      "name": "海外展開",
+      "short": "海外",
+      "color": "sky",
+      "sizeBy": "stores",
+      "description": "日系チェーンの海外店舗と、海外で買収した会社・現地パートナー。大きさは海外の店舗数"
+    }
   ],
   "companies": [
     {
@@ -43,8 +113,15 @@
       "tagline": "店舗数No.1。運営はゼンショーHD",
       "description": "1982年に横浜で1号店。2008年に店舗数で吉野家を抜いて首位に。",
       "metrics": {
-        "stores": { "value": 1996, "period": "2025年12月末", "note": "国内" },
-        "price": { "value": 480, "period": "2026年7月〜" }
+        "stores": {
+          "value": 1996,
+          "period": "2025年12月末",
+          "note": "国内"
+        },
+        "price": {
+          "value": 480,
+          "period": "2026年7月〜"
+        }
       },
       "points": [
         "2025年9月に並盛を480円→450円へ約11年ぶりに値下げしたが、2026年7月に480円へ戻した",
@@ -62,8 +139,15 @@
       "tagline": "1899年創業の老舗。運営は吉野家HD",
       "description": "東京・日本橋の魚河岸で創業した牛丼の元祖的存在。",
       "metrics": {
-        "stores": { "value": 1290, "period": "2026年2月", "note": "国内" },
-        "price": { "value": 498, "period": "2024年7月〜" }
+        "stores": {
+          "value": 1290,
+          "period": "2026年2月",
+          "note": "国内"
+        },
+        "price": {
+          "value": 498,
+          "period": "2024年7月〜"
+        }
       },
       "points": [
         "3社の中で並盛がもっとも高い価格帯（498円）",
@@ -81,10 +165,19 @@
       "tagline": "みそ汁付きの「牛めし」。運営は松屋フーズHD",
       "description": "券売機・定食メニューの充実が特徴。牛丼ではなく「牛めし」と呼ぶ。",
       "metrics": {
-        "stores": { "value": 1185, "period": "2026年3月末", "note": "牛めし業態" },
-        "price": { "value": 460, "note": "みそ汁付き" }
+        "stores": {
+          "value": 1185,
+          "period": "2026年3月末",
+          "note": "牛めし業態"
+        },
+        "price": {
+          "value": 460,
+          "note": "みそ汁付き"
+        }
       },
-      "points": ["並盛は3社で最安（みそ汁付き460円）"]
+      "points": [
+        "並盛は3社で最安（みそ汁付き460円）"
+      ]
     },
     {
       "id": "nakau",
@@ -95,9 +188,39 @@
       "tagline": "親子丼・京風うどん。ゼンショー傘下",
       "description": "親子丼と京風うどんが看板の丼チェーン。2005年にゼンショーの子会社に。",
       "metrics": {
-        "stores": { "value": 446, "period": "2026年6月" }
+        "stores": {
+          "value": 446,
+          "period": "2026年6月"
+        }
       },
       "url": "https://www.nakau.co.jp/"
+    },
+    {
+      "id": "chikarameshi",
+      "name": "東京チカラめし",
+      "short": "チカラめし",
+      "group": "others",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "「焼き牛丼」で一時急拡大→大幅縮小",
+      "description": "煮込まずに焼いた牛肉をのせる「焼き牛丼」で2010年代前半に急拡大したが、その後は店舗を大きく減らした。"
+    },
+    {
+      "id": "sutadon",
+      "name": "伝説のすた丼屋",
+      "short": "すた丼",
+      "group": "others",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "にんにく醤油の豚丼（アントワークス）",
+      "description": "東京・国立発祥の「すた丼」（豚肉のにんにく醤油炒め丼）チェーン。運営はアントワークス。",
+      "metrics": {
+        "stores": {
+          "value": 70,
+          "approx": true,
+          "note": "「70店舗以上」との紹介（時点不明）"
+        }
+      }
     },
     {
       "id": "zensho",
@@ -111,17 +234,34 @@
       "tagline": "日本の外食で売上首位",
       "description": "すき家・なか卯・はま寿司などを持つ外食最大手。2025年3月期に日本の外食企業で初めて売上高1兆円を突破。",
       "metrics": {
-        "revenue": { "value": 12640, "note": "前期比+11.2%" },
-        "op": { "value": 814, "note": "前期比+8.4%" }
+        "revenue": {
+          "value": 12640,
+          "note": "前期比+11.2%"
+        },
+        "op": {
+          "value": 814,
+          "note": "前期比+8.4%"
+        }
       },
-      "brands": ["すき家", "なか卯", "はま寿司", "ココス", "ジョリーパスタ", "ビッグボーイ", "ゼッテリア（旧ロッテリア）"],
+      "brands": [
+        "すき家",
+        "なか卯",
+        "はま寿司",
+        "ココス",
+        "ジョリーパスタ",
+        "ビッグボーイ",
+        "ゼッテリア（旧ロッテリア）"
+      ],
       "points": [
         "はま寿司が既存店+15.5%と好調、すき家はコスト増で減益",
-        "海外ではすき家に加え、スーパー内のテイクアウト寿司を北米などで大規模に展開",
+        "海外ではすき家に加え、北米・英国などのスーパー内テイクアウト寿司（AFC・Snowfox）を大規模に展開",
         "2027年3月期は売上高1兆4,240億円・営業利益920億円を計画"
       ],
       "facts": [
-        { "label": "グループ店舗数", "value": "14,918店（2025年12月末）" }
+        {
+          "label": "グループ店舗数",
+          "value": "14,918店（2025年12月末）"
+        }
       ],
       "url": "https://www.zensho.co.jp/"
     },
@@ -137,16 +277,30 @@
       "tagline": "牛丼・うどん・ラーメンの3本柱へ",
       "description": "吉野家とはなまるうどんに加え、ラーメンを第3の柱に育成中。",
       "metrics": {
-        "revenue": { "value": 2257, "note": "前期比+10.1%" },
-        "op": { "value": 81, "note": "前期比+10.7%" }
+        "revenue": {
+          "value": 2257,
+          "note": "前期比+10.1%"
+        },
+        "op": {
+          "value": 81,
+          "note": "前期比+10.7%"
+        }
       },
-      "brands": ["吉野家", "はなまるうどん", "せたが屋", "ずんどう屋"],
+      "brands": [
+        "吉野家",
+        "はなまるうどん",
+        "せたが屋",
+        "キラメキノ未来"
+      ],
       "points": [
-        "ラーメン事業を強化（M&Aでチェーンや製麺・スープ工場を取得）",
+        "ラーメンを第3の柱に。M&Aでチェーンや麺・スープ工場（宝産業）を取得し、2026年には米国のKizukiも傘下に",
         "中期計画で2029年度に吉野家1,500店・はなまる600店体制を目指す"
       ],
       "facts": [
-        { "label": "はなまるうどん", "value": "418店（2026年2月）" }
+        {
+          "label": "はなまるうどん",
+          "value": "418店（2026年2月）"
+        }
       ],
       "url": "https://www.yoshinoya-holdings.com/"
     },
@@ -162,19 +316,103 @@
       "tagline": "牛めし＋とんかつ（松のや）の二刀流",
       "description": "松屋に加え、とんかつの松のや、ラーメン、鮨などを展開。",
       "metrics": {
-        "revenue": { "value": 1845, "note": "前期比+19.6%" },
-        "op": { "value": 76, "note": "前期比+72.3%・過去最高益" }
+        "revenue": {
+          "value": 1845,
+          "note": "前期比+19.6%"
+        },
+        "op": {
+          "value": 76,
+          "note": "前期比+72.3%・過去最高益"
+        }
       },
-      "brands": ["松屋", "松のや", "マイカリー食堂"],
+      "brands": [
+        "松屋",
+        "松のや",
+        "マイカリー食堂"
+      ],
       "points": [
         "既存店売上+10.5%と好調で過去最高益",
         "2027年3月期は売上高2,150億円・営業利益82億円を計画"
       ],
       "facts": [
-        { "label": "店舗数", "value": "1,573店（うち海外24、2026年3月末）" },
-        { "label": "業態別", "value": "牛めし1,185・とんかつ195・ラーメン132・鮨21ほか" }
+        {
+          "label": "店舗数",
+          "value": "1,573店（うち海外24、2026年3月末）"
+        },
+        {
+          "label": "業態別",
+          "value": "牛めし1,185・とんかつ195・ラーメン132・鮨21ほか"
+        }
       ],
       "url": "https://www.matsuyafoods.co.jp/"
+    },
+    {
+      "id": "hamazushi",
+      "name": "はま寿司",
+      "group": "sister",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "ゼンショーの回転寿司。グループの稼ぎ頭",
+      "description": "ゼンショーの回転寿司チェーン。2026年3月期は既存店売上が+15.5%と好調で、すき家の減益を補った。"
+    },
+    {
+      "id": "zetteria",
+      "name": "ゼッテリア（旧ロッテリア）",
+      "short": "ゼッテリア",
+      "group": "sister",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "2023年にゼンショーが買収したバーガー",
+      "description": "ゼンショーが2023年にロッテリアを買収し、新ブランド「ゼッテリア」へ転換を進めている。"
+    },
+    {
+      "id": "hanamaru",
+      "name": "はなまるうどん",
+      "short": "はなまる",
+      "group": "sister",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "吉野家HDのセルフうどん",
+      "metrics": {
+        "stores": {
+          "value": 418,
+          "period": "2026年2月"
+        }
+      },
+      "points": [
+        "中期計画で2029年度に600店体制を目指す"
+      ]
+    },
+    {
+      "id": "ramen_yoshinoya",
+      "name": "吉野家HDのラーメン事業",
+      "short": "吉野家のラーメン",
+      "group": "sister",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "せたが屋・宝産業・キラメキノ未来",
+      "description": "牛丼・うどんに続く第3の柱。2016年に「せたが屋」、2024年に麺・スープ製造の宝産業、2025年に鶏白湯ラーメンなどの「キラメキノ未来」を買収。",
+      "brands": [
+        "せたが屋",
+        "宝産業（麺・スープ製造）",
+        "キラメキノ未来"
+      ]
+    },
+    {
+      "id": "matsunoya",
+      "name": "松のや",
+      "group": "sister",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "松屋フーズのとんかつ業態",
+      "description": "松屋フーズのとんかつ定食チェーン。牛めしに次ぐ第2の柱。",
+      "metrics": {
+        "stores": {
+          "value": 195,
+          "period": "2026年3月末",
+          "note": "とんかつ業態"
+        }
+      }
     },
     {
       "id": "katsuya",
@@ -219,7 +457,11 @@
       "tagline": "中国を中心にアジア・中南米へ",
       "description": "ゼンショーの海外すき家。中国を中心に、アジアや中南米にも出店している。",
       "metrics": {
-        "stores": { "value": 652, "period": "2025年12月末", "note": "海外" }
+        "stores": {
+          "value": 652,
+          "period": "2025年12月末",
+          "note": "海外"
+        }
       }
     },
     {
@@ -231,7 +473,11 @@
       "tagline": "海外店舗の約6割が中国",
       "description": "中国本土・米国・東南アジアなどに展開。中国北部と香港は現地企業がフランチャイズで運営。",
       "metrics": {
-        "stores": { "value": 1000, "approx": true, "note": "2020〜22年ごろの報道ベース。要更新" }
+        "stores": {
+          "value": 1000,
+          "approx": true,
+          "note": "2020〜22年ごろの報道ベース。要更新"
+        }
       }
     },
     {
@@ -242,8 +488,55 @@
       "country": "海外",
       "tagline": "海外はまだ小規模",
       "metrics": {
-        "stores": { "value": 24, "period": "2026年3月末", "note": "全業態の海外店舗" }
+        "stores": {
+          "value": 24,
+          "period": "2026年3月末",
+          "note": "全業態の海外店舗"
+        }
       }
+    },
+    {
+      "id": "afc",
+      "name": "AFC（米国）",
+      "short": "AFC",
+      "group": "overseas",
+      "region": "overseas",
+      "country": "米国",
+      "tagline": "スーパー内のテイクアウト寿司。2018年にゼンショーが買収",
+      "description": "北米のスーパーマーケット内で寿司売り場を運営する会社。買収時点で約4,000店舗（売り場）を持っていた。",
+      "metrics": {
+        "stores": {
+          "value": 4000,
+          "approx": true,
+          "note": "2018年の買収時点（カナダ・豪州含む）"
+        }
+      }
+    },
+    {
+      "id": "snowfox",
+      "name": "Snowfox（北米・英国）",
+      "short": "Snowfox",
+      "group": "overseas",
+      "region": "overseas",
+      "country": "米国・英国",
+      "tagline": "寿司キオスク約3,000店。2023年にゼンショーが買収",
+      "description": "北米と英国でスーパー内の寿司キオスクなどを運営（英国の回転寿司「YO! Sushi」を含むグループ）。約6.2億ドルで買収。",
+      "metrics": {
+        "stores": {
+          "value": 3000,
+          "approx": true,
+          "note": "2023年の買収時点"
+        }
+      }
+    },
+    {
+      "id": "kizuki",
+      "name": "Kizuki（米国）",
+      "group": "overseas",
+      "region": "overseas",
+      "country": "米国",
+      "tagline": "米国のラーメン・居酒屋チェーン。2026年に吉野家が70%取得",
+      "description": "吉野家HDが米子会社を通じて持分70%の取得を決めた（2026年7月発表）。海外でもラーメン事業を広げる。"
     },
     {
       "id": "hophing",
@@ -257,47 +550,244 @@
     }
   ],
   "relations": [
-    { "from": "zensho", "to": "sukiya", "type": "subsidiary", "label": "運営" },
-    { "from": "zensho", "to": "nakau", "type": "subsidiary", "label": "2005年 子会社化" },
-    { "from": "yoshinoya_hd", "to": "yoshinoya", "type": "subsidiary", "label": "運営" },
-    { "from": "matsuya_hd", "to": "matsuya", "type": "subsidiary", "label": "運営" },
-    { "from": "zensho", "to": "sukiya_global", "type": "subsidiary", "label": "海外展開" },
-    { "from": "yoshinoya_hd", "to": "yoshinoya_global", "type": "subsidiary", "label": "海外展開" },
-    { "from": "matsuya_hd", "to": "matsuya_global", "type": "subsidiary", "label": "海外展開" },
-    { "from": "hophing", "to": "yoshinoya_global", "type": "alliance", "label": "中国北部のFC運営" }
+    {
+      "from": "zensho",
+      "to": "sukiya",
+      "type": "subsidiary",
+      "label": "運営"
+    },
+    {
+      "from": "zensho",
+      "to": "nakau",
+      "type": "subsidiary",
+      "label": "2005年 子会社化"
+    },
+    {
+      "from": "yoshinoya_hd",
+      "to": "yoshinoya",
+      "type": "subsidiary",
+      "label": "運営"
+    },
+    {
+      "from": "matsuya_hd",
+      "to": "matsuya",
+      "type": "subsidiary",
+      "label": "運営"
+    },
+    {
+      "from": "zensho",
+      "to": "hamazushi",
+      "type": "subsidiary",
+      "label": "運営"
+    },
+    {
+      "from": "zensho",
+      "to": "zetteria",
+      "type": "subsidiary",
+      "label": "2023年 ロッテリア買収"
+    },
+    {
+      "from": "yoshinoya_hd",
+      "to": "hanamaru",
+      "type": "subsidiary",
+      "label": "運営"
+    },
+    {
+      "from": "yoshinoya_hd",
+      "to": "ramen_yoshinoya",
+      "type": "subsidiary",
+      "label": "M&Aで拡大"
+    },
+    {
+      "from": "matsuya_hd",
+      "to": "matsunoya",
+      "type": "subsidiary",
+      "label": "運営"
+    },
+    {
+      "from": "zensho",
+      "to": "sukiya_global",
+      "type": "subsidiary",
+      "label": "海外展開"
+    },
+    {
+      "from": "zensho",
+      "to": "afc",
+      "type": "subsidiary",
+      "label": "2018年買収"
+    },
+    {
+      "from": "zensho",
+      "to": "snowfox",
+      "type": "subsidiary",
+      "label": "2023年買収"
+    },
+    {
+      "from": "yoshinoya_hd",
+      "to": "yoshinoya_global",
+      "type": "subsidiary",
+      "label": "海外展開"
+    },
+    {
+      "from": "yoshinoya_hd",
+      "to": "kizuki",
+      "type": "subsidiary",
+      "label": "2026年 70%取得"
+    },
+    {
+      "from": "matsuya_hd",
+      "to": "matsuya_global",
+      "type": "subsidiary",
+      "label": "海外展開"
+    },
+    {
+      "from": "hophing",
+      "to": "yoshinoya_global",
+      "type": "alliance",
+      "label": "中国北部のFC運営"
+    }
   ],
   "trends": [
-    { "title": "並盛の価格戦略", "text": "吉野家498円、松屋460円（みそ汁付き）、すき家は450円への値下げから一転して2026年7月に480円へ。コスト高の中で価格の付け方が分かれる。" },
-    { "title": "コメ・牛肉・円安", "text": "2024年以降のコメ価格高騰に、輸入牛肉の値上がりと円安が重なり、原価率が上昇。" },
-    { "title": "牛丼以外への多角化", "text": "ゼンショーは寿司（はま寿司・海外テイクアウト寿司）、吉野家はラーメン、松屋はとんかつ（松のや）が成長の柱。" },
-    { "title": "食の安全と信頼", "text": "2025年のすき家の異物混入問題では全店一時休業に。衛生管理への投資が経営課題に。" },
-    { "title": "人手不足と省人化", "text": "深夜の1人勤務（ワンオペ）問題を経て、券売機・モバイルオーダー・セルフ化などの省人化が進む。" }
+    {
+      "title": "並盛の価格戦略",
+      "text": "吉野家498円、松屋460円（みそ汁付き）、すき家は450円への値下げから一転して2026年7月に480円へ。「500円の壁」を超えると客離れするとの見方も。"
+    },
+    {
+      "title": "米国産牛肉の高騰",
+      "text": "牛丼用の米国産バラ肉（ショートプレート）は2025年度比で約4割上昇。米国の牛の頭数減少と円安が原因で、豪州産・国産への切り替えも簡単ではない。"
+    },
+    {
+      "title": "コメ高と原価率の上昇",
+      "text": "2024年以降のコメ価格高騰が重なり、各社の原価率が上昇。ゼンショーはすき家が減益に。"
+    },
+    {
+      "title": "牛丼以外への多角化",
+      "text": "ゼンショーは寿司（はま寿司・海外テイクアウト寿司）、吉野家はうどん・ラーメン（国内外でM&A）、松屋はとんかつ（松のや）が成長の柱。"
+    },
+    {
+      "title": "食の安全と信頼",
+      "text": "2025年のすき家の異物混入問題では全店一時休業に。衛生管理への投資が経営課題に。"
+    },
+    {
+      "title": "人手不足と省人化",
+      "text": "深夜の1人勤務（ワンオペ）問題を経て、券売機・モバイルオーダー・セルフ化などの省人化が進む。"
+    }
   ],
   "timeline": [
-    { "date": "1899", "text": "吉野家が東京・日本橋の魚河岸で創業" },
-    { "date": "1966", "text": "松屋の前身（中華飯店）が東京・江古田で創業" },
-    { "date": "1982", "text": "ゼンショー設立、すき家1号店（横浜・生麦）" },
-    { "date": "2004", "text": "BSE問題で米国産牛肉が輸入停止、吉野家が牛丼販売を休止" },
-    { "date": "2005", "text": "ゼンショーがなか卯を子会社化" },
-    { "date": "2008", "text": "すき家が店舗数で吉野家を抜き首位に" },
-    { "date": "2014", "text": "すき家の深夜ワンオペが問題化、深夜営業を一部休止" },
-    { "date": "2023", "text": "ゼンショーがロッテリアを買収（ゼッテリアへ転換）" },
-    { "date": "2025.3", "text": "すき家が異物混入問題で全国ほぼ全店を一時休業" },
-    { "date": "2025.9", "text": "すき家が並盛を450円に値下げ" },
-    { "date": "2026.7", "text": "すき家が並盛を480円に値上げ" }
+    {
+      "date": "1899",
+      "text": "吉野家が東京・日本橋の魚河岸で創業"
+    },
+    {
+      "date": "1966",
+      "text": "松屋の前身（中華飯店）が東京・江古田で創業"
+    },
+    {
+      "date": "1982",
+      "text": "ゼンショー設立、すき家1号店（横浜・生麦）"
+    },
+    {
+      "date": "2004",
+      "text": "BSE問題で米国産牛肉が輸入停止、吉野家が牛丼販売を休止"
+    },
+    {
+      "date": "2005",
+      "text": "ゼンショーがなか卯を子会社化"
+    },
+    {
+      "date": "2008",
+      "text": "すき家が店舗数で吉野家を抜き首位に"
+    },
+    {
+      "date": "2014",
+      "text": "すき家の深夜ワンオペが問題化、深夜営業を一部休止"
+    },
+    {
+      "date": "2015",
+      "text": "神戸らんぷ亭が全店閉店"
+    },
+    {
+      "date": "2016",
+      "text": "吉野家HDがラーメンの「せたが屋」を買収"
+    },
+    {
+      "date": "2018",
+      "text": "ゼンショーが米テイクアウト寿司のAFCを買収"
+    },
+    {
+      "date": "2023",
+      "text": "ゼンショーがロッテリア（ゼッテリアへ転換）と英米のSnowfoxを買収"
+    },
+    {
+      "date": "2024",
+      "text": "吉野家HDが麺・スープ製造の宝産業を買収"
+    },
+    {
+      "date": "2025.3",
+      "text": "すき家が異物混入問題で全国ほぼ全店を一時休業"
+    },
+    {
+      "date": "2025.9",
+      "text": "すき家が並盛を450円に値下げ"
+    },
+    {
+      "date": "2026.7",
+      "text": "すき家が並盛を480円に値上げ／吉野家HDが米Kizukiの70%取得を決定"
+    }
   ],
   "notes": [
     "チェーンの店舗数は時点が異なります（各タイルの詳細に記載）。",
     "売上高・営業利益は運営会社（ホールディングス）全体の数値です。",
-    "吉野家の海外店舗数は古い報道ベースの概数なので、決算資料で更新してください。"
+    "吉野家の海外店舗数、AFC・Snowfoxの店舗数は買収時点や古い報道ベースの概数なので、決算資料で更新してください。"
   ],
   "sources": [
-    { "title": "流通ニュース：ゼンショーHD 2026年3月期決算", "url": "https://www.ryutsuu.biz/accounts/s051276.html" },
-    { "title": "マネックス証券：吉野家HD 2026年2月期決算", "url": "https://scouter.monex.co.jp/news/detail/9861_20260409_act_20260409_160014_2" },
-    { "title": "流通ニュース：松屋フーズHD 2026年3月期決算", "url": "https://www.ryutsuu.biz/accounts/s051580.html" },
-    { "title": "業界ダイジェスト：ゼンショーHD 2026年3月期 第3四半期", "url": "https://www.gyokaidigest.com/companies/zensho/report/2026-Q3" },
-    { "title": "株予報：吉野家HD", "url": "https://kabuyoho.jp/reportTop?bcode=9861" },
-    { "title": "週刊アスキー：牛丼チェーンの価格", "url": "https://weekly.ascii.jp/elem/000/004/416/4416368/" },
-    { "title": "J-Net21（中小機構）：牛丼店の市場動向", "url": "https://j-net21.smrj.go.jp/report/research/restaurant/cons-gyudonten2.html" }
+    {
+      "title": "流通ニュース：ゼンショーHD 2026年3月期決算",
+      "url": "https://www.ryutsuu.biz/accounts/s051276.html"
+    },
+    {
+      "title": "マネックス証券：吉野家HD 2026年2月期決算",
+      "url": "https://scouter.monex.co.jp/news/detail/9861_20260409_act_20260409_160014_2"
+    },
+    {
+      "title": "流通ニュース：松屋フーズHD 2026年3月期決算",
+      "url": "https://www.ryutsuu.biz/accounts/s051580.html"
+    },
+    {
+      "title": "業界ダイジェスト：ゼンショーHD 2026年3月期 第3四半期",
+      "url": "https://www.gyokaidigest.com/companies/zensho/report/2026-Q3"
+    },
+    {
+      "title": "株予報：吉野家HD",
+      "url": "https://kabuyoho.jp/reportTop?bcode=9861"
+    },
+    {
+      "title": "週刊アスキー：牛丼チェーンの価格",
+      "url": "https://weekly.ascii.jp/elem/000/004/416/4416368/"
+    },
+    {
+      "title": "J-Net21（中小機構）：牛丼店の市場動向",
+      "url": "https://j-net21.smrj.go.jp/report/research/restaurant/cons-gyudonten2.html"
+    },
+    {
+      "title": "PRESIDENT Online：牛丼と米国産牛肉の高騰",
+      "url": "https://president.jp/articles/-/107516"
+    },
+    {
+      "title": "日本M&Aセンター：吉野家HD 宝産業の買収",
+      "url": "https://www.nihon-ma.co.jp/news/20241226_9861-8/"
+    },
+    {
+      "title": "日本M&Aセンター：吉野家HD Kizukiの持分取得",
+      "url": "https://www.nihon-ma.co.jp/news/20260710_9861-50/"
+    },
+    {
+      "title": "SeafoodSource：ゼンショーのSnowfox買収",
+      "url": "https://www.seafoodsource.com/news/business-finance/japanese-foodservice-firm-zensho-acquires-us-sushi-specialist-snowfox-group"
+    },
+    {
+      "title": "J-CAST：神戸らんぷ亭の閉店",
+      "url": "https://www.j-cast.com/2015/08/13242687.html"
+    }
   ]
 }

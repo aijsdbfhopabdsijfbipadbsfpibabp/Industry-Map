@@ -6,14 +6,28 @@
       "name": "化粧品",
       "icon": "💄",
       "category": "生活・消費財",
-      "description": "資生堂・コーセー・花王と、ロレアルなど海外大手"
+      "description": "資生堂・コーセー・花王、訪販・通販・製薬系、OEM、海外勢まで"
     },
     {
       "id": "gyudon",
       "name": "牛丼",
       "icon": "🍚",
       "category": "外食",
-      "description": "すき家・吉野家・松屋の3強と周辺業態"
+      "description": "すき家・吉野家・松屋の3強と、グループ業態・海外展開"
+    },
+    {
+      "id": "toys",
+      "name": "おもちゃ",
+      "icon": "🧸",
+      "category": "エンタメ・ホビー",
+      "description": "バンダイナムコ・タカラトミー、トレカ、キャラクター、海外大手"
+    },
+    {
+      "id": "semiconductors",
+      "name": "半導体",
+      "icon": "🔬",
+      "category": "テクノロジー",
+      "description": "エヌビディア・TSMCから、日本の装置・材料、ラピダスまで"
     }
   ]
 }

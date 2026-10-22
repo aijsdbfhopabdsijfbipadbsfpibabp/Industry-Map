@@ -1,0 +1,821 @@
+{
+  "name": "半導体",
+  "icon": "🔬",
+  "category": "テクノロジー",
+  "updated": "2026-10-22",
+  "summary": "半導体は「設計（ファブレス）→製造（ファウンドリ・メモリ）→装置・材料」の分業で成り立つ。AI向けのGPUで米エヌビディアが世界首位に立ち、製造は台湾のTSMC、メモリは韓国のサムスン・SKハイニックスと米マイクロンが握る。\n日本は半導体そのものではキオクシア（メモリ）、ソニー（イメージセンサー）、ルネサス（車載マイコン）などに限られる一方、製造装置（東京エレクトロン・アドバンテスト）と材料（信越化学・SUMCO・JSR・味の素のABF）では世界的に強い。国はラピダス（2ナノ）やTSMC熊本工場（JASM）を支援し、製造の復活を目指している。2026年はAI投資とメモリ価格の高騰で、世界市場が前年のほぼ2倍に膨らむ見通し。",
+  "market": {
+    "jp": {
+      "label": "日本製の製造装置",
+      "value": "約5.2兆円",
+      "period": "2025年度（見込み）",
+      "note": "日本製半導体製造装置の販売高。初めて5兆円を超える見通し",
+      "source": "日本半導体製造装置協会（SEAJ）",
+      "url": "https://www.semi.org/jp/news-resources/press/20251216-2"
+    },
+    "global": {
+      "label": "世界半導体市場",
+      "value": "7,956億ドル",
+      "period": "2025年",
+      "note": "前年比+26.2%。2026年は1兆5,112億ドル（+89.9%）の予測",
+      "source": "WSTS（2026年春季予測）",
+      "url": "https://eetimes.itmedia.co.jp/ee/articles/2606/04/news120.html"
+    }
+  },
+  "breakdowns": [
+    {
+      "title": "世界半導体市場の内訳（予測）",
+      "period": "2026年",
+      "unit": "億ドル",
+      "items": [
+        { "label": "メモリ", "value": 8039, "note": "前年の約3.5倍。価格高騰が大きい" },
+        { "label": "ロジック", "value": 4114, "note": "前年比+37.3%（AI向けGPU・ASICなど）" },
+        { "label": "その他", "value": 2959, "note": "アナログ・センサー・個別半導体など（合計1兆5,112億ドルとの差額）" }
+      ],
+      "source": "WSTS（2026年春季予測）",
+      "url": "https://eetimes.itmedia.co.jp/ee/articles/2606/04/news120.html"
+    }
+  ],
+  "metrics": [
+    { "key": "revenue", "label": "売上高", "unit": "億円", "description": "会社または半導体関連部門の売上高。海外企業は1ドル=150円などで円換算した概算。" },
+    { "key": "op", "label": "営業利益", "unit": "億円" }
+  ],
+  "sizeBy": "revenue",
+  "rankBy": "revenue",
+  "groups": [
+    { "id": "jp_chips", "section": "半導体をつくる会社", "name": "日本の半導体メーカー", "short": "日本の半導体", "color": "pink", "description": "メモリ・イメージセンサー・車載マイコン・パワー半導体など、得意分野に特化" },
+    { "id": "jp_fabs", "section": "半導体をつくる会社", "name": "国が支援する新しい工場", "short": "ラピダス・JASM", "color": "rose", "description": "最先端ロジックの国産化（ラピダス）と、TSMCの熊本工場（JASM）" },
+    { "id": "design", "section": "半導体をつくる会社", "name": "設計（ファブレス・IP）", "short": "設計", "color": "navy", "description": "工場を持たずに設計し、製造はTSMCなどに委託。AI向けGPU・ASICが急成長" },
+    { "id": "memory", "section": "半導体をつくる会社", "name": "メモリ", "short": "メモリ", "color": "lavender", "description": "DRAM・NAND・AI向けのHBM。2026年は価格高騰で超好況" },
+    { "id": "foundry", "section": "半導体をつくる会社", "name": "受託製造（ファウンドリ）・総合", "short": "ファウンドリ", "color": "sky", "description": "他社が設計した半導体を製造する会社と、設計から製造まで行う総合メーカー" },
+    { "id": "analog", "section": "半導体をつくる会社", "name": "アナログ・パワー・車載（海外）", "short": "車載・パワー", "color": "peach", "description": "自動車・産業機器向けで、ルネサスやロームの競合" },
+    { "id": "equip_jp", "section": "製造装置", "name": "日本の装置メーカー", "short": "日本の装置", "color": "sage", "description": "前工程（成膜・エッチング・洗浄）から後工程（切断・検査）まで、日本勢のシェアが高い" },
+    { "id": "equip_global", "section": "製造装置", "name": "海外の装置メーカー", "short": "海外の装置", "color": "sage", "description": "露光装置のASMLを筆頭とする米欧の大手" },
+    { "id": "materials", "section": "材料・部材", "name": "材料・部材", "short": "材料", "color": "lemon", "description": "シリコンウエハー・フォトレジスト・パッケージ基板など。日本企業が世界的に強い" },
+    { "id": "backers", "section": "出資・支援", "name": "出資者・国の支援", "short": "出資・支援", "color": "gray", "description": "ラピダスやJASMに出資する事業会社と、国の投資ファンド・支援機関" }
+  ],
+  "companies": [
+    {
+      "id": "kioxia",
+      "name": "キオクシアホールディングス",
+      "short": "キオクシア",
+      "group": "jp_chips",
+      "region": "jp",
+      "country": "日本",
+      "code": "285A",
+      "fy": "2026年3月期",
+      "tagline": "NANDフラッシュメモリ。旧東芝メモリ",
+      "description": "東芝のメモリ事業が独立した会社。データを保存するNAND型フラッシュメモリの世界大手で、2024年12月に上場。三重県四日市・岩手県北上の工場を米サンディスクと共同運営。",
+      "metrics": {
+        "revenue": { "value": 23376, "note": "前期比+37.0%・2期連続で過去最高" },
+        "op": { "value": 8704, "note": "IFRS（Non-GAAPでは8,762億円）" }
+      },
+      "brands": ["BiCS FLASH（NAND）", "SSD"],
+      "points": ["AIデータセンター向けSSDの需要とメモリ価格の上昇で大幅増益。純利益は5,545億円"]
+    },
+    {
+      "id": "sony_semi",
+      "name": "ソニー（イメージング＆センシング）",
+      "short": "ソニー",
+      "group": "jp_chips",
+      "region": "jp",
+      "country": "日本",
+      "code": "6758",
+      "fy": "2026年3月期",
+      "tagline": "スマホカメラのイメージセンサー世界首位",
+      "description": "ソニーグループの半導体部門（ソニーセミコンダクタソリューションズ）。スマートフォン向けのイメージセンサーが主力。",
+      "metrics": {
+        "revenue": { "value": 21515, "note": "I&SS分野・前期比+19.6%。うちイメージセンサー1兆9,832億円" },
+        "op": { "value": 3573, "note": "前期比+36.8%" }
+      },
+      "brands": ["CMOSイメージセンサー", "LYTIA"]
+    },
+    {
+      "id": "renesas",
+      "name": "ルネサスエレクトロニクス",
+      "short": "ルネサス",
+      "group": "jp_chips",
+      "region": "jp",
+      "country": "日本",
+      "code": "6723",
+      "fy": "2025年12月期",
+      "tagline": "車載マイコンの世界大手",
+      "description": "日立・三菱電機・NECの半導体事業が統合して誕生。自動車や産業機器を制御するマイコン・アナログ半導体が主力。",
+      "metrics": {
+        "revenue": { "value": 13212, "note": "前期比-2.0%" },
+        "op": { "value": 2011, "note": "前期比-9.8%" }
+      },
+      "brands": ["RH850（車載マイコン）", "RA/RXマイコン"],
+      "points": ["出資先の米ウルフスピード（SiC）の経営再建に伴い2,366億円の損失を計上し、最終損益は517億円の赤字"]
+    },
+    {
+      "id": "rohm",
+      "name": "ローム",
+      "group": "jp_chips",
+      "region": "jp",
+      "country": "日本",
+      "code": "6963",
+      "fy": "2026年3月期",
+      "tagline": "SiCパワー半導体に注力（京都）",
+      "metrics": {
+        "revenue": { "value": 4811, "note": "前期比+7.3%" },
+        "op": { "value": 109, "note": "前期は401億円の赤字" }
+      },
+      "brands": ["SiCパワーデバイス", "アナログIC"],
+      "points": ["EV向けSiCの需要鈍化で前期は赤字。減価償却方法の変更なども寄与して黒字に戻した"]
+    },
+    {
+      "id": "melco_semi",
+      "name": "三菱電機（半導体・デバイス）",
+      "short": "三菱電機",
+      "group": "jp_chips",
+      "region": "jp",
+      "country": "日本",
+      "code": "6503",
+      "fy": "2026年3月期",
+      "tagline": "鉄道・産業向けのパワー半導体",
+      "metrics": {
+        "revenue": { "value": 2871, "note": "半導体・デバイスセグメント" },
+        "op": { "value": 475, "note": "前期比+17%" }
+      },
+      "brands": ["パワーモジュール", "光デバイス"],
+      "points": ["パワー半導体の需要は低迷が続く一方、通信用の光デバイスが堅調"]
+    },
+    {
+      "id": "fujielectric",
+      "name": "富士電機",
+      "group": "jp_chips",
+      "region": "jp",
+      "country": "日本",
+      "code": "6504",
+      "tagline": "パワー半導体（IGBTなど）"
+    },
+    {
+      "id": "toshiba_dev",
+      "name": "東芝（デバイス事業）",
+      "short": "東芝",
+      "group": "jp_chips",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "パワー半導体・HDD。2023年に非上場化"
+    },
+    {
+      "id": "socionext",
+      "name": "ソシオネクスト",
+      "group": "jp_chips",
+      "region": "jp",
+      "country": "日本",
+      "code": "6526",
+      "tagline": "日本のファブレス（カスタムSoC）"
+    },
+    {
+      "id": "rapidus",
+      "name": "ラピダス",
+      "group": "jp_fabs",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "2ナノの最先端ロジックを北海道で量産へ",
+      "description": "トヨタ・ソニー・NTTなど8社の出資で2022年に設立。北海道千歳市に工場を建て、2027年に2ナノ世代の量産を目指す。巨額の政府支援を受ける国策企業。",
+      "points": [
+        "2026年2月、国の情報処理推進機構（IPA）から1,000億円、キヤノン・富士通・NTT・ソフトバンク・ソニーなど民間32社から1,676億円の出資を受けた",
+        "2026年6月にIPAから1,500億円の追加出資"
+      ]
+    },
+    {
+      "id": "jasm",
+      "name": "JASM（TSMC熊本）",
+      "short": "JASM",
+      "group": "jp_fabs",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "TSMCの熊本工場。2024年に第1工場が稼働",
+      "description": "TSMCが過半を出資し、ソニー・デンソー・トヨタも出資する熊本県菊陽町の工場。車載・イメージセンサー向けなどを製造。第2工場は計画の遅れが報じられている。"
+    },
+    {
+      "id": "nvidia",
+      "name": "エヌビディア",
+      "group": "design",
+      "region": "overseas",
+      "country": "米国",
+      "code": "NVDA",
+      "fy": "2026年1月期",
+      "tagline": "AI向けGPUで世界首位。半導体売上で1位",
+      "description": "ゲーム用GPUから出発し、AIの学習・推論に使うデータセンター向けGPUで圧倒的なシェアを持つ。製造はTSMCに委託。",
+      "metrics": {
+        "revenue": { "value": 323900, "approx": true, "note": "2,159億ドル（前期比+65%、1ドル=150円で換算）" }
+      },
+      "brands": ["Blackwell（AI向けGPU）", "GeForce", "CUDA"],
+      "points": [
+        "データセンター部門だけで1,937億ドル（+68%）",
+        "2025年の半導体売上で、初めて1,000億ドルを超えたベンダーに（Gartner）"
+      ],
+      "url": "https://www.nvidia.com/"
+    },
+    {
+      "id": "broadcom",
+      "name": "ブロードコム",
+      "group": "design",
+      "region": "overseas",
+      "country": "米国",
+      "code": "AVGO",
+      "fy": "2025年",
+      "tagline": "AI向けカスタムチップ（ASIC）・通信",
+      "metrics": { "revenue": { "value": 51450, "approx": true, "note": "半導体売上343億ドル（Gartner、+23.3%）" } },
+      "brands": ["カスタムAIチップ", "ネットワーク用チップ"]
+    },
+    {
+      "id": "qualcomm",
+      "name": "クアルコム",
+      "group": "design",
+      "region": "overseas",
+      "country": "米国",
+      "code": "QCOM",
+      "fy": "2025年",
+      "tagline": "スマホ向けSoCと通信モデム",
+      "metrics": { "revenue": { "value": 55500, "approx": true, "note": "半導体売上370億ドル（Gartner）" } },
+      "brands": ["Snapdragon"]
+    },
+    {
+      "id": "amd",
+      "name": "AMD",
+      "group": "design",
+      "region": "overseas",
+      "country": "米国",
+      "code": "AMD",
+      "fy": "2025年",
+      "tagline": "CPU・GPUでインテル・エヌビディアに挑む",
+      "metrics": { "revenue": { "value": 48750, "approx": true, "note": "半導体売上325億ドル（Gartner）" } },
+      "brands": ["Ryzen", "EPYC", "Instinct（AI向けGPU）"]
+    },
+    {
+      "id": "apple",
+      "name": "アップル（自社チップ）",
+      "short": "アップル",
+      "group": "design",
+      "region": "overseas",
+      "country": "米国",
+      "code": "AAPL",
+      "fy": "2025年",
+      "tagline": "iPhone・Mac用のチップを自社設計",
+      "metrics": { "revenue": { "value": 36900, "approx": true, "note": "半導体売上246億ドル相当（Gartner）" } },
+      "brands": ["Aシリーズ", "Mシリーズ"]
+    },
+    {
+      "id": "mediatek",
+      "name": "メディアテック",
+      "group": "design",
+      "region": "overseas",
+      "country": "台湾",
+      "code": "2454",
+      "fy": "2025年",
+      "tagline": "スマホ・家電向けSoC",
+      "metrics": { "revenue": { "value": 27750, "approx": true, "note": "半導体売上185億ドル（Gartner）" } },
+      "brands": ["Dimensity"]
+    },
+    {
+      "id": "arm",
+      "name": "Arm",
+      "group": "design",
+      "region": "overseas",
+      "country": "英国",
+      "code": "ARM",
+      "tagline": "CPUの設計図（IP）。ソフトバンク傘下",
+      "description": "スマホのほぼすべてに使われるCPU設計を他社にライセンスする会社。2016年にソフトバンクグループが買収し、2023年に米国で再上場（ソフトバンクが過半を保有）。"
+    },
+    {
+      "id": "samsung",
+      "name": "サムスン電子（半導体）",
+      "short": "サムスン",
+      "group": "memory",
+      "region": "overseas",
+      "country": "韓国",
+      "code": "005930",
+      "fy": "2025年",
+      "tagline": "メモリ世界大手。ファウンドリも",
+      "metrics": { "revenue": { "value": 108750, "approx": true, "note": "半導体売上725億ドル（Gartner、世界2位）" } },
+      "brands": ["DRAM", "NAND", "HBM", "Exynos", "サムスン・ファウンドリ"],
+      "points": ["メモリは+13%だが、ファウンドリなど非メモリは-8%（2025年）"]
+    },
+    {
+      "id": "skhynix",
+      "name": "SKハイニックス",
+      "group": "memory",
+      "region": "overseas",
+      "country": "韓国",
+      "code": "000660",
+      "fy": "2025年12月期",
+      "tagline": "AI向けHBMの先頭。営業利益でサムスンを逆転",
+      "metrics": {
+        "revenue": { "value": 102000, "approx": true, "note": "97.15兆ウォン（前期比+47%、100ウォン=10.5円で換算）" },
+        "op": { "value": 49570, "approx": true, "note": "47.21兆ウォン（営業利益率49%）" }
+      },
+      "brands": ["HBM", "DRAM", "NAND（Solidigm）"],
+      "points": ["HBMの売上は前年の2倍超。エヌビディアのGPUに搭載される"]
+    },
+    {
+      "id": "micron",
+      "name": "マイクロン",
+      "group": "memory",
+      "region": "overseas",
+      "country": "米国",
+      "code": "MU",
+      "fy": "2026年8月期",
+      "tagline": "米国唯一のメモリ大手。売上が3.5倍に",
+      "metrics": { "revenue": { "value": 199800, "approx": true, "note": "1,332億ドル（前期比+256%）" } },
+      "brands": ["DRAM", "HBM", "NAND"],
+      "points": ["2027年分のHBM供給の大半について顧客と合意済み。広島にも工場を持つ"]
+    },
+    {
+      "id": "sandisk",
+      "name": "サンディスク",
+      "group": "memory",
+      "region": "overseas",
+      "country": "米国",
+      "code": "SNDK",
+      "tagline": "NAND。キオクシアと工場を共同運営",
+      "description": "米ウエスタンデジタルから2025年に分離・上場したフラッシュメモリ会社。"
+    },
+    {
+      "id": "tsmc",
+      "name": "TSMC（台湾積体電路製造）",
+      "short": "TSMC",
+      "group": "foundry",
+      "region": "overseas",
+      "country": "台湾",
+      "code": "2330",
+      "fy": "2025年12月期",
+      "tagline": "受託製造で世界シェアの大半。最先端品はほぼ独占",
+      "description": "1987年設立の世界最大のファウンドリ。エヌビディア・アップル・AMDなどのチップを製造し、先端パッケージ（CoWoS）でもAI需要を取り込む。",
+      "metrics": {
+        "revenue": { "value": 183600, "approx": true, "note": "1,224億ドル（3兆8,091億台湾ドル、前期比+35.9%）" },
+        "op": { "value": 93300, "approx": true, "note": "営業利益率50.8%から概算" }
+      },
+      "brands": ["3ナノ・2ナノプロセス", "CoWoS（先端パッケージ）"],
+      "url": "https://www.tsmc.com/"
+    },
+    {
+      "id": "intel",
+      "name": "インテル",
+      "group": "foundry",
+      "region": "overseas",
+      "country": "米国",
+      "code": "INTC",
+      "fy": "2025年",
+      "tagline": "CPUの老舗。トップ10で唯一の減収",
+      "metrics": { "revenue": { "value": 71850, "approx": true, "note": "半導体売上479億ドル（Gartner、-3.9%）" } },
+      "brands": ["Core", "Xeon", "Intel Foundry"]
+    },
+    {
+      "id": "globalfoundries",
+      "name": "グローバルファウンドリーズ",
+      "short": "GF",
+      "group": "foundry",
+      "region": "overseas",
+      "country": "米国",
+      "code": "GFS",
+      "tagline": "成熟プロセスのファウンドリ"
+    },
+    {
+      "id": "smic",
+      "name": "SMIC（中芯国際）",
+      "short": "SMIC",
+      "group": "foundry",
+      "region": "overseas",
+      "country": "中国",
+      "code": "0981",
+      "tagline": "中国最大のファウンドリ"
+    },
+    {
+      "id": "infineon",
+      "name": "インフィニオン",
+      "group": "analog",
+      "region": "overseas",
+      "country": "ドイツ",
+      "code": "IFX",
+      "tagline": "パワー半導体・車載で世界首位級"
+    },
+    {
+      "id": "ti",
+      "name": "テキサス・インスツルメンツ",
+      "short": "TI",
+      "group": "analog",
+      "region": "overseas",
+      "country": "米国",
+      "code": "TXN",
+      "tagline": "アナログ半導体の最大手"
+    },
+    {
+      "id": "st",
+      "name": "STマイクロエレクトロニクス",
+      "short": "ST",
+      "group": "analog",
+      "region": "overseas",
+      "country": "スイス",
+      "code": "STM",
+      "tagline": "車載・産業向け（仏伊系）"
+    },
+    {
+      "id": "nxp",
+      "name": "NXPセミコンダクターズ",
+      "short": "NXP",
+      "group": "analog",
+      "region": "overseas",
+      "country": "オランダ",
+      "code": "NXPI",
+      "tagline": "車載マイコンでルネサスと競合"
+    },
+    {
+      "id": "tel",
+      "name": "東京エレクトロン",
+      "group": "equip_jp",
+      "region": "jp",
+      "country": "日本",
+      "code": "8035",
+      "fy": "2026年3月期",
+      "tagline": "国内最大の装置メーカー。世界でも上位",
+      "description": "ウエハーに薬液を塗る・成膜する・削る（エッチング）・洗うなど、前工程の主要装置を幅広く持つ。",
+      "metrics": {
+        "revenue": { "value": 24435, "note": "前期とほぼ横ばい" },
+        "op": { "value": 6249, "note": "前期6,973億円から減益" }
+      },
+      "brands": ["コータ／デベロッパ（塗布・現像）", "エッチング装置", "成膜装置", "洗浄装置"],
+      "points": ["今回から通期予想の開示をやめ、半期予想のみに変更"],
+      "url": "https://www.tel.co.jp/"
+    },
+    {
+      "id": "advantest",
+      "name": "アドバンテスト",
+      "group": "equip_jp",
+      "region": "jp",
+      "country": "日本",
+      "code": "6857",
+      "fy": "2026年3月期",
+      "tagline": "テスタ（検査装置）の世界大手。AIで急成長",
+      "description": "完成した半導体が正しく動くかを調べるテスタが主力。AI向けGPU・HBMの複雑化で需要が急増。",
+      "metrics": {
+        "revenue": { "value": 11286, "note": "過去最高" },
+        "op": { "value": 4991, "note": "営業利益率44.2%（前期29.3%）" }
+      },
+      "brands": ["SoCテスタ", "メモリテスタ"],
+      "points": ["2027年3月期は売上高1兆4,200億円・営業利益6,275億円を計画"]
+    },
+    {
+      "id": "disco",
+      "name": "ディスコ",
+      "group": "equip_jp",
+      "region": "jp",
+      "country": "日本",
+      "code": "6146",
+      "fy": "2026年3月期",
+      "tagline": "切る・削る・磨く。ダイサーで世界首位級",
+      "metrics": { "revenue": { "value": 4369, "approx": true, "note": "前期比+11%（集計サイトの値）" } },
+      "brands": ["ダイシングソー", "グラインダ"]
+    },
+    {
+      "id": "screen",
+      "name": "SCREENホールディングス",
+      "short": "SCREEN",
+      "group": "equip_jp",
+      "region": "jp",
+      "country": "日本",
+      "code": "7735",
+      "tagline": "ウエハー洗浄装置で世界首位級",
+      "metrics": { "revenue": { "value": 6057, "approx": true, "note": "直近期（集計サイトの値）" } },
+      "brands": ["枚葉式洗浄装置"]
+    },
+    {
+      "id": "lasertec",
+      "name": "レーザーテック",
+      "group": "equip_jp",
+      "region": "jp",
+      "country": "日本",
+      "code": "6920",
+      "tagline": "EUVマスクの検査装置",
+      "metrics": { "revenue": { "value": 2515, "approx": true, "note": "直近期（集計サイトの値）" } },
+      "brands": ["マスクブランクス検査装置", "EUVマスク検査装置"]
+    },
+    {
+      "id": "kokusai",
+      "name": "KOKUSAI ELECTRIC",
+      "short": "KOKUSAI",
+      "group": "equip_jp",
+      "region": "jp",
+      "country": "日本",
+      "code": "6525",
+      "fy": "2026年3月期",
+      "tagline": "成膜装置（バッチ式）。旧日立国際電気",
+      "metrics": { "revenue": { "value": 2351, "note": "前期比-1.6%" } }
+    },
+    {
+      "id": "hitachi_hightech",
+      "name": "日立ハイテク",
+      "group": "equip_jp",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "測長SEM・エッチング（日立の子会社）"
+    },
+    {
+      "id": "ebara",
+      "name": "荏原製作所",
+      "short": "荏原",
+      "group": "equip_jp",
+      "region": "jp",
+      "country": "日本",
+      "code": "6361",
+      "tagline": "CMP（研磨）装置・真空ポンプ"
+    },
+    {
+      "id": "accretech",
+      "name": "東京精密",
+      "group": "equip_jp",
+      "region": "jp",
+      "country": "日本",
+      "code": "7729",
+      "tagline": "プローバ（検査工程）・ダイシング"
+    },
+    {
+      "id": "asml",
+      "name": "ASML",
+      "group": "equip_global",
+      "region": "overseas",
+      "country": "オランダ",
+      "code": "ASML",
+      "fy": "2025年12月期",
+      "tagline": "最先端のEUV露光装置を独占",
+      "description": "回路を焼き付ける露光装置の最大手。最先端品に欠かせないEUV露光装置は世界で同社しかつくれない。",
+      "metrics": {
+        "revenue": { "value": 55590, "approx": true, "note": "327億ユーロ（1ユーロ=170円で換算）" }
+      },
+      "brands": ["EUV露光装置", "DUV露光装置"],
+      "points": ["2025年末の受注残は388億ユーロ。2026年の売上は340〜390億ユーロを見込む"]
+    },
+    {
+      "id": "amat",
+      "name": "アプライド マテリアルズ",
+      "short": "AMAT",
+      "group": "equip_global",
+      "region": "overseas",
+      "country": "米国",
+      "code": "AMAT",
+      "fy": "2025年10月期",
+      "tagline": "装置の世界最大手（成膜など）",
+      "metrics": { "revenue": { "value": 42600, "approx": true, "note": "約284億ドル（中国向けが約3割）" } }
+    },
+    {
+      "id": "lam",
+      "name": "ラムリサーチ",
+      "group": "equip_global",
+      "region": "overseas",
+      "country": "米国",
+      "code": "LRCX",
+      "fy": "2025年6月期",
+      "tagline": "エッチング装置の最大手。東京エレクトロンの競合",
+      "metrics": { "revenue": { "value": 27600, "approx": true, "note": "約184億ドル" } }
+    },
+    {
+      "id": "kla",
+      "name": "KLA",
+      "group": "equip_global",
+      "region": "overseas",
+      "country": "米国",
+      "code": "KLAC",
+      "fy": "2025年6月期",
+      "tagline": "検査・計測装置の最大手",
+      "metrics": { "revenue": { "value": 18200, "approx": true, "note": "約122億ドル" } }
+    },
+    {
+      "id": "shinetsu",
+      "name": "信越化学工業",
+      "short": "信越化学",
+      "group": "materials",
+      "region": "jp",
+      "country": "日本",
+      "code": "4063",
+      "fy": "2026年3月期",
+      "tagline": "シリコンウエハー世界首位。フォトレジストも",
+      "description": "塩ビ樹脂とシリコンウエハーで世界首位級の化学メーカー。全社の売上高は2兆5,739億円。",
+      "metrics": {
+        "revenue": { "value": 10157, "note": "電子材料セグメント（全社2兆5,739億円）" },
+        "op": { "value": 6352, "note": "全社の営業利益（前期比-14.4%）" }
+      },
+      "brands": ["シリコンウエハー", "フォトレジスト", "マスクブランクス"]
+    },
+    {
+      "id": "sumco",
+      "name": "SUMCO",
+      "group": "materials",
+      "region": "jp",
+      "country": "日本",
+      "code": "3436",
+      "fy": "2025年12月期",
+      "tagline": "シリコンウエハー世界2位",
+      "metrics": {
+        "revenue": { "value": 4097, "note": "前期比+3.3%" },
+        "op": { "value": 13, "note": "前期比-96.4%（最終赤字117億円）" }
+      },
+      "brands": ["シリコンウエハー"],
+      "points": ["AI向けの先端品は好調だが、それ以外のウエハー需要の回復が遅れ大幅減益"]
+    },
+    {
+      "id": "jsr",
+      "name": "JSR",
+      "group": "materials",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "フォトレジスト大手。2024年にJICが買収し非上場化",
+      "brands": ["フォトレジスト", "EUV向けメタルレジスト（Inpria）"]
+    },
+    {
+      "id": "tok",
+      "name": "東京応化工業",
+      "short": "東京応化",
+      "group": "materials",
+      "region": "jp",
+      "country": "日本",
+      "code": "4186",
+      "tagline": "フォトレジストの世界大手"
+    },
+    {
+      "id": "resonac",
+      "name": "レゾナック",
+      "group": "materials",
+      "region": "jp",
+      "country": "日本",
+      "code": "4004",
+      "tagline": "後工程材料に強い（旧昭和電工）"
+    },
+    {
+      "id": "ajinomoto",
+      "name": "味の素（ABF）",
+      "short": "味の素",
+      "group": "materials",
+      "region": "jp",
+      "country": "日本",
+      "code": "2802",
+      "tagline": "CPU・GPUの基板に使う絶縁フィルムをほぼ独占",
+      "description": "調味料の研究から生まれた層間絶縁フィルム「ABF」が、高性能半導体のパッケージ基板にほぼ必ず使われている。"
+    },
+    {
+      "id": "ibiden",
+      "name": "イビデン",
+      "group": "materials",
+      "region": "jp",
+      "country": "日本",
+      "code": "4062",
+      "tagline": "AI向けICパッケージ基板"
+    },
+    {
+      "id": "shinko",
+      "name": "新光電気工業",
+      "short": "新光電気",
+      "group": "materials",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "パッケージ基板。2025年にJICなどが買収し非上場化",
+      "description": "富士通の子会社だったパッケージ基板メーカー。JIC・大日本印刷・三井化学が約6,850億円で買収（2025年3月にTOB成立）。"
+    },
+    {
+      "id": "hoya",
+      "name": "HOYA",
+      "group": "materials",
+      "region": "jp",
+      "country": "日本",
+      "code": "7741",
+      "tagline": "EUV向けマスクブランクス"
+    },
+    {
+      "id": "jic",
+      "name": "産業革新投資機構（JIC）",
+      "short": "JIC",
+      "group": "backers",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "国の投資ファンド。JSR・新光電気を買収",
+      "description": "政府が出資する投資会社。半導体材料・部材の再編を後押ししている。"
+    },
+    {
+      "id": "ipa",
+      "name": "情報処理推進機構（IPA）",
+      "short": "IPA（国）",
+      "group": "backers",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "国の資金でラピダスに出資"
+    },
+    {
+      "id": "toyota",
+      "name": "トヨタ自動車",
+      "short": "トヨタ",
+      "group": "backers",
+      "region": "jp",
+      "country": "日本",
+      "code": "7203",
+      "tagline": "ラピダス・JASMに出資"
+    },
+    {
+      "id": "denso",
+      "name": "デンソー",
+      "group": "backers",
+      "region": "jp",
+      "country": "日本",
+      "code": "6902",
+      "tagline": "車載部品最大手。ラピダス・JASMに出資"
+    },
+    {
+      "id": "softbank",
+      "name": "ソフトバンクグループ",
+      "short": "ソフトバンクG",
+      "group": "backers",
+      "region": "jp",
+      "country": "日本",
+      "code": "9984",
+      "tagline": "Armの親会社。ラピダスにも出資"
+    },
+    {
+      "id": "ntt",
+      "name": "NTT",
+      "group": "backers",
+      "region": "jp",
+      "country": "日本",
+      "code": "9432",
+      "tagline": "ラピダスに出資。光電融合を研究"
+    }
+  ],
+  "relations": [
+    { "from": "tsmc", "to": "jasm", "type": "subsidiary", "label": "約86.5%出資" },
+    { "from": "sony_semi", "to": "jasm", "type": "equity", "label": "約6%出資" },
+    { "from": "denso", "to": "jasm", "type": "equity", "label": "約5.5%出資" },
+    { "from": "toyota", "to": "jasm", "type": "equity", "label": "約2%出資" },
+    { "from": "ipa", "to": "rapidus", "type": "equity", "label": "国の出資（2026年）" },
+    { "from": "toyota", "to": "rapidus", "type": "equity", "label": "設立時から出資" },
+    { "from": "denso", "to": "rapidus", "type": "equity", "label": "設立時から出資" },
+    { "from": "sony_semi", "to": "rapidus", "type": "equity", "label": "設立時から出資" },
+    { "from": "softbank", "to": "rapidus", "type": "equity", "label": "設立時から出資" },
+    { "from": "ntt", "to": "rapidus", "type": "equity", "label": "設立時から出資" },
+    { "from": "kioxia", "to": "rapidus", "type": "equity", "label": "設立時から出資" },
+    { "from": "softbank", "to": "arm", "type": "subsidiary", "label": "2016年買収（過半を保有）" },
+    { "from": "jic", "to": "jsr", "type": "subsidiary", "label": "2024年 非上場化" },
+    { "from": "jic", "to": "shinko", "type": "subsidiary", "label": "2025年 買収" },
+    { "from": "kioxia", "to": "sandisk", "type": "alliance", "label": "四日市・北上工場を共同運営" },
+    { "from": "nvidia", "to": "tsmc", "type": "other", "label": "製造を委託" },
+    { "from": "apple", "to": "tsmc", "type": "other", "label": "製造を委託" },
+    { "from": "amd", "to": "tsmc", "type": "other", "label": "製造を委託" },
+    { "from": "skhynix", "to": "nvidia", "type": "other", "label": "HBMを供給" },
+    { "from": "asml", "to": "tsmc", "type": "other", "label": "EUV露光装置を供給" }
+  ],
+  "trends": [
+    { "title": "AIデータセンター投資", "text": "エヌビディアの売上は2,159億ドル（+65%）。GPUに加え、ブロードコムなどのカスタムAIチップ、先端パッケージ、HBMまでAI向けがけん引。" },
+    { "title": "メモリの超好況", "text": "AI向けのHBMと価格高騰で、2026年のメモリ市場は前年の約3.5倍の予測。マイクロンの売上は3.5倍、SKハイニックスは営業利益でサムスンを逆転、キオクシアも過去最高。" },
+    { "title": "日本は装置・材料で強い", "text": "日本製の製造装置は2025年度に初めて5兆円超え。アドバンテストは営業利益率44%、ウエハーは信越化学とSUMCOで世界の過半、ABFは味の素がほぼ独占。" },
+    { "title": "製造の国産化（国策）", "text": "ラピダスは2027年の2ナノ量産を目指し、国と民間32社が出資。TSMC熊本（JASM）は第1工場が稼働、第2工場は遅れが報じられる。JICはJSR・新光電気を買収して材料・部材の再編を進める。" },
+    { "title": "パワー半導体・車載の停滞", "text": "EVの減速でSiCなどパワー半導体が低迷。ローム、三菱電機、ルネサス（ウルフスピード関連で巨額損失）が影響を受けた。" },
+    { "title": "米中対立と輸出規制", "text": "先端半導体・装置の中国向け輸出規制が続く。米装置大手は中国向けが売上の約3割を占め、規制の行方が業績を左右する。" }
+  ],
+  "timeline": [
+    { "date": "1947", "text": "米ベル研究所でトランジスタが発明される" },
+    { "date": "1971", "text": "インテルが世界初のマイクロプロセッサ「4004」を発表（日本のビジコン社と共同開発）" },
+    { "date": "1986", "text": "日米半導体協定。日本のDRAMが世界を席巻していた時代" },
+    { "date": "1987", "text": "TSMC設立（ファウンドリ専業の始まり）" },
+    { "date": "1993", "text": "エヌビディア設立" },
+    { "date": "2010", "text": "ルネサス エレクトロニクス発足（日立・三菱・NECの半導体が統合）" },
+    { "date": "2016", "text": "ソフトバンクグループが英Armを買収" },
+    { "date": "2019", "text": "東芝メモリがキオクシアに社名変更" },
+    { "date": "2021", "text": "TSMCが熊本にJASMを設立" },
+    { "date": "2022", "text": "トヨタ・ソニー・NTTなど8社の出資でラピダス設立" },
+    { "date": "2024.2", "text": "JASM熊本第1工場が開所" },
+    { "date": "2024", "text": "JICによるJSRの買収・非上場化" },
+    { "date": "2024.12", "text": "キオクシアが上場" },
+    { "date": "2025.3", "text": "JICなどによる新光電気のTOBが成立" },
+    { "date": "2026.2", "text": "ラピダスに国（IPA）と民間32社が出資／エヌビディアの年間売上が2,159億ドルに" },
+    { "date": "2026.6", "text": "WSTSが2026年の世界半導体市場を1兆5,112億ドル（+89.9%）と予測" }
+  ],
+  "notes": [
+    "売上高・営業利益は各社の直近の通期決算（決算期は会社ごとに異なる）。ソニー・三菱電機・信越化学などは半導体関連の部門の数値です。",
+    "海外の半導体メーカーの一部（ブロードコム・クアルコム・AMD・アップル・メディアテック・サムスン・インテル）は、Gartnerによる2025年の半導体売上（速報）を使っています。",
+    "海外企業は 1ドル=150円・1ユーロ=170円・100ウォン=10.5円 で円に換算した概算です。",
+    "アプライド マテリアルズ・ラムリサーチ・KLAの売上は概算です。決算資料で更新してください。",
+    "数値のない会社は点線の小さいタイルで表示しています。"
+  ],
+  "sources": [
+    { "title": "EE Times Japan：2025年の半導体売上高ランキング（Gartner）", "url": "https://eetimes.itmedia.co.jp/ee/articles/2601/13/news120.html" },
+    { "title": "EE Times Japan：WSTS 2026年春季予測", "url": "https://eetimes.itmedia.co.jp/ee/articles/2606/04/news120.html" },
+    { "title": "SEMI：半導体製造装置の市場予測", "url": "https://www.semi.org/jp/news-resources/press/20251216-2" },
+    { "title": "NVIDIA：Fourth Quarter and Fiscal 2026 results", "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/q4fy26pr.htm" },
+    { "title": "ASML：Q4 2025 financial results", "url": "https://www.asml.com/en/news/press-releases/2026/q4-2025-financial-results" },
+    { "title": "TeleCom Lead：TSMC 2025 results", "url": "https://telecomlead.com/semiconductor/tsmc-delivers-record-2025-revenue-and-profit-as-ai-chip-demand-fuels-growth-us-expansion-accelerates-124150" },
+    { "title": "SK hynix：FY25 results", "url": "https://www.storagenewsletter.com/2026/02/10/sk-hynix-fiscal-4q25-and-fy25-financial-results/" },
+    { "title": "TrendForce：Micron FY2026", "url": "https://www.trendforce.com/news/2026-10-01/news-micron-fy2026-revenue-surges-256-to-133-2b-locks-in-35-of-revenue-through-2030/" },
+    { "title": "EE Times Japan：キオクシア 2026年3月期決算", "url": "https://eetimes.itmedia.co.jp/ee/articles/2605/18/news047.html" },
+    { "title": "業界ダイジェスト：ルネサス 2025年12月期", "url": "https://www.gyokaidigest.com/companies/renesas/report/2025-FY" },
+    { "title": "EE Times Japan：ソニー イメージセンサー 2025年度", "url": "https://eetimes.itmedia.co.jp/ee/articles/2605/11/news043.html" },
+    { "title": "決算短信：ローム 2026年3月期", "url": "https://www2.jpx.co.jp/disc/69630/081220260511521331_tse-acedjpsm-69630-20260512369630-ixbrl.htm" },
+    { "title": "EE Times Japan：三菱電機 半導体・デバイス 2025年度", "url": "https://eetimes.itmedia.co.jp/ee/articles/2604/30/news054.html" },
+    { "title": "OANDA：東京エレクトロン 2026年3月期", "url": "https://www.oanda.jp/lab-education/market_news/kn_2026043001002446/" },
+    { "title": "マネーポスト：アドバンテスト 2026年3月期", "url": "https://www.moneypost.jp/1418239" },
+    { "title": "電波新聞：信越化学 2026年3月期", "url": "https://dempa-digital.com/?p=714394" },
+    { "title": "業界ダイジェスト：SUMCO 2025年12月期", "url": "https://www.gyokaidigest.com/companies/sumco/report/2025-FY" },
+    { "title": "The Register：ラピダスの資金調達（2026年2月）", "url": "https://www.theregister.com/2026/02/27/rapidus_funding/" },
+    { "title": "ACN Newswire：JASMの出資構成", "url": "https://www.acnnewswire.com/press-release/english/88896/jasm-set-to-expand-in-kumamoto-japan" },
+    { "title": "日本M&Aセンター：新光電気のTOB成立", "url": "https://www.nihon-ma.co.jp/news/20250319_6967-1/" }
+  ]
+}

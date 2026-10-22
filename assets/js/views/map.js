@@ -3,9 +3,9 @@ import { esc, formatValue } from '../util.js';
 import { RELATION_TYPES } from '../data.js';
 
 /** sqrt(値 / 最大値) でタイルの大きさの段階を決める（面積がおおむね規模に比例） */
-function sizeLevel(v, max) {
+function sizeLevel(v, max, scale = 1) {
   if (!(v > 0) || !(max > 0)) return 'chip';
-  const s = Math.sqrt(v / max);
+  const s = Math.sqrt(v / max) * scale;
   if (s >= 0.8) return 'xl';
   if (s >= 0.55) return 'l';
   if (s >= 0.38) return 'm';
@@ -37,33 +37,50 @@ export function renderMap(root, ctx) {
 
   const relTypes = new Set(sector.relations.filter((r) => visibleIds.has(r.from) && visibleIds.has(r.to)).map((r) => r.type));
 
-  const groupsHtml = sector.groups
-    .map((g) => {
-      const items = visible.filter((c) => c.group === g.id);
-      if (!items.length) return '';
-      const key = override || g.sizeBy || sector.sizeBy;
-      const metric = sector.metricMap.get(key);
-      const relCount = (id) => sector.relations.filter((r) => (r.from === id || r.to === id) && visibleIds.has(r.from) && visibleIds.has(r.to)).length;
-      const tiles = items
-        .map((c, i) => ({ c, i, v: c.values[key], lvl: sizeLevel(c.values[key], maxBy[key]) }))
-        .sort((a, b) => LEVEL_ORDER[a.lvl] - LEVEL_ORDER[b.lvl] || (b.v ?? -Infinity) - (a.v ?? -Infinity) || a.i - b.i)
-        .map(({ c, v, lvl }) => tileHtml(c, lvl, metric, v, g, relCount(c.id)))
-        .join('');
-      const overseasOnly = items.every((c) => c.region === 'overseas');
-      const sized = items.some((c) => c.values[key] > 0);
-      return `
-        <section class="group" style="--g:${g.color}" aria-label="${esc(g.name)}">
-          <div class="group-head">
-            <span class="group-dot" aria-hidden="true"></span>
-            <h3>${esc(g.name)}</h3>
-            ${overseasOnly ? '<span class="group-badge">海外</span>' : ''}
-            <span class="group-meta">${items.length}社${sized ? `・大きさ=${esc(metric?.label ?? '')}` : ''}</span>
-          </div>
-          ${g.description ? `<p class="group-desc">${esc(g.description)}</p>` : ''}
-          <div class="tiles">${tiles}</div>
-        </section>`;
-    })
+  // グループをセクション（見出し）ごとにまとめる
+  const sections = [];
+  const navItems = [];
+  for (const g of sector.groups) {
+    const items = visible.filter((c) => c.group === g.id);
+    if (!items.length) continue;
+    const key = override || g.sizeBy || sector.sizeBy;
+    const metric = sector.metricMap.get(key);
+    const relCount = (id) => sector.relations.filter((r) => (r.from === id || r.to === id) && visibleIds.has(r.from) && visibleIds.has(r.to)).length;
+    const tiles = items
+      .map((c, i) => ({ c, i, v: c.values[key], lvl: sizeLevel(c.values[key], maxBy[key], g.scale) }))
+      .sort((a, b) => LEVEL_ORDER[a.lvl] - LEVEL_ORDER[b.lvl] || (b.v ?? -Infinity) - (a.v ?? -Infinity) || a.i - b.i)
+      .map(({ c, v, lvl }) => tileHtml(c, lvl, metric, v, g, relCount(c.id)))
+      .join('');
+    const overseasOnly = items.every((c) => c.region === 'overseas');
+    const sized = items.some((c) => c.values[key] > 0);
+    const html = `
+      <section class="group" id="g-${esc(g.id)}" style="--g:${g.color}" aria-label="${esc(g.name)}">
+        <div class="group-head">
+          <span class="group-dot" aria-hidden="true"></span>
+          <h3>${esc(g.name)}</h3>
+          ${overseasOnly ? '<span class="group-badge">海外</span>' : ''}
+          <span class="group-meta">${items.length}社${sized ? `・大きさ=${esc(metric?.label ?? '')}` : ''}</span>
+        </div>
+        ${g.description ? `<p class="group-desc">${esc(g.description)}</p>` : ''}
+        <div class="tiles">${tiles}</div>
+      </section>`;
+    const secName = g.section || '';
+    let sec = sections[sections.length - 1];
+    if (!sec || sec.name !== secName) {
+      sec = { name: secName, html: [] };
+      sections.push(sec);
+    }
+    sec.html.push(html);
+    navItems.push({ g, count: items.length });
+  }
+  const groupsHtml = sections
+    .map((sec) => `${sec.name ? `<h2 class="map-section">${esc(sec.name)}</h2>` : ''}<div class="map-groups">${sec.html.join('')}</div>`)
     .join('');
+  const navHtml = navItems.length > 3
+    ? `<nav class="group-nav" aria-label="グループへ移動">${navItems
+        .map(({ g, count }) => `<button type="button" class="gchip" data-jump="${esc(g.id)}" style="--g:${g.color}"><i aria-hidden="true"></i>${esc(g.short || g.name)}<span>${count}</span></button>`)
+        .join('')}</nav>`
+    : '';
 
   root.innerHTML = `
     <div class="toolbar">
@@ -76,14 +93,19 @@ export function renderMap(root, ctx) {
       </label>
       ${relTypes.size ? `<button type="button" class="chip-toggle" id="linesBtn" aria-pressed="${state.showLines}" title="オフのときは、ほかのグループをまたぐ長い線を省略します"><span class="sw" aria-hidden="true"></span>線をすべて表示</button>` : ''}
     </div>
+    ${navHtml}
     ${legendHtml(relTypes)}
     <div class="map" id="map">
-      <div class="map-groups">${groupsHtml || '<p class="empty">表示できる企業がありません。</p>'}</div>
+      ${groupsHtml || '<p class="empty">表示できる企業がありません。</p>'}
       <svg class="map-lines" aria-hidden="true"></svg>
       <div class="map-labels" aria-hidden="true"></div>
     </div>
     <p class="hint">タイルをタップすると詳細と、その会社のつながり（線）を表示します。大きさは規模の目安（面積比）です。</p>`;
 
+  root.querySelector('.group-nav')?.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-jump]');
+    if (b) root.querySelector(`#g-${CSS.escape(b.dataset.jump)}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
   root.querySelector('#sizeSel')?.addEventListener('change', (e) => ctx.onSizeMetric(e.target.value));
   root.querySelector('#linesBtn')?.addEventListener('click', () => ctx.onToggleLines());
   root.querySelector('#map').addEventListener('click', (e) => {

@@ -1,0 +1,506 @@
+{
+  "name": "おもちゃ",
+  "icon": "🧸",
+  "category": "生活・消費財",
+  "updated": "2026-10-22",
+  "summary": "国内はバンダイナムコが圧倒的な首位で、タカラトミーが2位。そこにポケモン（ポケカ）・コナミ（遊戯王）・ブシロードのトレーディングカード勢、サンリオなどのキャラクター会社、プラモデル・フィギュアのホビー各社が並ぶ。\n国内の玩具市場は2025年度に1兆1,664億円と6年連続で過去最高。けん引役は大人（キダルト）向けで、トレカだけで市場の約3割を占める。一方で、玩具店市場が伸びる中でも日本トイザらスが2026年10月に民事再生法を申請するなど、売り場の主役はカプセルトイやトレカの専門店、ECへと移っている。",
+  "market": {
+    "jp": {
+      "label": "国内玩具市場",
+      "value": "1兆1,664億円",
+      "period": "2025年度",
+      "note": "前年度比+6.3%、6年連続で過去最高（メーカー希望小売価格ベース）",
+      "source": "日本玩具協会",
+      "url": "https://www.toys.or.jp/toukei_siryou_data.html"
+    }
+  },
+  "breakdowns": [
+    {
+      "title": "国内玩具市場の主な分野",
+      "period": "2025年度",
+      "unit": "億円",
+      "items": [
+        { "label": "カードゲーム・トレカ", "value": 3384, "note": "前年度比+11.9%（+359億円）。市場全体の約3割" },
+        { "label": "ホビー（プラモデル等）", "value": 1960, "note": "前年度から+115億円" },
+        { "label": "ぬいぐるみ", "value": 624, "note": "前年度比+38.2%（推し活・キャラクター人気）" },
+        { "label": "ハイテク系トレンドトイ", "value": 212, "note": "前年度比+15.5%（たまごっちなど）" },
+        { "label": "主要10分野のその他", "value": 3747, "note": "キャラクター・女児・乳幼児・ゲームなど（主要10分野7,967億円との差額）" },
+        { "label": "その他の分野", "value": 1737, "note": "市場全体との差額" }
+      ],
+      "source": "日本玩具協会",
+      "url": "https://www.toys.or.jp/toukei_siryou_data.html"
+    }
+  ],
+  "metrics": [
+    { "key": "revenue", "label": "売上高", "unit": "億円", "description": "グループ全体の売上高（ゲームやアミューズメントなども含む会社があります）。海外企業は円換算の概算。" },
+    { "key": "op", "label": "営業利益", "unit": "億円" },
+    { "key": "distSales", "label": "流通の売上高", "unit": "億円", "description": "卸・小売など、売る側の会社の売上高。" }
+  ],
+  "sizeBy": "revenue",
+  "rankBy": "revenue",
+  "groups": [
+    { "id": "major", "section": "国内のおもちゃメーカー", "name": "玩具大手2社", "short": "大手2社", "color": "pink", "description": "国内の玩具市場をリードするグループ" },
+    { "id": "subs", "section": "国内のおもちゃメーカー", "name": "大手の主な事業会社", "short": "大手の子会社", "color": "rose", "description": "ガシャポン・ガンプラ・ガチャなど、実際に商品をつくる中核の子会社" },
+    { "id": "tcg", "section": "国内のおもちゃメーカー", "name": "トレーディングカード", "short": "トレカ", "color": "lavender", "description": "玩具市場の約3割を占める最大分野。大人のコレクター需要と海外人気で急拡大" },
+    { "id": "character", "section": "国内のおもちゃメーカー", "name": "キャラクター・IP", "short": "キャラクター", "color": "peach", "description": "キャラクターの使用許諾（ライセンス）や物販で稼ぐ会社と、その親会社" },
+    { "id": "makers", "section": "国内のおもちゃメーカー", "name": "専業・中堅メーカー", "short": "専業メーカー", "color": "sky", "description": "人形・ままごと・ボードゲームなど、得意分野を持つ玩具メーカー" },
+    { "id": "hobby", "section": "国内のおもちゃメーカー", "name": "ホビー・フィギュア・プラモデル", "short": "ホビー", "color": "lemon", "description": "大人向けのプラモデル・フィギュア・プライズ（景品）" },
+    { "id": "global", "section": "海外のおもちゃメーカー", "name": "欧米の大手", "short": "欧米大手", "color": "navy", "description": "世界の玩具市場の上位。日本でも人気のブランドを多く持つ" },
+    { "id": "asia", "section": "海外のおもちゃメーカー", "name": "中国の新興", "short": "中国", "color": "rose", "description": "フィギュア（ブラインドボックス）で世界的なブームを起こした新勢力" },
+    { "id": "channel", "section": "売る場所", "name": "卸・小売・専門店", "short": "卸・小売", "color": "sage", "sizeBy": "distSales", "scale": 0.75, "description": "おもちゃの流通を担う会社。大きさは流通の売上高" }
+  ],
+  "companies": [
+    {
+      "id": "bandainamco",
+      "name": "バンダイナムコホールディングス",
+      "short": "バンダイナムコHD",
+      "group": "major",
+      "region": "jp",
+      "country": "日本",
+      "code": "7832",
+      "fy": "2026年3月期",
+      "tagline": "国内玩具首位。ガンダム・一番くじ・ガシャポン",
+      "description": "2005年にバンダイとナムコが経営統合。玩具（トイホビー）に加え、ゲーム、アミューズメント施設、映像・音楽までIPを軸に展開する。",
+      "metrics": {
+        "revenue": { "value": 13482, "note": "グループ全体（ゲーム・アミューズメント等を含む）" },
+        "op": 1895
+      },
+      "brands": ["ガンダム", "ガンプラ", "一番くじ", "ガシャポン", "ONE PIECEカードゲーム", "ドラゴンボール", "たまごっち", "仮面ライダー", "プリキュア"],
+      "points": [
+        "トイホビー事業がハイターゲット（大人）層向けを中心に各カテゴリーで好調",
+        "ガンダムIPは四半期で600億円規模に成長",
+        "業績予想を期中に2度上方修正し、増収増益で着地"
+      ],
+      "url": "https://www.bandainamco.co.jp/"
+    },
+    {
+      "id": "takaratomy",
+      "name": "タカラトミー",
+      "group": "major",
+      "region": "jp",
+      "country": "日本",
+      "code": "7867",
+      "fy": "2026年3月期",
+      "tagline": "トミカ・プラレール・リカちゃん・ベイブレード",
+      "description": "2006年にタカラとトミーが合併。定番の乳幼児・男児・女児玩具に加え、トレカやガチャ、大人向けにも広げている。",
+      "metrics": {
+        "revenue": { "value": 2705, "note": "前期比+8.1%・過去最高" },
+        "op": { "value": 242, "note": "前期比-2.5%" }
+      },
+      "brands": ["トミカ", "プラレール", "リカちゃん", "ベイブレードX", "デュエル・マスターズ", "人生ゲーム", "ゾイド", "アイプリ"],
+      "points": [
+        "トレカやガチャ、キデイランドが好調で売上は過去最高",
+        "投資の増加と米国の関税で営業減益、米国子会社（ベビー用品）ののれん48.6億円を減損",
+        "2027年3月期の配当は年70円を予想"
+      ],
+      "url": "https://www.takaratomy.co.jp/"
+    },
+    {
+      "id": "bandai",
+      "name": "バンダイ",
+      "group": "subs",
+      "region": "jp",
+      "country": "日本",
+      "fy": "2026年3月期",
+      "tagline": "トイホビーの中核会社（単体）",
+      "description": "バンダイナムコグループの玩具の中核。カード、ガシャポン、たまごっち、シール商材が好調。",
+      "metrics": {
+        "revenue": { "value": 2911, "note": "単体・前期比+17.5%" },
+        "op": { "value": 575, "note": "単体・前期比+29.4%" }
+      },
+      "brands": ["ガシャポン", "たまごっち", "ONE PIECEカードゲーム", "ドラゴンボールスーパーカードゲーム", "仮面ライダー", "スーパー戦隊", "プリキュア"]
+    },
+    {
+      "id": "bandai_spirits",
+      "name": "BANDAI SPIRITS",
+      "group": "subs",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "ガンプラ・一番くじ・大人向けフィギュア",
+      "brands": ["ガンプラ", "一番くじ", "S.H.Figuarts", "超合金"]
+    },
+    {
+      "id": "megahouse",
+      "name": "メガハウス",
+      "group": "subs",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "フィギュア・ボードゲーム",
+      "brands": ["P.O.P（ONE PIECEフィギュア）", "ルービックキューブ（国内販売）"]
+    },
+    {
+      "id": "takaratomy_arts",
+      "name": "タカラトミーアーツ",
+      "group": "subs",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "ガチャ・プライズ・アイプリ",
+      "description": "タカラトミーの子会社。ガチャ（カプセルトイ）やゲームセンターのプライズ、アミューズメント機器を手がける。",
+      "metrics": { "revenue": { "value": 536, "approx": false, "note": "前期比+17%・過去最高" } },
+      "brands": ["ガチャ", "プライズ", "ポケモン関連"]
+    },
+    {
+      "id": "pokemon",
+      "name": "株式会社ポケモン",
+      "short": "ポケモン",
+      "group": "tcg",
+      "region": "jp",
+      "country": "日本",
+      "fy": "2026年2月期",
+      "tagline": "ポケモンIPの管理会社。ポケカが大黒柱",
+      "description": "ポケモンのブランド管理・プロデュースを行う非上場会社。ゲーム・カード・グッズ・映像などを統括し、ポケモンセンターも運営する。",
+      "metrics": {
+        "revenue": { "value": 5314, "note": "前期比+29.3%（決算公告）" },
+        "op": { "value": 1440, "note": "前期比+43%" }
+      },
+      "brands": ["ポケモンカードゲーム", "Pokémon Trading Card Game Pocket", "ポケモンセンター", "Pokémon LEGENDS Z-A"],
+      "points": [
+        "純利益は1,200億円（前期比+70.7%）",
+        "カードゲームの累計製造枚数は750億枚以上（2025年11月時点）"
+      ]
+    },
+    {
+      "id": "konami",
+      "name": "コナミグループ",
+      "short": "コナミ",
+      "group": "tcg",
+      "region": "jp",
+      "country": "日本",
+      "code": "9766",
+      "tagline": "遊☆戯☆王カードゲーム",
+      "description": "ゲーム会社。1999年に発売した「遊☆戯☆王オフィシャルカードゲーム」は世界的なロングセラー。",
+      "brands": ["遊☆戯☆王 OCG", "遊☆戯☆王 ラッシュデュエル"]
+    },
+    {
+      "id": "bushiroad",
+      "name": "ブシロード",
+      "group": "tcg",
+      "region": "jp",
+      "country": "日本",
+      "code": "7803",
+      "fy": "2026年6月期",
+      "tagline": "ヴァイスシュヴァルツ・ヴァンガード",
+      "description": "トレカを中心に、アニメ・音楽・ライブなどのIPを展開。",
+      "metrics": { "revenue": { "value": 578, "note": "前期比+2.9%・過去最高" } },
+      "brands": ["ヴァイスシュヴァルツ", "カードファイト!! ヴァンガード", "Shadowverse EVOLVE", "BanG Dream!"],
+      "points": ["新日本プロレスの株式を売却し、最終利益は大幅増益"]
+    },
+    {
+      "id": "sanrio",
+      "name": "サンリオ",
+      "group": "character",
+      "region": "jp",
+      "country": "日本",
+      "code": "8136",
+      "fy": "2026年3月期",
+      "tagline": "ハローキティ。ライセンスで過去最高益",
+      "description": "キャラクターの物販・ライセンス・テーマパーク（ピューロランド）を展開。複数キャラクター戦略が奏功し急成長。",
+      "metrics": {
+        "revenue": { "value": 1941, "note": "前期1,449億円" },
+        "op": { "value": 779, "note": "前期518億円" }
+      },
+      "brands": ["ハローキティ", "クロミ", "マイメロディ", "シナモロール", "ポムポムプリン"],
+      "points": [
+        "国内外のライセンスと物販、テーマパークがそろって伸び、売上・利益とも過去最高",
+        "元常務の不適切な報酬受給問題で決算発表が延期された",
+        "2026年4月に1株を5株に分割"
+      ],
+      "url": "https://www.sanrio.co.jp/"
+    },
+    {
+      "id": "sanx",
+      "name": "サンエックス",
+      "group": "character",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "すみっコぐらし・リラックマ（非上場）",
+      "brands": ["すみっコぐらし", "リラックマ"]
+    },
+    {
+      "id": "nintendo",
+      "name": "任天堂",
+      "group": "character",
+      "region": "jp",
+      "country": "日本",
+      "code": "7974",
+      "tagline": "ゲーム大手。ポケモンに出資",
+      "description": "ゲーム機・ソフトの大手。株式会社ポケモンには任天堂・ゲームフリーク・クリーチャーズが出資している。"
+    },
+    {
+      "id": "segasammy",
+      "name": "セガサミーホールディングス",
+      "short": "セガサミーHD",
+      "group": "character",
+      "region": "jp",
+      "country": "日本",
+      "code": "6460",
+      "tagline": "ゲーム・遊技機大手。セガトイズの親会社"
+    },
+    {
+      "id": "epoch",
+      "name": "エポック社",
+      "group": "makers",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "シルバニアファミリー・野球盤",
+      "brands": ["シルバニアファミリー", "野球盤", "アクアビーズ"]
+    },
+    {
+      "id": "sega_toys",
+      "name": "セガトイズ",
+      "group": "makers",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "セガサミーグループの玩具会社",
+      "brands": ["ホームスター（家庭用プラネタリウム）"]
+    },
+    {
+      "id": "pilot_ink",
+      "name": "パイロットインキ",
+      "group": "makers",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "文具のパイロット系。メルちゃん",
+      "brands": ["メルちゃん"]
+    },
+    {
+      "id": "people",
+      "name": "ピープル",
+      "group": "makers",
+      "region": "jp",
+      "country": "日本",
+      "code": "7865",
+      "tagline": "ぽぽちゃん・乳幼児向け",
+      "brands": ["ぽぽちゃん"]
+    },
+    {
+      "id": "goodsmile",
+      "name": "グッドスマイルカンパニー",
+      "short": "グッスマ",
+      "group": "hobby",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "ねんどろいどのフィギュア大手",
+      "brands": ["ねんどろいど", "POP UP PARADE"]
+    },
+    {
+      "id": "kotobukiya",
+      "name": "壽屋",
+      "group": "hobby",
+      "region": "jp",
+      "country": "日本",
+      "code": "7809",
+      "tagline": "プラモデル・フィギュア",
+      "brands": ["フレームアームズ・ガール"]
+    },
+    {
+      "id": "tamiya",
+      "name": "タミヤ",
+      "group": "hobby",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "ミニ四駆・プラモデルの老舗（非上場）",
+      "brands": ["ミニ四駆", "ミリタリーミニチュア"]
+    },
+    {
+      "id": "kaiyodo",
+      "name": "海洋堂",
+      "group": "hobby",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "精密なフィギュアの造形集団"
+    },
+    {
+      "id": "furyu",
+      "name": "フリュー",
+      "group": "hobby",
+      "region": "jp",
+      "country": "日本",
+      "code": "6238",
+      "tagline": "プライズフィギュア・プリントシール機"
+    },
+    {
+      "id": "mattel",
+      "name": "マテル",
+      "group": "global",
+      "region": "overseas",
+      "country": "米国",
+      "code": "MAT",
+      "fy": "2025年12月期",
+      "tagline": "バービー・ホットウィール",
+      "metrics": { "revenue": { "value": 8020, "approx": true, "note": "53.5億ドル（前期比-1%、1ドル=150円で換算）" } },
+      "brands": ["バービー", "ホットウィール", "フィッシャープライス", "UNO", "きかんしゃトーマス"],
+      "points": ["北米が5%減、海外は増収"]
+    },
+    {
+      "id": "hasbro",
+      "name": "ハズブロ",
+      "group": "global",
+      "region": "overseas",
+      "country": "米国",
+      "code": "HAS",
+      "fy": "2025年12月期",
+      "tagline": "トランスフォーマー・マジック：ザ・ギャザリング",
+      "description": "玩具に加え、カードゲーム「マジック：ザ・ギャザリング」のウィザーズ・オブ・ザ・コーストが稼ぎ頭。",
+      "metrics": { "revenue": { "value": 7050, "approx": true, "note": "約47億ドル（前期比+14%）" } },
+      "brands": ["トランスフォーマー", "マジック：ザ・ギャザリング", "モノポリー", "ナーフ", "プレイ・ドー", "ペッパピッグ"],
+      "points": ["ウィザーズ・オブ・ザ・コースト＆デジタルゲーム部門が+45%と過去最高、玩具などの消費者向け部門は-4%"]
+    },
+    {
+      "id": "lego",
+      "name": "レゴ",
+      "group": "global",
+      "region": "overseas",
+      "country": "デンマーク",
+      "fy": "2025年12月期",
+      "tagline": "世界最大の玩具メーカー（非上場）",
+      "description": "創業家の投資会社が所有する非上場企業。大人向けセットも広げ、2025年も過去最高の業績。",
+      "metrics": {
+        "revenue": { "value": 19040, "approx": true, "note": "835億デンマーク・クローネ（前期比+12%、1クローネ=22.8円で換算）" },
+        "op": { "value": 5020, "approx": true, "note": "220億クローネ（前期比+18%）" }
+      },
+      "brands": ["レゴ シティ", "レゴ テクニック", "レゴ アイコン", "レゴ デュプロ"],
+      "points": ["世界の玩具市場（+7%）を上回る伸び。消費者向け販売は+16%"]
+    },
+    {
+      "id": "spinmaster",
+      "name": "スピンマスター",
+      "group": "global",
+      "region": "overseas",
+      "country": "カナダ",
+      "fy": "2025年12月期",
+      "tagline": "パウ・パトロール・ルービックキューブ",
+      "metrics": { "revenue": { "value": 3170, "approx": true, "note": "21.1億ドル（前期比-6.6%）" } },
+      "brands": ["パウ・パトロール", "ルービックキューブ", "Hatchimals"]
+    },
+    {
+      "id": "mga",
+      "name": "MGAエンターテインメント",
+      "short": "MGA",
+      "group": "global",
+      "region": "overseas",
+      "country": "米国",
+      "tagline": "L.O.L.サプライズ！・ブラッツ（非上場）",
+      "brands": ["L.O.L.サプライズ！", "ブラッツ", "MINIVERSE"]
+    },
+    {
+      "id": "popmart",
+      "name": "ポップマート",
+      "group": "asia",
+      "region": "overseas",
+      "country": "中国",
+      "fy": "2025年12月期",
+      "tagline": "LABUBUで売上が約2.8倍",
+      "description": "中身の見えない「ブラインドボックス」のフィギュアで成長。LABUBUが世界的なブームになり、2025年の売上高は前年の約2.8倍に。",
+      "metrics": { "revenue": { "value": 7800, "approx": true, "note": "371.2億元（前期比+185%、1元=21円で換算）" } },
+      "brands": ["LABUBU（THE MONSTERS）", "MOLLY", "SKULLPANDA", "CRYBABY"],
+      "points": ["LABUBUが売上の約38%を占め、依存度の高さを懸念して決算後に株価は急落"]
+    },
+    {
+      "id": "happinet",
+      "name": "ハピネット",
+      "group": "channel",
+      "region": "jp",
+      "country": "日本",
+      "code": "7552",
+      "fy": "2026年3月期",
+      "tagline": "玩具・ゲームの卸最大手。バンダイナムコ系",
+      "description": "玩具・ゲーム・映像音楽の卸売が主力。カプセルトイの自販機運営も行う。バンダイナムコHDが筆頭株主（約26%）。",
+      "metrics": {
+        "distSales": { "value": 4391, "note": "前期比+20.5%（ゲーム・映像なども含む）" },
+        "op": { "value": 156, "note": "前期比+33%" }
+      },
+      "points": ["一番くじ・プラモデル・カプセル玩具が好調、Nintendo Switch 2の需要でゲームも拡大"]
+    },
+    {
+      "id": "kiddyland",
+      "name": "キデイランド",
+      "group": "channel",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "キャラクターグッズ専門店。タカラトミー傘下",
+      "metrics": { "distSales": { "value": 409, "note": "前期比+21%" } }
+    },
+    {
+      "id": "toysrus_jp",
+      "name": "日本トイザらス",
+      "short": "トイザらス",
+      "group": "channel",
+      "region": "jp",
+      "country": "日本",
+      "fy": "2025年12月期",
+      "tagline": "2026年10月に民事再生法を申請",
+      "description": "大型おもちゃ専門店チェーン。売上はピーク（2007年1月期・約1,943億円）から大きく減り、8期連続の最終赤字。2026年10月1日に東京地裁へ民事再生法の適用を申請した。",
+      "metrics": { "distSales": { "value": 752, "note": "決算期変更後の2025年12月期" } },
+      "facts": [{ "label": "店舗数", "value": "158店（2026年7月時点）" }]
+    },
+    {
+      "id": "pokemon_center",
+      "name": "ポケモンセンター",
+      "group": "channel",
+      "region": "jp",
+      "country": "日本",
+      "tagline": "ポケモン公式ショップ（株式会社ポケモン直営）"
+    }
+  ],
+  "relations": [
+    { "from": "bandainamco", "to": "bandai", "type": "subsidiary", "label": "中核の事業会社" },
+    { "from": "bandainamco", "to": "bandai_spirits", "type": "subsidiary", "label": "子会社" },
+    { "from": "bandainamco", "to": "megahouse", "type": "subsidiary", "label": "子会社" },
+    { "from": "bandainamco", "to": "happinet", "type": "equity", "label": "筆頭株主（約26%）" },
+    { "from": "takaratomy", "to": "takaratomy_arts", "type": "subsidiary", "label": "子会社" },
+    { "from": "takaratomy", "to": "kiddyland", "type": "subsidiary", "label": "2007年 子会社化" },
+    { "from": "takaratomy", "to": "hasbro", "type": "alliance", "label": "トランスフォーマーを共同展開" },
+    { "from": "nintendo", "to": "pokemon", "type": "equity", "label": "出資（ゲームフリーク・クリーチャーズと共同）" },
+    { "from": "pokemon", "to": "pokemon_center", "type": "subsidiary", "label": "直営ショップ" },
+    { "from": "segasammy", "to": "sega_toys", "type": "subsidiary", "label": "子会社" }
+  ],
+  "trends": [
+    { "title": "キダルト（大人）がけん引", "text": "ガンプラ・フィギュア・トレカなど、子ども心を持つ大人向けが成長の主役。バンダイナムコも「ハイターゲット層」向けが好調。" },
+    { "title": "トレカが市場の3割に", "text": "カードゲーム・トレカは3,384億円（+11.9%）。ポケモンの売上は5,314億円（+29%）。高額転売への対策も政治課題に。" },
+    { "title": "ぬいぐるみ・推し活・LABUBU", "text": "ぬいぐるみは+38.2%と急伸。中国のポップマートはLABUBUの世界的ブームで売上が約2.8倍に。" },
+    { "title": "売り場の主役が交代", "text": "玩具店市場は7,620億円（2025年度、+8.6%）と過去最高だが、増加分の7割超はカプセルトイ・トレカ専門店。一方で日本トイザらスは民事再生法を申請。" },
+    { "title": "IPを持つ会社が強い", "text": "ガンダム、ポケモン、ハローキティなど、キャラクターを自社で持ち、玩具・ゲーム・映像・ライセンスで多面的に稼ぐ会社が伸びている。" },
+    { "title": "米国の関税", "text": "中国などで生産して米国で売る玩具にとって関税がコスト増に。タカラトミーは関税の影響もあり営業減益。" }
+  ],
+  "timeline": [
+    { "date": "1924", "text": "トミーの前身・富山玩具製作所が創業" },
+    { "date": "1950", "text": "バンダイの前身・萬代屋が創業" },
+    { "date": "1955", "text": "タカラの前身が創業" },
+    { "date": "1960", "text": "サンリオの前身・山梨シルクセンターが創業" },
+    { "date": "1980", "text": "ガンプラ（ガンダムのプラモデル）発売" },
+    { "date": "1985", "text": "エポック社がシルバニアファミリーを発売" },
+    { "date": "1996", "text": "ポケモンカードゲーム、たまごっち発売" },
+    { "date": "1999", "text": "遊☆戯☆王オフィシャルカードゲーム発売" },
+    { "date": "2005", "text": "バンダイとナムコが経営統合" },
+    { "date": "2006", "text": "タカラとトミーが合併しタカラトミーに" },
+    { "date": "2007", "text": "タカラトミーがキデイランドを子会社化" },
+    { "date": "2023", "text": "ベイブレードX発売／国内玩具市場が初めて1兆円を超える" },
+    { "date": "2025", "text": "LABUBUが世界的ブーム（ポップマートの売上+185%）" },
+    { "date": "2026.10", "text": "日本トイザらスが民事再生法の適用を申請" }
+  ],
+  "notes": [
+    "売上高・営業利益は各社の直近の通期決算（決算期は会社ごとに異なる）。非上場企業は決算公告などの公表値。",
+    "バンダイナムコHD・サンリオ・ハピネットなどは玩具以外（ゲーム・ライセンス・映像など）も含む全社の数値です。",
+    "海外企業は 1ドル=150円・1元=21円・1デンマーク・クローネ=22.8円 で円に換算した概算です。",
+    "数値のない会社は点線の小さいタイルで表示しています。"
+  ],
+  "sources": [
+    { "title": "日本玩具協会：玩具市場規模調査結果データ", "url": "https://www.toys.or.jp/toukei_siryou_data.html" },
+    { "title": "マイナビ子育て：日本おもちゃ大賞2026と市場規模", "url": "https://kosodate.mynavi.jp/articles/45807" },
+    { "title": "gamebiz：バンダイナムコHD 2026年3月期決算", "url": "https://gamebiz.jp/news/425799" },
+    { "title": "決算短信：タカラトミー 2026年3月期", "url": "https://www2.jpx.co.jp/disc/78670/081220260511522379_tse-acedjpsm-78670-20260512378670-ixbrl.htm" },
+    { "title": "gamebiz：タカラトミーの子会社アーツとキデイランド", "url": "https://gamebiz.jp/news/426175" },
+    { "title": "gamebiz：ポケモン 2026年2月期決算", "url": "https://gamebiz.jp/news/426891" },
+    { "title": "決算短信：サンリオ 2026年3月期", "url": "https://www2.jpx.co.jp/disc/81360/081220260623576716_tse-acedjpsm-81360-20260623381360-ixbrl.htm" },
+    { "title": "gamebiz：ハピネット 2026年3月期決算", "url": "https://gamebiz.jp/news/425900" },
+    { "title": "gamebiz：ブシロード 2026年6月期決算", "url": "https://gamebiz.jp/news/431028" },
+    { "title": "東京商工リサーチ：日本トイザらスの民事再生法申請", "url": "https://tsr-net.co.jp/news/tsr/detail/1203287_1521.html" },
+    { "title": "Forbes JAPAN：玩具店市場7,620億円とトイザらス", "url": "https://forbesjapan.com/articles/detail/106101" },
+    { "title": "Mattel：Fourth Quarter and Full Year 2025 Results", "url": "https://www.businesswire.com/news/home/20260210523373/en" },
+    { "title": "Hasbro：Fourth Quarter and Full Year 2025 Results", "url": "https://newsroom.hasbro.com/node/36306" },
+    { "title": "LEGO Group：2025 results", "url": "https://www.lego.com/en-us/aboutus/news/2026/march/the-lego-group-delivers-record-results-in-2025-driven-by-strong-brand-and-innovative-portfolio" },
+    { "title": "Spin Master：Q4 2025 Results", "url": "https://www.newswire.ca/news-releases/spin-master-reports-q4-2025-financial-results-865384470.html" },
+    { "title": "Jing Daily：Pop Mart 2025 results", "url": "https://jingdaily.com/intels/2026-03/25/pop-mart-posts-record-results-as-labubu-reliance-weighs" }
+  ]
+}

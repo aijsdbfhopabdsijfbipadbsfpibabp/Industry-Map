@@ -1,5 +1,5 @@
 // 概要表示：市場規模・トレンド・年表・出典
-import { esc } from '../util.js';
+import { esc, formatValue } from '../util.js';
 
 function safeUrl(u) {
   return /^https?:\/\//i.test(u || '') ? u : '';
@@ -32,6 +32,22 @@ export function renderOverview(root, ctx) {
   if (markets.length) {
     const hint = sector.market.global && !showWorld ? '<p class="small muted" style="margin-top:8px">右上を「世界」にすると世界市場も表示します。</p>' : '';
     parts.push(`<section class="card span2"><h2>市場規模</h2><div class="market">${markets.join('')}</div>${hint}</section>`);
+  }
+
+  for (const b of sector.breakdowns) {
+    const max = Math.max(...b.items.map((it) => it.value), 0) || 1;
+    const total = b.items.reduce((t, it) => t + it.value, 0);
+    const url = safeUrl(b.url);
+    const src = b.source ? (url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(b.source)}</a>` : esc(b.source)) : '';
+    parts.push(`<section class="card span2"><h2>${esc(b.title)}${b.period ? `<span class="muted small">（${esc(b.period)}）</span>` : ''}</h2>
+      <ul class="bd">${b.items
+        .map((it) => {
+          const share = it.share ?? (total ? (it.value / total) * 100 : 0);
+          return `<li><span class="bd-label">${esc(it.label)}</span><span class="bd-bar"><i style="width:${((it.value / max) * 100).toFixed(1)}%"></i></span><span class="bd-val">${esc(formatValue(it.value, { unit: b.unit }))}<small>${share.toFixed(1)}%</small></span>${it.note ? `<span class="bd-note">${esc(it.note)}</span>` : ''}</li>`;
+        })
+        .join('')}</ul>
+      ${b.note || src ? `<p class="small muted" style="margin-top:8px">${esc(b.note)}${b.note && src ? ' ／ ' : ''}${src ? `出典：${src}` : ''}</p>` : ''}
+    </section>`);
   }
 
   if (sector.trends.length) {
