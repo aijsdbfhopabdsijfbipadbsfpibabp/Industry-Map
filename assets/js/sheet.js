@@ -61,6 +61,7 @@ export function renderSheet(sector, c) {
     </div>
     <div class="sheet-body">
       ${c.tagline || c.description ? `<p class="desc">${esc(c.description || c.tagline)}</p>` : ''}
+      ${c.tags.length ? `<div class="chips chips-tag">${c.tags.map((t) => `<span class="chip chip-tag">#${esc(t)}</span>`).join('')}</div>` : ''}
       ${metrics.length ? `<section><h3>数字</h3><div class="metrics">${metrics
         .map((m) => {
           const meta = c.valueMeta[m.key] || {};

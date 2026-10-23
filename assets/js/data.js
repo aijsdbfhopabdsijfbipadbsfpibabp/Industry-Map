@@ -159,6 +159,7 @@ export function normalizeSector(raw, meta) {
       points: Array.isArray(c.points) ? c.points.filter(Boolean) : [],
       facts: (Array.isArray(c.facts) ? c.facts : []).filter((f) => f && f.label),
       url: typeof c.url === 'string' ? c.url : '',
+      tags: Array.isArray(c.tags) ? [...new Set(c.tags.filter((t) => typeof t === 'string' && t.trim()).map((t) => t.trim()))] : [],
     };
     companies.push(company);
     companyMap.set(id, company);
@@ -180,6 +181,35 @@ export function normalizeSector(raw, meta) {
     const m = raw.market?.[key];
     if (m && m.value) market[key] = { label: m.label || (key === 'jp' ? '国内市場' : '世界市場'), value: String(m.value), period: m.period || '', note: m.note || '', source: m.source || '', url: m.url || '' };
   }
+
+  // タグ（絞り込み用）。tagGroups で見出しと並び順を決められる。書かれていないタグは「その他」に入る
+  const allTags = [...new Set(companies.flatMap((c) => c.tags))];
+  const tagGroups = [];
+  const placed = new Set();
+  (Array.isArray(raw.tagGroups) ? raw.tagGroups : []).forEach((tg) => {
+    if (!tg || !Array.isArray(tg.tags)) return;
+    const tags = tg.tags.filter((t) => allTags.includes(t) && !placed.has(t));
+    tags.forEach((t) => placed.add(t));
+    if (tags.length) tagGroups.push({ label: tg.label || 'タグ', tags });
+  });
+  const rest = allTags.filter((t) => !placed.has(t));
+  if (rest.length) tagGroups.push({ label: tagGroups.length ? 'その他' : 'タグ', tags: rest });
+
+  const VERDICTS = { yes: '○ おおむね正しい', partly: '△ 一部正しい', no: '× 違う', open: '？ 検討中' };
+  const insights = (Array.isArray(raw.insights) ? raw.insights : [])
+    .filter((x) => x && (x.title || x.hypothesis))
+    .map((x) => ({
+      title: x.title || '考察',
+      date: x.date || '',
+      hypothesis: x.hypothesis || '',
+      verdict: VERDICTS[x.verdict] ? x.verdict : 'open',
+      verdictLabel: VERDICTS[x.verdict] || VERDICTS.open,
+      sections: (Array.isArray(x.sections) ? x.sections : [])
+        .filter((s) => s && s.label && Array.isArray(s.items) && s.items.length)
+        .map((s) => ({ label: s.label, items: s.items.filter(Boolean) })),
+      conclusion: x.conclusion || '',
+      tag: typeof x.tag === 'string' ? x.tag : '',
+    }));
 
   return {
     id: meta.id,
@@ -213,6 +243,8 @@ export function normalizeSector(raw, meta) {
     timeline: (Array.isArray(raw.timeline) ? raw.timeline : []).filter((t) => t && t.text),
     notes: Array.isArray(raw.notes) ? raw.notes.filter(Boolean) : [],
     sources: (Array.isArray(raw.sources) ? raw.sources : []).map((s) => (typeof s === 'string' ? { title: s, url: '' } : s)).filter((s) => s && (s.title || s.url)),
+    tagGroups,
+    insights,
     warnings,
   };
 }

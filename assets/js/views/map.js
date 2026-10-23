@@ -91,6 +91,7 @@ export function renderMap(root, ctx) {
           ${sector.metrics.map((m) => `<option value="${esc(m.key)}"${override === m.key ? ' selected' : ''}>${esc(m.label)}</option>`).join('')}
         </select>
       </label>
+      ${tagSelectHtml(sector, state)}
       ${relTypes.size ? `<button type="button" class="chip-toggle" id="linesBtn" aria-pressed="${state.showLines}" title="オフのときは、ほかのグループをまたぐ長い線を省略します"><span class="sw" aria-hidden="true"></span>線をすべて表示</button>` : ''}
     </div>
     ${navHtml}
@@ -107,12 +108,30 @@ export function renderMap(root, ctx) {
     if (b) root.querySelector(`#g-${CSS.escape(b.dataset.jump)}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
   root.querySelector('#sizeSel')?.addEventListener('change', (e) => ctx.onSizeMetric(e.target.value));
+  root.querySelector('#tagSel')?.addEventListener('change', (e) => ctx.onTagFilter(e.target.value));
   root.querySelector('#linesBtn')?.addEventListener('click', () => ctx.onToggleLines());
   root.querySelector('#map').addEventListener('click', (e) => {
     const tile = e.target.closest('.tile');
     if (tile) ctx.onSelect(tile.dataset.id);
     else if (ctx.state.companyId) ctx.onSelect(null); // 余白をタップで選択解除
   });
+}
+
+/** タグで光らせる（絞り込み）セレクト。マップとランキングで共通 */
+export function tagSelectHtml(sector, state) {
+  if (!sector.tagGroups.length) return '';
+  const cur = state.tagFilter[sector.id] || '';
+  return `<label class="select select-tag${cur ? ' is-on' : ''}">
+      <span>注目</span>
+      <select id="tagSel" aria-label="タグで注目する会社を選ぶ">
+        <option value="">すべて</option>
+        ${sector.tagGroups
+          .map((tg) => `<optgroup label="${esc(tg.label)}">${tg.tags
+            .map((t) => `<option value="${esc(t)}"${t === cur ? ' selected' : ''}>${esc(t)}（${sector.companies.filter((c) => c.tags.includes(t)).length}）</option>`)
+            .join('')}</optgroup>`)
+          .join('')}
+      </select>
+    </label>`;
 }
 
 function tileHtml(c, lvl, metric, value, group, rels) {
@@ -141,7 +160,7 @@ function tileHtml(c, lvl, metric, value, group, rels) {
 }
 
 /** 選択状態の反映（再描画せずクラスだけ切り替える） */
-export function applyMapSelection(root, sector, selectedId, showLines) {
+export function applyMapSelection(root, sector, selectedId, showLines, tag = '') {
   const map = root.querySelector('#map');
   if (!map) return;
   const related = new Set();
@@ -156,6 +175,8 @@ export function applyMapSelection(root, sector, selectedId, showLines) {
     t.classList.toggle('is-selected', id === selectedId);
     t.classList.toggle('is-related', related.has(id));
     t.classList.toggle('is-dim', !!selectedId && id !== selectedId && !related.has(id));
+    t.classList.toggle('is-off', !!tag && !sector.companyMap.get(id)?.tags.includes(tag));
+    t.classList.toggle('is-hit', !!tag && !!sector.companyMap.get(id)?.tags.includes(tag));
   });
   drawLines(map, sector, selectedId, showLines);
 }

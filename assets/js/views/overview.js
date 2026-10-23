@@ -26,6 +26,18 @@ export function renderOverview(root, ctx) {
     parts.push(`<section class="card span2"><h2>ざっくり言うと</h2>${sector.summary.split(/\n+/).map((p) => `<p>${esc(p)}</p>`).join('')}</section>`);
   }
 
+  for (const x of sector.insights) {
+    parts.push(`<section class="card span2 insight">
+      <h2>考察メモ：${esc(x.title)}${x.date ? `<span class="muted small">（${esc(x.date)}）</span>` : ''}</h2>
+      ${x.hypothesis ? `<div class="ins-hyp"><span class="ins-k">仮説</span><p>${esc(x.hypothesis)}</p><span class="ins-v is-${x.verdict}">${esc(x.verdictLabel)}</span></div>` : ''}
+      <div class="ins-grid">${x.sections
+        .map((s) => `<div class="ins-sec"><h3>${esc(s.label)}</h3><ul>${s.items.map((it) => `<li>${esc(it)}</li>`).join('')}</ul></div>`)
+        .join('')}</div>
+      ${x.conclusion ? `<p class="ins-concl"><b>いまの結論</b>${esc(x.conclusion)}</p>` : ''}
+      ${x.tag ? `<button type="button" class="ins-tag" data-tag="${esc(x.tag)}">マップで「#${esc(x.tag)}」を光らせる →</button>` : ''}
+    </section>`);
+  }
+
   const markets = [];
   if (sector.market.jp) markets.push(marketItemHtml(sector.market.jp, false));
   if (sector.market.global && showWorld) markets.push(marketItemHtml(sector.market.global, true));
@@ -87,4 +99,5 @@ export function renderOverview(root, ctx) {
   }
 
   root.innerHTML = `<div class="ov">${parts.join('')}</div>`;
+  root.querySelectorAll('[data-tag]').forEach((b) => b.addEventListener('click', () => ctx.onShowTag(b.dataset.tag)));
 }

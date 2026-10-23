@@ -25,6 +25,7 @@ const state = {
   sizeMetric: {},
   rankMetric: {},
   rankGroup: {},
+  tagFilter: {},
 };
 
 let sheetPushed = false; // 詳細を開いたときに履歴を積んだか（戻るボタンで閉じるため）
@@ -208,6 +209,16 @@ function viewContext() {
       state.rankGroup[state.sector.id] = groupId;
       renderView();
     },
+    onShowTag: (tag) => {
+      state.tagFilter[state.sector.id] = tag;
+      navigate({ view: 'map', companyId: null }, { replace: true });
+      window.scrollTo({ top: 0 });
+    },
+    onTagFilter: (tag) => {
+      state.tagFilter[state.sector.id] = tag;
+      renderView();
+      syncSelection();
+    },
     onToggleLines: () => {
       state.showLines = !state.showLines;
       store.set('allLines', state.showLines);
@@ -237,7 +248,7 @@ function syncSelection() {
   if (state.view === 'map') {
     // シートの開閉で横幅が変わるので、レイアウト確定後に線を引き直す
     requestAnimationFrame(() => {
-      applyMapSelection(els.view, s, state.companyId, state.showLines);
+      applyMapSelection(els.view, s, state.companyId, state.showLines, state.tagFilter[s.id] || '');
       if (c) ensureTileVisible(c.id);
     });
   }
