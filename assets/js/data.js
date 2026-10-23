@@ -105,7 +105,7 @@ export function normalizeSector(raw, meta) {
     const sb = g.sizeBy && metricMap.has(g.sizeBy) ? g.sizeBy : null;
     if (g.sizeBy && !sb) warnings.push(`グループ「${g.id}」の sizeBy「${g.sizeBy}」は metrics にありません`);
     const scale = typeof g.scale === 'number' && g.scale > 0 && g.scale <= 1 ? g.scale : 1;
-    const group = { id: String(g.id), name: g.name || g.id, short: g.short || '', section: g.section || '', description: g.description || '', color: resolveColor(g.color, i), sizeBy: sb, scale };
+    const group = { id: String(g.id), name: g.name || g.id, short: g.short || '', section: g.section || '', description: g.description || '', color: resolveColor(g.color, i), sizeBy: sb, scale, countLabel: typeof g.countLabel === 'string' && g.countLabel.trim() ? g.countLabel.trim() : '社' };
     groups.push(group);
     groupMap.set(group.id, group);
   });
@@ -124,7 +124,7 @@ export function normalizeSector(raw, meta) {
       if (groupId) warnings.push(`「${c.name || id}」のグループ「${groupId}」が groups にありません（「その他」に表示）`);
       groupId = '__other';
       if (!groupMap.has(groupId)) {
-        const g = { id: groupId, name: 'その他', short: '', section: '', description: '', color: resolveColor('gray'), sizeBy: null, scale: 1 };
+        const g = { id: groupId, name: 'その他', short: '', section: '', description: '', color: resolveColor('gray'), sizeBy: null, scale: 1, countLabel: '社' };
         groups.push(g);
         groupMap.set(groupId, g);
       }
@@ -144,6 +144,7 @@ export function normalizeSector(raw, meta) {
       id,
       name: c.name || id,
       short: c.short || '',
+      kana: typeof c.kana === 'string' ? c.kana : '',
       group: groupId,
       region: normalizeRegion(c.region),
       country: c.country || '',

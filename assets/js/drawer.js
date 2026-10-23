@@ -80,7 +80,7 @@ async function renderBody() {
     try { sector = await loadSector(meta); } catch { continue; }
     for (const c of sector.companies) {
       const brandHit = c.brands.find((b) => normalizeText(b.name).includes(q));
-      if (normalizeText(`${c.name}${c.short}`).includes(q) || brandHit) {
+      if (normalizeText(`${c.name}${c.short}${c.kana}${c.tags.join('')}`).includes(q) || brandHit) {
         companyHits.push({ meta, c, brand: brandHit && !normalizeText(c.name).includes(q) ? brandHit.name : '' });
       }
     }

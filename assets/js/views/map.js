@@ -59,7 +59,7 @@ export function renderMap(root, ctx) {
           <span class="group-dot" aria-hidden="true"></span>
           <h3>${esc(g.name)}</h3>
           ${overseasOnly ? '<span class="group-badge">海外</span>' : ''}
-          <span class="group-meta">${items.length}社${sized ? `・大きさ=${esc(metric?.label ?? '')}` : ''}</span>
+          <span class="group-meta">${items.length}${esc(g.countLabel)}${sized ? `・大きさ=${esc(metric?.label ?? '')}` : ''}</span>
         </div>
         ${g.description ? `<p class="group-desc">${esc(g.description)}</p>` : ''}
         <div class="tiles">${tiles}</div>
