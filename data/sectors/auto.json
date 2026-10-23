@@ -1,0 +1,1015 @@
+{
+  "name": "自動車",
+  "icon": "🚗",
+  "category": "モビリティ",
+  "updated": "2026-10-23",
+  "summary": "日本の自動車産業は、世界販売6年連続首位のトヨタを中心に、ホンダ・スズキ・日産などの完成車メーカーと、デンソー・アイシンなどの部品メーカーが連なる巨大なピラミッド。2026年3月期、トヨタは日本企業で初めて売上50兆円を超えた一方、米国関税（15%）や中東情勢（ホルムズ海峡の封鎖）で各社とも利益が大きく削られた。\nEVでは中国のBYDがテスラを抜いて世界一になり、2025年には中国車の世界販売が日本車を初めて上回った。一方、北米のEV計画を中止したホンダは1.6兆円の損失を出し、米欧勢もEVで巨額の損失。世界ではまだハイブリッド車（HV）が稼ぎ頭で、トヨタの電動車の大半はHV。\n再編も続く。ホンダと日産の経営統合は白紙になり、日野と三菱ふそうはARCHIONに統合、トヨタグループは豊田自動織機を約5.9兆円で非公開化した。",
+  "market": {
+    "jp": {
+      "label": "国内の新車販売",
+      "value": "456万5,777台",
+      "period": "2025年",
+      "note": "前年比+3.3%。ダイハツの生産正常化で軽自動車が7%増。2025年度（4月〜3月）は453万台で前年並み",
+      "source": "日本自動車販売協会連合会・全国軽自動車協会連合会",
+      "url": "https://www.zaikei.co.jp/article/20260111/839288.html"
+    },
+    "global": {
+      "label": "世界の新車販売",
+      "value": "約9,000万台",
+      "period": "2025年",
+      "note": "集計により約8,975万〜9,190万台。最大の市場は中国。生産でも中国が約3,450万台と世界の約4割",
+      "source": "業界各社の集計"
+    }
+  },
+  "breakdowns": [
+    {
+      "title": "世界販売ランキング（グループ）",
+      "period": "2025年",
+      "unit": "万台",
+      "note": "各社の発表をもとにした集計。子会社や中国合弁の含め方、数え方（出荷・小売）は会社ごとに違う",
+      "items": [
+        { "label": "トヨタ（ダイハツ・日野含む）", "value": 1132, "note": "6年連続首位・過去最高" },
+        { "label": "フォルクスワーゲン", "value": 898 },
+        { "label": "現代自動車・起亜", "value": 727 },
+        { "label": "GM", "value": 618, "note": "中国合弁を含む" },
+        { "label": "ステランティス", "value": 548 },
+        { "label": "フォード", "value": 465 },
+        { "label": "BYD", "value": 460, "note": "EVとPHEVのみ" },
+        { "label": "上海汽車（SAIC）", "value": 451 },
+        { "label": "吉利（ジーリー）グループ", "value": 412, "note": "ボルボなどを含む" },
+        { "label": "ホンダ", "value": 352 },
+        { "label": "スズキ", "value": 329, "note": "初めて日産を抜く" },
+        { "label": "日産", "value": 320 }
+      ],
+      "source": "Merkmal「2025年世界販売ランキング」、Record China ほか",
+      "url": "https://merkmal-biz.jp/post/111105"
+    },
+    {
+      "title": "国内の新車販売（車の種類別）",
+      "period": "2025年",
+      "unit": "万台",
+      "note": "合計456.6万台。軽自動車が約4割",
+      "items": [
+        { "label": "登録乗用車（普通・小型）", "value": 253.4, "share": 55.5, "note": "うちハイブリッド車が約6割（153万台）" },
+        { "label": "軽乗用車", "value": 130.3, "share": 28.5, "note": "+8.4%" },
+        { "label": "軽貨物車", "value": 36.5, "share": 8.0 },
+        { "label": "トラック・バス（登録車）", "value": 36.5, "share": 8.0 }
+      ],
+      "source": "日本カーソリューションズ（自販連・全軽自協の統計）",
+      "url": "https://www.ncsol.co.jp/column/c_049/"
+    },
+    {
+      "title": "国内で売れたクルマ（車名別）",
+      "period": "2025年",
+      "unit": "万台",
+      "items": [
+        { "label": "ホンダ N-BOX（軽）", "value": 20.1, "note": "4年連続1位" },
+        { "label": "トヨタ ヤリス", "value": 16.7 },
+        { "label": "スズキ スペーシア（軽）", "value": 16.6 },
+        { "label": "トヨタ カローラ", "value": 13.9 },
+        { "label": "ダイハツ タント（軽）", "value": 12.5 },
+        { "label": "ダイハツ ムーヴ（軽）", "value": 12.2, "note": "新型が好調（前年の2.9倍）" },
+        { "label": "トヨタ シエンタ", "value": 10.7 },
+        { "label": "トヨタ ライズ", "value": 10.1 }
+      ],
+      "source": "財経新聞（自販連・全軽自協）",
+      "url": "https://www.zaikei.co.jp/article/20260111/839288.html"
+    }
+  ],
+  "metrics": [
+    { "key": "revenue", "label": "売上高", "unit": "億円", "description": "直近の通期決算（日本の完成車・部品は主に2026年3月期）。海外企業は2025年度を1ドル=150円・1ユーロ=170円・1元=21円・100ウォン=10.5円で円換算した概算。" },
+    { "key": "op", "label": "営業利益", "unit": "億円" },
+    { "key": "units", "label": "世界販売台数", "unit": "万台", "decimals": 1, "description": "2025年（暦年）の各社発表ベース。グループの範囲や数え方は会社ごとに違う。" }
+  ],
+  "sizeBy": "revenue",
+  "rankBy": "revenue",
+  "groups": [
+    {
+      "id": "jp_makers",
+      "section": "クルマをつくる会社（日本）",
+      "name": "乗用車メーカー",
+      "short": "乗用車",
+      "color": "navy",
+      "description": "トヨタが突出し、ホンダ・日産・スズキが続く。マツダ・スバル・三菱自動車は規模が小さく、トヨタや日産と資本でつながる"
+    },
+    {
+      "id": "trucks",
+      "section": "クルマをつくる会社（日本）",
+      "name": "トラック・バス",
+      "short": "トラック",
+      "color": "sky",
+      "description": "いすゞ（UDトラックス）と、日野・三菱ふそうが統合したARCHIONの2陣営に"
+    },
+    {
+      "id": "bikes",
+      "section": "クルマをつくる会社（日本）",
+      "name": "二輪車（バイク）",
+      "short": "二輪",
+      "color": "peach",
+      "description": "世界のバイクは日本勢が強い。最大手のホンダとスズキは「乗用車メーカー」に掲載"
+    },
+    {
+      "id": "parts",
+      "section": "部品・素材",
+      "name": "部品メーカー",
+      "short": "部品",
+      "color": "lavender",
+      "description": "完成車メーカーに部品を納める会社。トヨタ系（デンソー・アイシン・豊田自動織機）とホンダ系（Astemo）、電線のワイヤーハーネス大手など"
+    },
+    {
+      "id": "tires",
+      "section": "部品・素材",
+      "name": "タイヤ",
+      "short": "タイヤ",
+      "color": "gray",
+      "description": "ブリヂストンは世界トップ級。新車用より、交換用（市販）や大型・高価格のタイヤで稼ぐ"
+    },
+    {
+      "id": "aftermarket",
+      "section": "売る・直す",
+      "name": "中古車・カー用品",
+      "short": "中古車・用品",
+      "color": "lemon",
+      "description": "中古車オークションの最大手USSと、カー用品店のオートバックス"
+    },
+    {
+      "id": "global_makers",
+      "section": "海外",
+      "name": "海外の自動車メーカー",
+      "short": "海外メーカー",
+      "color": "rose",
+      "description": "ドイツ・米国・韓国の大手と、急成長する中国勢（BYD・吉利）、EV専業のテスラ"
+    },
+    {
+      "id": "global_parts",
+      "section": "海外",
+      "name": "海外の電池メーカー",
+      "short": "電池",
+      "color": "sage",
+      "description": "EVの心臓部である電池は中国勢が強い"
+    }
+  ],
+  "tagGroups": [
+    { "label": "主な分野", "tags": ["乗用車", "軽自動車", "トラック・バス", "二輪", "部品", "タイヤ", "電池", "販売・中古車"] },
+    { "label": "クルマの動力", "tags": ["HVが強い", "EVが主力"] },
+    { "label": "2025〜26年の注目", "tags": ["米国関税", "中東情勢", "EV戦略の見直し", "再編・提携", "中国勢", "トヨタ陣営"] }
+  ],
+  "insights": [
+    {
+      "title": "日本車はEVで負けるのか？",
+      "date": "2026-10-23",
+      "hypothesis": "EVで出遅れた日本メーカーは、BYDやテスラに負けていく。",
+      "verdict": "partly",
+      "sections": [
+        {
+          "label": "合っている点",
+          "items": [
+            "2025年、中国車の世界販売が日本車を初めて上回った（2000年以降で初）。BYDと吉利がそれぞれ日産・ホンダを抜いた",
+            "BYDのEV販売は226万台でテスラ（163万台）を抜き世界一。海外販売も104万台（+145%）に急増",
+            "中国市場では日本車が苦戦し、東南アジアでも中国のEVが広がっている",
+            "日本でもBYDの軽EV「ラッコ」（約249万円）が発売から約2カ月半で受注2,000台を超えた"
+          ]
+        },
+        {
+          "label": "違う点",
+          "items": [
+            "世界の稼ぎ頭はまだハイブリッド車。トヨタの電動車比率は48%で、その大半がHV。2027年3月期はHVだけで500万台を超える見通し",
+            "EVに賭けた会社ほど損をしている：ホンダは北米EVの中止で1兆5,778億円の損失、フォードのEV部門は48億ドルの赤字、ステランティスは254億ユーロの特別損失",
+            "テスラは2年連続で販売減。米国のEV税額控除が終わり、需要が落ちた",
+            "国内の乗用車はHVが約6割で、EV（PHEV含む）は約2.5%"
+          ]
+        },
+        {
+          "label": "注意（本当の勝負どころ）",
+          "items": [
+            "中国勢の強みはEVそのものより、コストの安さと開発スピード、ソフトウェア。トヨタも「チャイナスピード」への対抗を掲げる",
+            "電池はCATL・BYDなど中国勢が強く、調達で頼らざるをえない",
+            "中東情勢で原油が高くなると、EVの経済性が上がる（IEAの指摘）。前提は変わりうる"
+          ]
+        }
+      ],
+      "conclusion": "「EVで負ける」は半分正しい。中国・東南アジアの量販EVでは中国勢が優勢。一方で世界全体ではHVがまだ利益の柱で、EVに一気に賭けたホンダや米欧勢は巨額の損失を出した。勝負は「EVかHVか」より、中国勢並みのコストとスピード、ソフトウェアの力をどれだけ早く身につけられるか。",
+      "tag": "EVが主力"
+    },
+    {
+      "title": "日本の自動車はトヨタ一強？",
+      "date": "2026-10-23",
+      "hypothesis": "日本の自動車業界はトヨタの一人勝ちで、ほかのメーカーは苦しい。",
+      "verdict": "partly",
+      "sections": [
+        {
+          "label": "合っている点",
+          "items": [
+            "2026年3月期の営業利益はトヨタ3兆7,662億円。ほかの乗用車6社（ホンダ・日産・スズキ・マツダ・スバル・三菱）を合計しても約4,300億円にとどまる",
+            "トヨタはスバル（約20%）・マツダ・スズキ・いすゞ（各約5%）に出資し、ダイハツは完全子会社。部品のデンソー・アイシンも含めた「トヨタ陣営」が大きい",
+            "日産は2期連続の最終赤字で工場閉鎖。マツダ・スバルは米国関税で営業利益が7〜9割減った"
+          ]
+        },
+        {
+          "label": "違う点・例外",
+          "items": [
+            "スズキはインドで強く、売上は5期連続で過去最高。2025年の世界販売で日産を抜いた",
+            "ホンダは二輪車で世界最大。二輪の営業利益は7,319億円で過去最高（四輪のEV損失を除けば全社の営業利益は約1兆円）",
+            "トヨタ自身も米国関税と中東情勢で3期連続の減益見通しで、「一強」でも楽ではない"
+          ]
+        }
+      ],
+      "conclusion": "利益の大きさではトヨタ一強は事実。ただし、スズキ（インド）やホンダ（二輪）のように「得意な市場を持つ会社」は強い。苦しいのは規模が小さく米国・中国に頼る会社で、関税と中国勢の挟み撃ちを受け、提携・再編が続いている。",
+      "tag": "トヨタ陣営"
+    }
+  ],
+  "companies": [
+    {
+      "id": "toyota",
+      "name": "トヨタ自動車",
+      "short": "トヨタ",
+      "group": "jp_makers",
+      "region": "jp",
+      "code": "7203",
+      "fy": "2026年3月期",
+      "tagline": "世界販売6年連続首位。日本企業で初の売上50兆円",
+      "description": "1933年に豊田自動織機製作所の自動車部として始まり、1937年に独立。世界販売は6年連続で首位（2025年はグループで1,132万台）。ハイブリッド車に強く、レクサス・ダイハツを傘下に持つ。",
+      "metrics": {
+        "revenue": { "value": 506849, "note": "日本企業で初めて50兆円を超えた" },
+        "op": { "value": 37662, "note": "前期比−21.5%。米国関税の影響が約1.4兆円" },
+        "units": { "value": 1132.3, "period": "2025年", "note": "ダイハツ・日野を含むグループ販売。過去最高" }
+      },
+      "brands": ["トヨタ", "レクサス", "ダイハツ", "GR"],
+      "points": [
+        "電動車の比率は48%（HV 462万台・EV 24万台、2026年3月期）",
+        "2027年3月期は中東情勢の影響（−6,700億円）で3期連続の減益見通し。営業利益の予想は3兆円から、円安で3.4兆円に上方修正（8月）",
+        "トヨタグループで豊田自動織機を約5.9兆円で非公開化（2026年）",
+        "日野自動車は2026年4月の統合（ARCHION）で連結から外れた",
+        "2026年に近健太氏が社長に就任"
+      ],
+      "url": "https://global.toyota/jp/",
+      "tags": ["乗用車", "HVが強い", "米国関税", "中東情勢", "再編・提携", "トヨタ陣営"]
+    },
+    {
+      "id": "honda",
+      "name": "ホンダ（本田技研工業）",
+      "short": "ホンダ",
+      "kana": "ほんだぎけんこうぎょう",
+      "group": "jp_makers",
+      "region": "jp",
+      "code": "7267",
+      "fy": "2026年3月期",
+      "tagline": "二輪で世界最大。北米EV中止で1.6兆円の損失",
+      "description": "1948年創業。四輪に加えて二輪車で世界最大のメーカーで、二輪は年2,200万台を売る。2026年3月、北米で予定していたEVの開発・発売を中止し、EV関連で1兆5,778億円の損失を計上した。",
+      "metrics": {
+        "revenue": 217966,
+        "op": { "value": -4143, "note": "EV関連損失1兆4,536億円を含む。除くと1兆393億円" },
+        "units": { "value": 352.1, "approx": true, "period": "2025年", "note": "四輪" }
+      },
+      "brands": ["N-BOX", "フリード", "ヴェゼル", "シビック", "アキュラ", "スーパーカブ"],
+      "points": [
+        "二輪は販売2,210万台・営業利益7,319億円でともに過去最高（インド・ブラジルが好調）",
+        "2025年11月、ネクスペリア問題による半導体不足で世界生産が過去最低に",
+        "2025年2月、日産との経営統合協議は白紙に",
+        "部品大手Astemoの株を日立から買い増し、61%を持つ親会社に（2026年）",
+        "ソニーとEV「AFEELA」を共同開発（ソニー・ホンダモビリティ）",
+        "2027年3月期の営業利益予想は6,500億円に上方修正。第1四半期は過去最高"
+      ],
+      "url": "https://global.honda/jp/",
+      "tags": ["乗用車", "軽自動車", "二輪", "HVが強い", "EV戦略の見直し", "米国関税", "再編・提携"]
+    },
+    {
+      "id": "nissan",
+      "name": "日産自動車",
+      "short": "日産",
+      "kana": "にっさん",
+      "group": "jp_makers",
+      "region": "jp",
+      "code": "7201",
+      "fy": "2026年3月期",
+      "tagline": "経営再建中。追浜工場を閉鎖へ",
+      "description": "1933年創業。2025年に発表した再建計画「Re:Nissan」で、2027年度までに国内外7工場の閉鎖と2万人の削減を進める。2026年3月期も5,331億円の最終赤字（2期連続）。",
+      "metrics": {
+        "revenue": { "value": 120079, "note": "前期比−4.9%" },
+        "op": { "value": 580, "note": "最終損益は5,331億円の赤字" },
+        "units": { "value": 320, "approx": true, "period": "2025年" }
+      },
+      "brands": ["ノート", "セレナ", "ルークス", "サクラ", "リーフ", "インフィニティ"],
+      "points": [
+        "追浜工場（神奈川）は2027年度末で車両生産を終え、日産自動車九州に移す",
+        "ルノーとの相互出資は最低10%まで引き下げ。かつてはルノーが日産株の43%を持っていた",
+        "三菱自動車の筆頭株主（26.67%）。2026年も保有を続ける方針",
+        "2025年の国内の登録車販売は17%減",
+        "2027年3月期は営業利益2,000億円・最終黒字200億円を見込む",
+        "社長はイヴァン・エスピノーサ氏（2025年4月〜）"
+      ],
+      "url": "https://www.nissan-global.com/JP/",
+      "tags": ["乗用車", "軽自動車", "米国関税", "再編・提携"]
+    },
+    {
+      "id": "suzuki",
+      "name": "スズキ",
+      "short": "スズキ",
+      "group": "jp_makers",
+      "region": "jp",
+      "code": "7269",
+      "fy": "2026年3月期",
+      "tagline": "インドで最大手。売上は5期連続で過去最高",
+      "description": "静岡県浜松市の自動車・二輪メーカー。インドの子会社マルチ・スズキは同国の乗用車市場で最大手。国内では軽自動車で首位級。",
+      "metrics": {
+        "revenue": { "value": 62930, "note": "5期連続で過去最高" },
+        "op": { "value": 6229, "note": "前期比−3.1%" },
+        "units": { "value": 329.5, "approx": true, "period": "2025年" }
+      },
+      "brands": ["スペーシア", "ハスラー", "ジムニー", "スイフト", "eビターラ"],
+      "points": [
+        "2025年の世界販売で日産を抜き、日本勢でトヨタ・ホンダに次ぐ3位に",
+        "2025年の国内販売（登録車＋軽）はトヨタに次ぐ2位",
+        "インドの税（GST）引き下げで販売が急増。新工場で生産能力を増やす",
+        "二輪も226万台（+9.5%）",
+        "トヨタが約5%を出資（2019年〜）"
+      ],
+      "url": "https://www.suzuki.co.jp/",
+      "tags": ["乗用車", "軽自動車", "二輪", "トヨタ陣営"]
+    },
+    {
+      "id": "mazda",
+      "name": "マツダ",
+      "short": "マツダ",
+      "group": "jp_makers",
+      "region": "jp",
+      "code": "7261",
+      "fy": "2026年3月期",
+      "tagline": "広島。米国関税で営業利益7割減",
+      "description": "広島の自動車メーカー。SKYACTIVエンジンやロータリーエンジンで知られる。米国への輸出が多く、米国関税（−1,549億円）の打撃が大きかった。",
+      "metrics": {
+        "revenue": 49182,
+        "op": { "value": 516, "note": "前期比−72.3%" },
+        "units": { "value": 125, "approx": true, "period": "2025年" }
+      },
+      "brands": ["CX-5", "CX-60", "MAZDA3", "ロードスター"],
+      "points": [
+        "下期は黒字に戻した",
+        "2027年3月期は新型CX-5で販売132万台・営業利益1,500億円を見込む",
+        "トヨタが約5%を出資"
+      ],
+      "url": "https://www.mazda.com/ja/",
+      "tags": ["乗用車", "米国関税", "トヨタ陣営"]
+    },
+    {
+      "id": "subaru",
+      "name": "SUBARU",
+      "short": "スバル",
+      "group": "jp_makers",
+      "region": "jp",
+      "code": "7270",
+      "fy": "2026年3月期",
+      "tagline": "北米が主戦場。米国関税で営業利益9割減",
+      "description": "群馬県太田市に主力工場を持つ自動車メーカー。水平対向エンジンと4WDが特徴で、売上の大半を北米で稼ぐ。トヨタが約20%を出資する持分法適用会社。",
+      "metrics": {
+        "revenue": { "value": 47850, "note": "前期比+2.1%" },
+        "op": { "value": 401, "note": "前期比−90.1%" }
+      },
+      "brands": ["フォレスター", "クロストレック", "レヴォーグ", "アウトバック"],
+      "points": [
+        "米国関税（−1,700億円）が直撃",
+        "2027年3月期は営業利益1,500億円への回復を見込む",
+        "クロストレックをストロングハイブリッドだけにした（2026年9月）"
+      ],
+      "url": "https://www.subaru.co.jp/",
+      "tags": ["乗用車", "米国関税", "トヨタ陣営"]
+    },
+    {
+      "id": "mitsubishi",
+      "name": "三菱自動車工業",
+      "short": "三菱自",
+      "kana": "みつびしじどうしゃ",
+      "group": "jp_makers",
+      "region": "jp",
+      "code": "7211",
+      "fy": "2026年3月期",
+      "tagline": "東南アジア・豪州に強い。日産が筆頭株主",
+      "description": "三菱グループの自動車メーカー。ピックアップトラック「トライトン」やSUV・PHEVを、東南アジア・豪州・中東で売る。2016年から日産が筆頭株主（26.67%）。",
+      "metrics": {
+        "revenue": { "value": 28965, "note": "前期比+3.9%" },
+        "op": { "value": 755, "note": "前期比−45.6%。最終利益は100億円" }
+      },
+      "brands": ["トライトン", "アウトランダーPHEV", "デリカ", "eKクロス"],
+      "points": [
+        "中東情勢や金利上昇で、中東・東南アジア・豪州の需要が弱まった",
+        "2027年3月期は営業利益900億円を見込む",
+        "鴻海（フォックスコン）からEVの供給を受け、オセアニアで販売（2026年後半）"
+      ],
+      "url": "https://www.mitsubishi-motors.com/jp/",
+      "tags": ["乗用車", "軽自動車", "中東情勢", "再編・提携"]
+    },
+    {
+      "id": "daihatsu",
+      "name": "ダイハツ工業",
+      "short": "ダイハツ",
+      "group": "jp_makers",
+      "region": "jp",
+      "fy": "2026年3月期（単体）",
+      "tagline": "軽自動車の大手。不正から回復",
+      "description": "軽自動車の大手で、トヨタの完全子会社。2023年に認証試験の不正で全車種の出荷を止めたが、生産が正常化して2025年に販売が大きく回復した。",
+      "metrics": {
+        "revenue": { "value": 16160, "note": "単体。前期比+27%" },
+        "op": { "value": 630, "note": "単体。前期の2.5倍" }
+      },
+      "brands": ["タント", "ムーヴ", "ミラ イース", "ハイゼット", "ロッキー"],
+      "points": [
+        "2025年の軽自動車販売は51.2万台（+46%）。新型ムーヴが好調",
+        "2026年1〜3月の軽自動車シェアで首位を取り戻した（32.2%）",
+        "トヨタのライズ・ルーミーなど小型車もつくる"
+      ],
+      "url": "https://www.daihatsu.co.jp/",
+      "tags": ["軽自動車", "トヨタ陣営"]
+    },
+    {
+      "id": "isuzu",
+      "name": "いすゞ自動車",
+      "short": "いすゞ",
+      "kana": "いすず",
+      "group": "trucks",
+      "region": "jp",
+      "code": "7202",
+      "fy": "2026年3月期",
+      "tagline": "トラック最大手。UDトラックスも傘下",
+      "description": "トラック・バスの大手。国内の小型・普通トラックでシェア5割超。2021年にボルボからUDトラックスを買収し、タイではピックアップトラックをつくる。",
+      "metrics": {
+        "revenue": { "value": 34791, "note": "前期比+7.5%" },
+        "op": { "value": 2037, "note": "前期比−11.2%" }
+      },
+      "brands": ["エルフ", "フォワード", "ギガ", "UDトラックス", "D-MAX"],
+      "points": [
+        "2026年3月、中東向けの出荷ができず減益（ホルムズ海峡の封鎖）",
+        "子会社のUDトラックスとの合併を進める",
+        "日産追浜工場の従業員の受け入れも表明",
+        "トヨタが約5%を出資"
+      ],
+      "url": "https://www.isuzu.co.jp/",
+      "tags": ["トラック・バス", "中東情勢", "トヨタ陣営"]
+    },
+    {
+      "id": "archion",
+      "name": "ARCHION（日野・三菱ふそう）",
+      "short": "ARCHION",
+      "kana": "あーちおん ひの みつびしふそう",
+      "group": "trucks",
+      "region": "jp",
+      "fy": "2026年4月発足",
+      "tagline": "日野と三菱ふそうが統合",
+      "description": "日野自動車と三菱ふそうトラック・バスが2026年4月に経営統合して発足した持株会社で、同日に東証プライムに上場した。",
+      "brands": ["日野", "三菱ふそう"],
+      "points": [
+        "2026年7月の株の売り出しで、議決権はダイムラートラック26.7%・トヨタ19.9%に",
+        "日野はエンジン認証の不正（2022年発覚）で、米国で約16億ドルの罰金・和解金を負った",
+        "燃料電池などの脱炭素技術や自動運転で協業を目指す"
+      ],
+      "url": "https://archion.co.jp/",
+      "tags": ["トラック・バス", "再編・提携", "トヨタ陣営"]
+    },
+    {
+      "id": "yamaha",
+      "name": "ヤマハ発動機",
+      "short": "ヤマハ発",
+      "group": "bikes",
+      "region": "jp",
+      "code": "7272",
+      "fy": "2025年12月期",
+      "tagline": "バイクと船外機。売上の9割超が海外",
+      "description": "楽器のヤマハ（日本楽器製造）から1955年に独立した二輪車メーカー。船外機でも世界トップクラスで、マリン事業が営業利益の約4割を稼ぐ。",
+      "metrics": {
+        "revenue": 25342,
+        "op": { "value": 1264, "note": "前期比−30%。米国関税と減損" }
+      },
+      "brands": ["YZF-R", "MT", "NMAX", "PAS（電動アシスト自転車）", "船外機"],
+      "points": [
+        "2026年は二輪が好調で、上期は過去最高。通期予想を上方修正"
+      ],
+      "url": "https://global.yamaha-motor.com/jp/",
+      "tags": ["二輪", "米国関税"]
+    },
+    {
+      "id": "kawasaki",
+      "name": "カワサキモータース",
+      "short": "カワサキ",
+      "group": "bikes",
+      "region": "jp",
+      "tagline": "川崎重工の二輪。Ninja",
+      "description": "川崎重工業の二輪・オフロード車の子会社（2021年に分社）。大型バイク「Ninja」で知られる。",
+      "brands": ["Ninja", "Z"],
+      "tags": ["二輪"]
+    },
+    {
+      "id": "denso",
+      "name": "デンソー",
+      "short": "デンソー",
+      "group": "parts",
+      "region": "jp",
+      "code": "6902",
+      "fy": "2026年3月期",
+      "tagline": "自動車部品で世界2位。トヨタ系最大",
+      "description": "トヨタグループ最大の部品メーカーで、自動車部品で世界2位。エアコン・電子制御・電動化部品・半導体などを手がけ、売上の約56%がトヨタグループ向け。1949年にトヨタ自動車工業から独立した。",
+      "metrics": {
+        "revenue": { "value": 75400, "note": "前期比+5.3%" },
+        "op": { "value": 5525, "note": "前期比+6.5%" }
+      },
+      "points": [
+        "2030年に売上8兆円以上・営業利益率10%以上を目指す",
+        "ホンダ（5.8%）・スバル（4.2%）など他社向けも多い"
+      ],
+      "url": "https://www.denso.com/jp/ja/",
+      "tags": ["部品", "トヨタ陣営"]
+    },
+    {
+      "id": "aisin",
+      "name": "アイシン",
+      "short": "アイシン",
+      "group": "parts",
+      "region": "jp",
+      "code": "7259",
+      "fy": "2026年3月期",
+      "tagline": "変速機・HV駆動ユニットの世界大手",
+      "description": "トヨタ系の部品大手。オートマチック変速機（AT）やハイブリッド用の駆動ユニットで世界大手。",
+      "metrics": {
+        "revenue": { "value": 51178, "note": "前期比+4.5%" },
+        "op": { "value": 2288, "note": "前期比+12.7%" }
+      },
+      "points": [
+        "変速機・電動ユニットの販売は年1,019万台（うちHV・EV用の電動ユニット269万台）"
+      ],
+      "url": "https://www.aisin.com/jp/",
+      "tags": ["部品", "HVが強い", "トヨタ陣営"]
+    },
+    {
+      "id": "toyota_ind",
+      "name": "豊田自動織機",
+      "short": "豊田織機",
+      "kana": "とよたじどうしょっき",
+      "group": "parts",
+      "region": "jp",
+      "tagline": "トヨタの源流。2026年に非公開化",
+      "description": "1926年創業のトヨタグループの源流。フォークリフトで世界首位、カーエアコン用コンプレッサーでも世界大手。トヨタのエンジンや車両の生産も担う。",
+      "points": [
+        "2026年3月、トヨタグループによるTOB（約5.9兆円・国内最大規模）が成立し、上場廃止に",
+        "グループの株の持ち合いを解消し、意思決定を速める狙い"
+      ],
+      "url": "https://www.toyota-shokki.co.jp/",
+      "tags": ["部品", "再編・提携", "トヨタ陣営"]
+    },
+    {
+      "id": "astemo",
+      "name": "Astemo",
+      "short": "Astemo",
+      "kana": "あすても",
+      "group": "parts",
+      "region": "jp",
+      "fy": "2025年3月期",
+      "tagline": "ホンダ系の部品大手（旧日立Astemo）",
+      "description": "日立オートモティブシステムズと、ホンダ系のケーヒン・ショーワ・日信工業が2021年に統合した部品大手。ブレーキ・サスペンション・電子制御などをつくる。",
+      "metrics": {
+        "revenue": 21865,
+        "op": 674
+      },
+      "points": [
+        "ホンダが日立から21%を買い増し、61%を持つ親会社に（2026年4〜6月に完了予定）",
+        "将来の上場（IPO）を目指す"
+      ],
+      "url": "https://www.astemo.com/jp/",
+      "tags": ["部品", "再編・提携"]
+    },
+    {
+      "id": "sei",
+      "name": "住友電気工業（自動車関連）",
+      "short": "住友電工",
+      "kana": "すみともでんこう",
+      "group": "parts",
+      "region": "jp",
+      "code": "5802",
+      "fy": "2026年3月期",
+      "tagline": "ワイヤーハーネスの世界大手",
+      "description": "電線の大手。車の中の電線を束ねたワイヤーハーネスで世界大手。全社ではデータセンター向けの光製品も伸び、過去最高益。",
+      "metrics": {
+        "revenue": { "value": 29372, "note": "自動車関連事業（全社は5兆1,102億円）" },
+        "op": { "value": 1797, "note": "自動車関連事業" }
+      },
+      "url": "https://sumitomoelectric.com/jp",
+      "tags": ["部品"]
+    },
+    {
+      "id": "yazaki",
+      "name": "矢崎総業",
+      "short": "矢崎",
+      "kana": "やざき",
+      "group": "parts",
+      "region": "jp",
+      "tagline": "ワイヤーハーネスの世界大手（非上場）",
+      "description": "ワイヤーハーネスの世界大手で、非上場の同族企業。メーター・コネクタなども手がける。",
+      "url": "https://www.yazaki-group.com/",
+      "tags": ["部品"]
+    },
+    {
+      "id": "bridgestone",
+      "name": "ブリヂストン",
+      "short": "ブリヂストン",
+      "group": "tires",
+      "region": "jp",
+      "code": "5108",
+      "fy": "2025年12月期",
+      "tagline": "タイヤで世界トップ級",
+      "description": "タイヤの世界大手。18インチ以上の高級タイヤや、鉱山用の超大型タイヤに強い。",
+      "metrics": {
+        "revenue": 44295,
+        "op": { "value": 4937, "note": "調整後営業利益（利益率11.1%）" }
+      },
+      "points": [
+        "売上の約半分が米州。工場の再編で収益力を高める"
+      ],
+      "url": "https://www.bridgestone.co.jp/",
+      "tags": ["タイヤ"]
+    },
+    {
+      "id": "yokohama",
+      "name": "横浜ゴム",
+      "short": "横浜ゴム",
+      "kana": "よこはまごむ",
+      "group": "tires",
+      "region": "jp",
+      "code": "5101",
+      "fy": "2025年12月期",
+      "tagline": "建機・農機用タイヤで急拡大",
+      "description": "タイヤ大手。乗用車用の「ADVAN」「iceGUARD」のほか、建機・農機などのオフハイウェイタイヤ（OHT）を買収で広げている。",
+      "metrics": {
+        "revenue": { "value": 12350, "note": "過去最高" },
+        "op": { "value": 1666, "note": "事業利益。過去最高" }
+      },
+      "points": [
+        "2025年に米グッドイヤーの鉱山・建機用タイヤ事業を買収"
+      ],
+      "url": "https://www.y-yokohama.com/",
+      "tags": ["タイヤ"]
+    },
+    {
+      "id": "srigroup",
+      "name": "住友ゴム工業",
+      "short": "住友ゴム",
+      "kana": "すみともごむ だんろっぷ",
+      "group": "tires",
+      "region": "jp",
+      "code": "5110",
+      "fy": "2025年12月期",
+      "tagline": "ダンロップ・ファルケン",
+      "description": "「ダンロップ」「ファルケン」のタイヤ大手。ゴルフ用品などのスポーツ事業も持つ。",
+      "metrics": {
+        "revenue": 12071,
+        "op": { "value": 908, "note": "事業利益。過去最高" }
+      },
+      "url": "https://www.srigroup.co.jp/",
+      "tags": ["タイヤ"]
+    },
+    {
+      "id": "uss",
+      "name": "ユー・エス・エス（USS）",
+      "short": "USS",
+      "group": "aftermarket",
+      "region": "jp",
+      "code": "4732",
+      "fy": "2026年3月期",
+      "tagline": "中古車オークションの最大手",
+      "description": "中古車オークションの国内最大手。中古車販売店どうしが車を売り買いする会場を全国で運営する。",
+      "metrics": {
+        "revenue": { "value": 1139, "note": "前期比+9.5%" },
+        "op": { "value": 598, "note": "営業利益率は5割超" }
+      },
+      "points": [
+        "2025年度の出品は350万台・成約は234万台（成約率67%）"
+      ],
+      "url": "https://www.ussnet.co.jp/",
+      "tags": ["販売・中古車"]
+    },
+    {
+      "id": "autobacs",
+      "name": "オートバックスセブン",
+      "short": "オートバックス",
+      "group": "aftermarket",
+      "region": "jp",
+      "code": "9832",
+      "fy": "2026年3月期",
+      "tagline": "カー用品店の最大手",
+      "description": "カー用品店の最大手。タイヤ・オイル・カーナビなどを売り、ホンダやBYDの正規ディーラー、中古車販売も運営する。",
+      "metrics": {
+        "revenue": { "value": 2801, "note": "前期比+12%" },
+        "op": 138
+      },
+      "points": [
+        "中東情勢でオイルの単価が上がり、2026年4〜6月の売上は過去最高",
+        "中国・奇瑞汽車（チェリー）などが参加する会社で、2027年発売予定の軽EVの開発を進める"
+      ],
+      "url": "https://www.autobacs.co.jp/",
+      "tags": ["販売・中古車", "中東情勢"]
+    },
+    {
+      "id": "vw",
+      "name": "フォルクスワーゲン・グループ",
+      "short": "VW",
+      "group": "global_makers",
+      "region": "overseas",
+      "country": "ドイツ",
+      "fy": "2025年12月期",
+      "tagline": "世界2位。中国と関税で利益半減",
+      "description": "ドイツの最大手。フォルクスワーゲン・アウディ・ポルシェ・シュコダなど多くのブランドを持つ世界2位のグループ。",
+      "metrics": {
+        "revenue": { "value": 547252, "approx": true, "note": "3,219億ユーロ" },
+        "op": { "value": 15076, "approx": true, "note": "89億ユーロ（前期比−53%）" },
+        "units": { "value": 898.4, "period": "2025年", "note": "納車台数" }
+      },
+      "points": [
+        "中国での販売減と米国関税で営業利益が半減",
+        "2026年上期は中国の販売が約3割減。米国でのID.4の生産を中止"
+      ],
+      "tags": ["乗用車", "米国関税"]
+    },
+    {
+      "id": "hyundai",
+      "name": "現代自動車（ヒョンデ）",
+      "short": "ヒョンデ",
+      "kana": "げんだいじどうしゃ ひゅんだい",
+      "group": "global_makers",
+      "region": "overseas",
+      "country": "韓国",
+      "fy": "2025年12月期",
+      "tagline": "起亜と合わせて世界3位",
+      "description": "韓国の最大手。グループ会社の起亜（キア）と合わせた現代自動車グループは世界3位（727万台）。",
+      "metrics": {
+        "revenue": { "value": 195567, "approx": true, "note": "186.3兆ウォン（過去最高）" },
+        "op": { "value": 12041, "approx": true, "note": "11.47兆ウォン（前期比−19.5%）" },
+        "units": { "value": 413.8, "period": "2025年", "note": "現代自動車のみ" }
+      },
+      "points": [
+        "米国での年間卸売が初めて100万台を超えた",
+        "HVの販売が過去最高（世界販売の約15%）",
+        "GMと車両の共同開発で提携"
+      ],
+      "tags": ["乗用車", "米国関税"]
+    },
+    {
+      "id": "gm",
+      "name": "ゼネラル・モーターズ（GM）",
+      "short": "GM",
+      "group": "global_makers",
+      "region": "overseas",
+      "country": "米国",
+      "fy": "2025年12月期",
+      "tagline": "米国最大手",
+      "description": "米国の最大手。シボレー・キャデラック・GMCなど。",
+      "metrics": {
+        "revenue": { "value": 277529, "approx": true, "note": "1,850億ドル" },
+        "op": { "value": 19121, "approx": true, "note": "調整後EBIT 127億ドル" }
+      },
+      "points": [
+        "EV関連の損失などで最終利益は55%減の27億ドル"
+      ],
+      "tags": ["乗用車", "EV戦略の見直し"]
+    },
+    {
+      "id": "ford",
+      "name": "フォード・モーター",
+      "short": "フォード",
+      "group": "global_makers",
+      "region": "overseas",
+      "country": "米国",
+      "fy": "2025年12月期",
+      "tagline": "EV部門は48億ドルの赤字",
+      "description": "米国の大手。ピックアップ「F-150」や商用車の「Ford Pro」が稼ぎ頭。",
+      "metrics": {
+        "revenue": { "value": 280950, "approx": true, "note": "1,873億ドル（過去最高）" },
+        "op": { "value": 10170, "approx": true, "note": "調整後EBIT 68億ドル" }
+      },
+      "points": [
+        "EV部門（Model e）は48億ドルの赤字。最終損益は82億ドルの赤字",
+        "HVの販売は過去最高（約25%増）"
+      ],
+      "tags": ["乗用車", "EV戦略の見直し"]
+    },
+    {
+      "id": "stellantis",
+      "name": "ステランティス",
+      "short": "ステランティス",
+      "group": "global_makers",
+      "region": "overseas",
+      "country": "オランダ（伊・仏・米）",
+      "fy": "2025年12月期",
+      "tagline": "EV計画見直しで巨額赤字",
+      "description": "2021年にPSA（プジョー）とFCA（フィアット・クライスラー）が合併して誕生。ジープ・プジョー・フィアットなど14ブランド。",
+      "metrics": {
+        "revenue": { "value": 260964, "approx": true, "note": "1,535億ユーロ" },
+        "op": { "value": -1431, "approx": true, "note": "調整後営業損失8.4億ユーロ" },
+        "units": { "value": 548, "approx": true, "period": "2025年", "note": "出荷台数" }
+      },
+      "points": [
+        "EV計画の見直しなどで254億ユーロの特別損失。最終赤字は223億ユーロ"
+      ],
+      "tags": ["乗用車", "EV戦略の見直し"]
+    },
+    {
+      "id": "renault",
+      "name": "ルノー",
+      "short": "ルノー",
+      "group": "global_makers",
+      "region": "overseas",
+      "country": "フランス",
+      "tagline": "日産の元親会社",
+      "description": "フランスの大手。1999年から日産と提携し、一時は日産株の43%を持っていた。2023年以降、出資を大きく引き下げた。",
+      "points": [
+        "2025年通期は約2兆円の最終赤字（日経）"
+      ],
+      "tags": ["乗用車", "再編・提携"]
+    },
+    {
+      "id": "byd",
+      "name": "BYD（比亜迪）",
+      "short": "BYD",
+      "kana": "びーわいでぃー",
+      "group": "global_makers",
+      "region": "overseas",
+      "country": "中国",
+      "fy": "2025年12月期",
+      "tagline": "EVで世界一。日本で軽EVも",
+      "description": "中国の最大手。電池メーカーから自動車に参入し、EVとPHEVだけを売る。2025年にEVの販売でテスラを抜いて世界一になった。",
+      "metrics": {
+        "revenue": { "value": 168834, "approx": true, "note": "8,040億元（スマホ部品事業を含む）" },
+        "units": { "value": 460.2, "period": "2025年", "note": "EV 226万台・PHEVなど" }
+      },
+      "brands": ["ラッコ（軽EV）", "ドルフィン", "ATTO 3", "シール", "デンツァ"],
+      "points": [
+        "海外販売は104万台（+145%）。110以上の国・地域で売る",
+        "中国の価格競争で純利益は19%減の326億元",
+        "日本では2026年7月に軽EV「ラッコ」（約249万円）を発売。約2カ月半で受注2,000台超",
+        "トヨタと中国でEVの共同開発会社を持つ"
+      ],
+      "tags": ["乗用車", "EVが主力", "中国勢"]
+    },
+    {
+      "id": "geely",
+      "name": "吉利汽車（ジーリー）",
+      "short": "吉利",
+      "kana": "じーりー きつり",
+      "group": "global_makers",
+      "region": "overseas",
+      "country": "中国",
+      "fy": "2025年12月期",
+      "tagline": "急成長の中国民営大手",
+      "description": "中国の民営大手。親会社の吉利控股グループは、ボルボ・カー、ジーカー（ZEEKR）、リンク&コー、ロータスなどを持つ。",
+      "metrics": {
+        "revenue": { "value": 72499, "approx": true, "note": "3,452億元（+25%、吉利汽車ホールディングス）" },
+        "units": { "value": 302.5, "period": "2025年", "note": "吉利汽車（+39%）。グループ全体は約412万台" }
+      },
+      "points": [
+        "新エネ車（EV・PHEV）は169万台（+90%）"
+      ],
+      "tags": ["乗用車", "中国勢"]
+    },
+    {
+      "id": "tesla",
+      "name": "テスラ",
+      "short": "テスラ",
+      "group": "global_makers",
+      "region": "overseas",
+      "country": "米国",
+      "fy": "2025年12月期",
+      "tagline": "EV専業。2年連続の販売減",
+      "description": "米国のEV専業メーカー。蓄電池や自動運転ソフトも手がける。",
+      "metrics": {
+        "revenue": { "value": 142245, "approx": true, "note": "948億ドル（前期比−3%）" },
+        "op": { "value": 6525, "approx": true, "note": "43.5億ドル（前期比−38%）" },
+        "units": { "value": 163.6, "period": "2025年", "note": "納車台数（−9%）" }
+      },
+      "points": [
+        "米国のEV税額控除の終了と中国勢との競争で、販売は2年連続で減少。BYDにEV世界一を明け渡した",
+        "蓄電池事業は+27%と好調"
+      ],
+      "tags": ["乗用車", "EVが主力"]
+    },
+    {
+      "id": "catl",
+      "name": "CATL（寧徳時代）",
+      "short": "CATL",
+      "group": "global_parts",
+      "region": "overseas",
+      "country": "中国",
+      "fy": "2025年12月期",
+      "tagline": "車載電池で世界最大",
+      "description": "車載用リチウムイオン電池で世界最大手。世界の自動車メーカーに電池を供給する。",
+      "metrics": {
+        "revenue": { "value": 88977, "approx": true, "note": "4,237億元（+17%）" }
+      },
+      "points": [
+        "純利益は722億元（+42%）"
+      ],
+      "tags": ["電池", "中国勢"]
+    }
+  ],
+  "relations": [
+    { "from": "toyota", "to": "daihatsu", "type": "subsidiary", "label": "100%" },
+    { "from": "toyota", "to": "subaru", "type": "equity", "label": "約20%（持分法）" },
+    { "from": "toyota", "to": "mazda", "type": "equity", "label": "約5%" },
+    { "from": "toyota", "to": "suzuki", "type": "equity", "label": "約5%（2019年〜）" },
+    { "from": "toyota", "to": "isuzu", "type": "equity", "label": "約5%" },
+    { "from": "toyota", "to": "archion", "type": "equity", "label": "議決権19.9%（2026年7月）" },
+    { "from": "toyota", "to": "denso", "type": "equity", "label": "トヨタグループ" },
+    { "from": "toyota", "to": "aisin", "type": "equity", "label": "トヨタグループ" },
+    { "from": "toyota_ind", "to": "toyota", "type": "other", "label": "トヨタの源流。2026年にグループで非公開化" },
+    { "from": "nissan", "to": "mitsubishi", "type": "equity", "label": "26.67%（筆頭株主）" },
+    { "from": "renault", "to": "nissan", "type": "equity", "label": "相互出資（最低10%に引き下げ）" },
+    { "from": "honda", "to": "astemo", "type": "subsidiary", "label": "61%に引き上げ（2026年）" },
+    { "from": "honda", "to": "nissan", "type": "other", "label": "2025年2月 経営統合協議が白紙に" },
+    { "from": "byd", "to": "toyota", "type": "alliance", "label": "中国でEVの共同開発会社" },
+    { "from": "hyundai", "to": "gm", "type": "alliance", "label": "車両の共同開発で提携" }
+  ],
+  "trends": [
+    {
+      "title": "米国関税（15%）",
+      "text": "2025年4月に日本車への追加関税（計27.5%）が発動され、9月に15%へ引き下げ。それでもトヨタは約1.4兆円、マツダは1,549億円、スバルは1,700億円の減益要因に。米国への輸出が多い会社ほど打撃が大きい。"
+    },
+    {
+      "title": "中東情勢・ホルムズ海峡の封鎖",
+      "text": "2026年3月からホルムズ海峡が事実上封鎖され、中東向けの完成車・部品の輸出が止まった（いすゞは3月に出荷できず）。プラスチックの原料ナフサやアルミの調達も混乱。トヨタは2027年3月期に6,700億円の減益要因と見込む。"
+    },
+    {
+      "title": "EV戦略の揺り戻し",
+      "text": "ホンダは北米EVの開発中止で1兆5,778億円の損失、フォードのEV部門は48億ドルの赤字、ステランティスは254億ユーロの特別損失。米国のEV税額控除が終わり、テスラも2年連続で販売減。各社がHV・PHEVに軸足を戻している。"
+    },
+    {
+      "title": "中国勢の台頭",
+      "text": "2025年、中国車の世界販売が初めて日本車を上回った。BYDはEVでテスラを抜いて世界一、海外販売も104万台に。中国は世界最大の自動車輸出国になり、東南アジアや中東でも日本車のシェアを奪う。日本でもBYDが軽EVを発売した。"
+    },
+    {
+      "title": "再編・提携の加速",
+      "text": "ホンダと日産の経営統合は白紙に。日野と三菱ふそうはARCHIONに統合、トヨタグループは豊田自動織機を非公開化、ホンダはAstemoを子会社化。日産は7工場を閉鎖し、追浜工場は2027年度末に車両生産を終える。"
+    },
+    {
+      "title": "国内市場：HVと軽が中心",
+      "text": "2025年の国内新車販売は456.6万台。登録乗用車の約6割がHVで、EV（PHEV含む）は約2.5%。軽自動車が約4割を占め、N-BOXが4年連続1位。物価高・金利上昇で買い替えを控える動きも出ている。"
+    },
+    {
+      "title": "半導体・レアアースのリスク",
+      "text": "2025年秋、中国資本の半導体会社ネクスペリアをめぐる混乱で車載半導体が不足し、ホンダの11月の世界生産は過去最低に。中国のレアアース（磁石）輸出管理も、モーターなどの調達リスクになっている。"
+    }
+  ],
+  "timeline": [
+    { "date": "1933", "text": "豊田自動織機製作所に自動車部ができる（1937年にトヨタ自動車工業として独立）。同年、日産の前身も創業" },
+    { "date": "1948", "text": "本田技研工業（ホンダ）創業" },
+    { "date": "1955", "text": "ヤマハ発動機が日本楽器製造から独立" },
+    { "date": "1999", "text": "ルノーが日産に36.8%出資し、カルロス・ゴーン氏が経営に参加" },
+    { "date": "2016", "text": "燃費不正のあった三菱自動車に日産が34%出資" },
+    { "date": "2019", "text": "トヨタがスズキと資本提携（約5%）、スバルへの出資を20%に" },
+    { "date": "2021", "text": "日立系とホンダ系の部品4社が統合し日立Astemo発足。いすゞがUDトラックスを買収" },
+    { "date": "2023", "text": "ダイハツの認証試験の不正が発覚し、全車種の出荷を停止" },
+    { "date": "2025年2月", "text": "ホンダと日産の経営統合協議が白紙に" },
+    { "date": "2025年4月", "text": "米国が日本車に追加関税（計27.5%、9月に15%へ）" },
+    { "date": "2025年5月", "text": "日産が再建計画「Re:Nissan」を発表（7工場閉鎖・2万人削減）" },
+    { "date": "2025年11月", "text": "ネクスペリア問題の半導体不足で、ホンダの世界生産が過去最低に" },
+    { "date": "2025年", "text": "BYDがEV販売でテスラを抜き世界一。中国車の世界販売が日本車を初めて上回る" },
+    { "date": "2026年3月", "text": "ホンダが北米EVの中止で1.6兆円の損失を計上。豊田自動織機のTOB（約5.9兆円）が成立。ホルムズ海峡が事実上封鎖される" },
+    { "date": "2026年4月", "text": "日野と三菱ふそうが統合しARCHIONとして上場" },
+    { "date": "2026年5月", "text": "トヨタの売上が日本企業で初めて50兆円を超える" },
+    { "date": "2026年7月", "text": "BYDが日本で軽EV「ラッコ」を発売" },
+    { "date": "2027年度末", "text": "日産・追浜工場の車両生産が終了する予定" }
+  ],
+  "notes": [
+    "売上高・営業利益は各社の直近の通期決算です。日本の完成車・部品・USS・オートバックスは2026年3月期、タイヤ3社とヤマハ発動機は2025年12月期、Astemoは2025年3月期、ダイハツは単体の数値です。",
+    "ホンダの営業利益（−4,143億円）は北米EV関連の損失1兆4,536億円を含みます。除くと1兆393億円です。",
+    "住友電工は自動車関連事業の数値です。タイヤ3社とブリヂストンの営業利益は「調整後営業利益」または「事業利益」です。",
+    "海外企業は2025年度の売上を1ドル=150円・1ユーロ=170円・1元=21円・100ウォン=10.5円で円換算した概算です。GM・フォードの営業利益は調整後EBIT、ステランティスは調整後営業損益です。",
+    "世界販売台数は2025年（暦年）の各社発表をもとにしています。子会社や中国合弁の含め方、出荷・小売など数え方が会社ごとに違うため、目安として見てください。"
+  ],
+  "sources": [
+    { "title": "トヨタ：2026年3月期 決算説明会資料", "url": "https://global.toyota/pages/global_toyota/ir/financial-results/2026_4q_presentation_2_jp.pdf" },
+    { "title": "日刊自動車新聞：トヨタの2026年3月期決算、日本企業初の売上高50兆円超え", "url": "https://www.netdenjd.com/archives/663573" },
+    { "title": "Honda：2026年3月期 決算説明会", "url": "https://global.honda/jp/investors/news/news20260514/main/0/link/FYE202603_4Q_financial_presentation_script_j_1.pdf" },
+    { "title": "日産：2026年3月期 決算短信", "url": "https://www.nissan-global.com/JP/IR/FINANCIAL_RESULTS/ASSETS/DATA/2025/20254th_financialresult_792_j.pdf" },
+    { "title": "スズキ：2026年3月期 決算説明会", "url": "https://www.suzuki.co.jp/ir/library/financialaffairs/pdf/2026_fin/presentation.pdf" },
+    { "title": "マツダ：2026年3月期 決算短信", "url": "https://www.mazda.com/content/dam/mazda/corporate/mazda-com/ja/pdf/investors/library/result/2026/result20260512_j.pdf" },
+    { "title": "三菱自動車：2026年3月期 決算短信", "url": "https://www.mitsubishi-motors.com/jp/investors/library/pdf/financial/2026/260508_FY25Q4_1j.pdf" },
+    { "title": "BSRweb：国産カーメーカー6社の中間決算（SUBARU・関税影響）", "url": "https://bsrweb.jp/article/316176?v=1792138352" },
+    { "title": "いすゞ：2026年3月期決算（トラックニュース）", "url": "https://www.trucknews.biz/article/s051308" },
+    { "title": "LOGISTICS TODAY：ARCHION、トヨタ・ダイムラー持分引き下げ", "url": "https://www.logi-today.com/973921" },
+    { "title": "デンソー：統合報告書2026", "url": "https://www.denso.com/jp/ja/-/media/Global/about-us/investors/annual-report/2026/annual-report-doc-2026-printing-ja.pdf?rev=d07f685659594bcb9d59ddfbe4b6b38f" },
+    { "title": "アイシン：2026年3月期 決算説明会", "url": "https://www.aisin.com/jp/investors/settlement/fy2026_q4_presentation-f-j_2.pdf" },
+    { "title": "CBC：豊田自動織機のTOB成立", "url": "https://newsdig.tbs.co.jp/articles/cbc/2551491?display=1" },
+    { "title": "Honda：Astemoの資本構成変更および連結子会社化について", "url": "https://global.honda/jp/news/2025/c251216.html" },
+    { "title": "ブリヂストン：2025年12月期 決算短信", "url": "https://www.bridgestone.co.jp/ir/library/result/pdf/r7_4.pdf" },
+    { "title": "ヤマハ発動機：2025年12月期 決算説明会", "url": "https://global.yamaha-motor.com/jp/ir/library/report/pdf/2025/2025explain.pdf" },
+    { "title": "日経：中国車、25年世界新車販売で首位", "url": "https://www.nikkei.com/article/DGXZQOUC167FD0W6A210C2000000" },
+    { "title": "Merkmal：2025年世界販売ランキング", "url": "https://merkmal-biz.jp/post/111105" },
+    { "title": "財経新聞：2025年 車名別販売ランキング", "url": "https://www.zaikei.co.jp/article/20260111/839288.html" },
+    { "title": "日本カーソリューションズ：2025年新車販売データ（HV比率・EV比率）", "url": "https://www.ncsol.co.jp/column/c_049/" },
+    { "title": "JETRO：中東の自動車動向（ホルムズ海峡封鎖の影響）", "url": "https://www.jetro.go.jp/biz/areareports/special/2026/0402/b8a8a2a2e4a69693.html" },
+    { "title": "日経：BYDの軽EV「ラッコ」、受注が2000台超", "url": "https://www.nikkei.com/article/DGXZQOUC195WR0Z11C26A0000000" },
+    { "title": "Volkswagen Group：Full Year Results 2025", "url": "https://www.volkswagen-group.com/en/press-releases/volkswagen-group-strengthens-financial-resilience-in-2025-strong-fourth-quarter-in-a-challenging-environment-20202" },
+    { "title": "Hyundai Motor：2025 Annual Business Results", "url": "https://www.hyundai.com/worldwide/en/newsroom/detail/0000001116.html" },
+    { "title": "GM：Q4 2025 Results", "url": "https://investor.gm.com/static-files/36170429-ef23-4ad5-97dd-6a523c3f8deb" },
+    { "title": "Ford：Fourth-Quarter, Full-Year 2025 Results", "url": "https://s205.q4cdn.com/882619693/files/doc_financials/2025/q4/Ford-Q4-2025-Earnings-Press-Release.pdf" },
+    { "title": "Stellantis：Full Year 2025 Results", "url": "https://www.stellantis.com/content/dam/stellantis-corporate/news/press-releases/2026/february/26-02-26/en/EN-20260226-Stellantis-FY-2025-Financial-Results.pdf" },
+    { "title": "CnEVPost：BYD 2025 full-year results", "url": "https://cnevpost.com/2026/03/27/byd-2025-full-year-results/" },
+    { "title": "Tesla revenue slips in 2025（Just Auto）", "url": "https://finance.yahoo.com/news/tesla-revenue-slips-2025-energy-163645200.html" },
+    { "title": "Geely Automobile：2025 Annual Results", "url": "https://www.geelyauto.com.hk/wp-content/uploads/2026/03/e_20260318_Press-Release_Geely_2025-Annual-Results.pdf" },
+    { "title": "CATL：2025 Annual Report", "url": "https://www.catl.com/en/news/6773.html" }
+  ]
+}
