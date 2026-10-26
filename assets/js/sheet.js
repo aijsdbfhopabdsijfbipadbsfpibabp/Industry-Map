@@ -91,10 +91,12 @@ export function renderSheet(sector, c) {
       ${url ? `<p><a class="ext" href="${esc(url)}" target="_blank" rel="noopener">公式サイト <span aria-hidden="true">↗</span></a></p>` : ''}
     </div>`;
   sheet.querySelector('.sheet-body').scrollTop = 0;
+  syncSpace();
 }
 
 export function openSheet() {
   if (!sheet.classList.contains('is-open')) lastFocus = document.activeElement;
+  applyHeight(userH);
   sheet.classList.add('is-open');
   sheet.setAttribute('aria-hidden', 'false');
   document.body.classList.add('sheet-open');
@@ -111,31 +113,117 @@ export function closeSheet() {
   lastFocus = null;
 }
 
-/** スマホ：つまみを下にスワイプで閉じる */
+/* ---------- スマホ：シートの高さを指で動かす ---------- */
+
+// ユーザーが決めた高さ（px）。null のあいだは内容に合わせて画面の58%まで
+let userH = null;
+
+/** いちばん上まで引き上げたときの高さ（上のバーの下まで） */
+function maxHeight() {
+  const bar = document.querySelector('.appbar');
+  const top = bar ? Math.max(0, bar.getBoundingClientRect().bottom) : 0;
+  return Math.max(220, window.innerHeight - top - 6);
+}
+
+/** いちばん下まで下げたときの高さ（つまみと会社名だけ見える） */
+function minHeight() {
+  const grab = sheet.querySelector('.sheet-grab');
+  return (grab ? grab.offsetHeight : 96) + 4;
+}
+
+function defaultHeight() {
+  return Math.min(Math.round(window.innerHeight * 0.58), maxHeight());
+}
+
+function applyHeight(h) {
+  if (isDesktop() || h == null) {
+    sheet.style.height = '';
+    sheet.style.maxHeight = '';
+  } else {
+    sheet.style.maxHeight = 'none';
+    sheet.style.height = `${Math.round(h)}px`;
+  }
+  // 高さはアニメーション中なので、余白は目標の高さで決める
+  syncSpace(h);
+}
+
+/** シートの裏に隠れた部分までページをスクロールできるよう、下の余白をシートの高さに合わせる */
+function syncSpace(h = isDesktop() ? null : userH) {
+  const px = h != null && !isDesktop() ? Math.round(h) : sheet.offsetHeight;
+  document.documentElement.style.setProperty('--sheet-space', `${px}px`);
+}
+
+/**
+ * つまみ（会社名のあたり）を上下にドラッグすると、離した高さでそのまま止まる。
+ * いちばん下より下まで下げる・素早く下に払うと閉じる。タップすると「いちばん上」と「標準」を切り替え。
+ */
 function setupDrag() {
   let startY = 0;
-  let dy = 0;
+  let startH = 0;
+  let lastY = 0;
+  let lastT = 0;
+  let velocity = 0; // 下向きがプラス（px/ms）
+  let moved = false;
   let dragging = false;
+
   sheet.addEventListener('pointerdown', (e) => {
     if (isDesktop() || !e.target.closest('.sheet-grab') || e.target.closest('button')) return;
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
     dragging = true;
-    startY = e.clientY;
-    dy = 0;
+    moved = false;
+    startY = lastY = e.clientY;
+    lastT = e.timeStamp;
+    velocity = 0;
+    startH = sheet.offsetHeight;
     sheet.classList.add('is-dragging');
     sheet.setPointerCapture(e.pointerId);
   });
+
   sheet.addEventListener('pointermove', (e) => {
     if (!dragging) return;
-    dy = Math.max(0, e.clientY - startY);
-    sheet.style.transform = `translateY(${dy}px)`;
+    const dy = e.clientY - startY;
+    if (Math.abs(dy) > 5) moved = true;
+    if (!moved) return;
+    const max = maxHeight();
+    let h = startH - dy;
+    if (h > max) h = max + (h - max) * 0.15; // 上限を超えたら少しだけ伸びる
+    h = Math.max(0, h);
+    sheet.style.maxHeight = 'none';
+    sheet.style.height = `${h}px`;
+    const dt = e.timeStamp - lastT;
+    if (dt > 0) velocity = 0.7 * ((e.clientY - lastY) / dt) + 0.3 * velocity;
+    lastY = e.clientY;
+    lastT = e.timeStamp;
   });
+
   const end = () => {
     if (!dragging) return;
     dragging = false;
     sheet.classList.remove('is-dragging');
-    sheet.style.transform = '';
-    if (dy > 90) handlers.onClose();
+    const max = maxHeight();
+    const min = minHeight();
+
+    if (!moved) {
+      // タップ：いちばん上 ⇔ 標準
+      userH = sheet.offsetHeight < max - 40 ? max : defaultHeight();
+      applyHeight(userH);
+      return;
+    }
+    const h = sheet.offsetHeight;
+    const flickDown = velocity > 1.1;
+    if (h < min * 0.7 || (flickDown && h < min * 1.8)) {
+      handlers.onClose();
+      return;
+    }
+    userH = Math.min(Math.max(h, min), max);
+    applyHeight(userH);
   };
   sheet.addEventListener('pointerup', end);
   sheet.addEventListener('pointercancel', end);
+
+  // 画面の回転・サイズ変更：はみ出さないように高さを直す
+  window.addEventListener('resize', () => {
+    if (userH != null && userH > maxHeight()) userH = maxHeight();
+    if (sheet.classList.contains('is-open')) applyHeight(userH);
+  });
 }
