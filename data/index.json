@@ -37,6 +37,41 @@
       "description": "王子・日本製紙の2強、家庭紙・段ボール・特殊紙、和紙の産地と原料まで"
     },
     {
+      "id": "chemicals",
+      "name": "化学",
+      "icon": "🧪",
+      "category": "素材",
+      "description": "三菱ケミカル・信越化学など総合化学・半導体材料から、産業ガス・塗料、BASFなど海外勢まで"
+    },
+    {
+      "id": "steel",
+      "name": "鉄鋼",
+      "icon": "🔩",
+      "category": "素材",
+      "description": "日本製鉄・JFE・神戸製鋼の高炉から電炉・特殊鋼、中国宝武・USスチールまで"
+    },
+    {
+      "id": "nonferrous",
+      "name": "非鉄金属",
+      "icon": "⛏️",
+      "category": "素材",
+      "description": "住友金属鉱山・三菱マテリアルなどの製錬から、電線（住友電工・フジクラ）・アルミまで"
+    },
+    {
+      "id": "textiles",
+      "name": "繊維",
+      "icon": "🧵",
+      "category": "素材",
+      "description": "東レ・帝人の合繊、紡績から変身した会社、今治・尾州・播州などの産地、ユニクロまで"
+    },
+    {
+      "id": "glass",
+      "name": "ガラス・セラミックス",
+      "icon": "🏺",
+      "category": "素材",
+      "description": "AGC・日本板硝子、セメント、京セラ・村田などのファインセラミックス、やきもの産地まで"
+    },
+    {
       "id": "auto",
       "name": "自動車",
       "icon": "🚗",

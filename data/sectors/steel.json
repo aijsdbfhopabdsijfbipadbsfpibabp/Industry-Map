@@ -1,0 +1,954 @@
+{
+  "name": "鉄鋼",
+  "icon": "🔩",
+  "category": "素材",
+  "updated": "2026-10-26",
+  "summary": "鉄鋼は、鉄鉱石と石炭（コークス）から高炉で鉄をつくる「高炉メーカー」と、鉄スクラップを電気で溶かす「電炉メーカー」、自動車部品などに使う「特殊鋼」に分かれる。国内の粗鋼（鉄の素材）の約46%を日本製鉄、約28%をJFEがつくる2強体制。\n国内の需要は減り続け、2025年度の粗鋼生産は8,033万tと4年連続で減った。2025年の暦年では米国に抜かれ、日本は世界4位になった。中国は国内の余った鉄を輸出し、2025年の鋼材輸出は1億1,902万tと過去最高。アジアの鋼材の値段が下がり、汎用品をつくる会社ほど苦しい。\nそのなかで日本製鉄は2025年6月に米国のUSスチールを買収し、粗鋼生産で世界3位に上がった。CO2を多く出す高炉から電炉への転換も、国の支援を受けて日本製鉄（八幡など3か所）・JFE（倉敷）が動き出している。",
+  "market": {
+    "jp": {
+      "label": "国内の粗鋼生産",
+      "value": "8,033万t",
+      "period": "2025年度",
+      "note": "前年度比−3.2%で4年連続の減少。2025年（暦年）は8,070万tで、米国（8,200万t）に抜かれ世界4位に",
+      "source": "日本鉄鋼連盟・worldsteel"
+    },
+    "global": {
+      "label": "世界の粗鋼生産",
+      "value": "18億4,940万t",
+      "period": "2025年",
+      "note": "中国が9億6,080万tで52%を占める。2位インド（1億6,490万t）は前年比+10.4%と伸びている",
+      "source": "worldsteel",
+      "url": "https://worldsteel.org/media/press-releases/2026/december-2025-crude-steel-production-2025-global-crude-steel-production"
+    }
+  },
+  "breakdowns": [
+    {
+      "title": "国内の粗鋼生産のシェア",
+      "period": "2025年度",
+      "unit": "万t",
+      "note": "日本製鉄の統合報告書のシェアを、国内粗鋼8,033万tに掛けた概算。日本製鉄・JFE・神戸製鋼の3社でおよそ8割",
+      "items": [
+        {
+          "label": "日本製鉄",
+          "value": 3695,
+          "share": 46,
+          "note": "単独の粗鋼は3,234万t。グループ会社を含むとシェア46%"
+        },
+        {
+          "label": "JFEスチール",
+          "value": 2249,
+          "share": 28,
+          "note": "単独2,137万t"
+        },
+        {
+          "label": "神戸製鋼所",
+          "value": 562,
+          "share": 7
+        },
+        {
+          "label": "電炉メーカーなど",
+          "value": 1526,
+          "share": 19,
+          "note": "東京製鐵・共英製鋼・合同製鐵など"
+        }
+      ],
+      "source": "日本製鉄 統合報告書2026",
+      "url": "https://www.nipponsteel.com/ir/library/pdf/nsc_jp_ir_2026_all.pdf"
+    },
+    {
+      "title": "世界の粗鋼生産（国別）",
+      "period": "2025年",
+      "unit": "万t",
+      "note": "合計18億4,940万t。中国は前年比−4.4%と減ったが、それでも世界の半分以上",
+      "items": [
+        {
+          "label": "中国",
+          "value": 96080
+        },
+        {
+          "label": "インド",
+          "value": 16490,
+          "note": "前年比+10.4%"
+        },
+        {
+          "label": "米国",
+          "value": 8200,
+          "note": "+3.1%"
+        },
+        {
+          "label": "日本",
+          "value": 8070,
+          "note": "−4.0%"
+        },
+        {
+          "label": "その他",
+          "value": 56100
+        }
+      ],
+      "source": "worldsteel",
+      "url": "https://worldsteel.org/media/press-releases/2026/december-2025-crude-steel-production-2025-global-crude-steel-production"
+    }
+  ],
+  "metrics": [
+    {
+      "key": "revenue",
+      "label": "売上高",
+      "unit": "億円",
+      "description": "直近の通期決算（多くは2026年3月期）。海外企業は2025年度を1ドル=150円・100ウォン=10.5円で円換算した概算。"
+    },
+    {
+      "key": "op",
+      "label": "営業利益",
+      "unit": "億円",
+      "description": "IFRSの日本製鉄・JFEは、一時的な損益を除いた「事業利益」を使っています。"
+    },
+    {
+      "key": "crude",
+      "label": "粗鋼生産量",
+      "unit": "万t",
+      "description": "2025年の粗鋼生産量（worldsteel、出資先を含むグループ合計）。"
+    }
+  ],
+  "sizeBy": "revenue",
+  "rankBy": "revenue",
+  "groups": [
+    {
+      "id": "blast",
+      "section": "日本の鉄鋼メーカー",
+      "name": "高炉メーカー",
+      "short": "高炉",
+      "color": "navy",
+      "description": "鉄鉱石と石炭（コークス）から高炉で鉄をつくり、自動車用の薄い鋼板・電磁鋼板・厚板など高級な鋼材までつくる一貫製鉄所を持つ3社"
+    },
+    {
+      "id": "eaf",
+      "section": "日本の鉄鋼メーカー",
+      "name": "電炉メーカー",
+      "short": "電炉",
+      "color": "sky",
+      "description": "鉄スクラップを電気で溶かして鉄筋・形鋼など建設向けの鋼材をつくる。CO2が高炉の約4分の1と少ない一方、建設需要と中国の安い鋼材に左右される"
+    },
+    {
+      "id": "special",
+      "section": "日本の鉄鋼メーカー",
+      "name": "特殊鋼",
+      "short": "特殊鋼",
+      "color": "lavender",
+      "description": "ニッケル・クロムなどを加えて強さや耐熱性を高めた鋼。エンジン・変速機の部品、ベアリング、金型などに使う。自動車向けが中心"
+    },
+    {
+      "id": "trade",
+      "section": "売る",
+      "name": "鉄鋼商社",
+      "short": "商社",
+      "color": "peach",
+      "description": "鋼材を仕入れて加工・販売する。独立系最大手の阪和興業"
+    },
+    {
+      "id": "global",
+      "section": "海外",
+      "name": "海外の鉄鋼メーカー",
+      "short": "海外",
+      "color": "gray",
+      "description": "世界最大の中国宝武、欧州・インドに強いアルセロール・ミタル、韓国のPOSCO、米国電炉最大手のニューコア、日本製鉄が買収したUSスチールなど"
+    }
+  ],
+  "tagGroups": [
+    {
+      "label": "つくり方・製品",
+      "tags": [
+        "高炉",
+        "電炉",
+        "特殊鋼",
+        "自動車向け",
+        "建設向け",
+        "電磁鋼板"
+      ]
+    },
+    {
+      "label": "注目",
+      "tags": [
+        "USスチール買収",
+        "中国の鋼材輸出",
+        "脱炭素（電炉転換）",
+        "海外で稼ぐ",
+        "中東ショック"
+      ]
+    }
+  ],
+  "insights": [
+    {
+      "title": "日本製鉄はUSスチールを買って世界一になった？",
+      "date": "2026-10-26",
+      "hypothesis": "日本製鉄はUSスチールの買収で、世界最大の鉄鋼メーカーになった。",
+      "verdict": "no",
+      "sections": [
+        {
+          "label": "大きくなったのは本当",
+          "items": [
+            "粗鋼生産は2024年の4,364万t（世界4位）から、2025年は5,778万t（世界3位）へ",
+            "2026年3月期の売上収益は10兆632億円で過去最高",
+            "世界の生産能力8,200万tを、将来1億tに増やす目標を掲げる"
+          ]
+        },
+        {
+          "label": "でも世界一ではない",
+          "items": [
+            "1位の中国宝武は1億2,476万tで、日本製鉄の2倍以上。2位はアルセロール・ミタル（6,343万t）",
+            "世界の上位20社のうち半分以上は中国の会社",
+            "純利益は171億円。米国の合弁（AM/NSカルバート）の解消で2,321億円の損失を出した（一時的な損益を除く実力利益は6,504億円）"
+          ]
+        },
+        {
+          "label": "これから",
+          "items": [
+            "USスチールの熱延設備などに投資して稼ぐ力を上げる。米国政府は買収の条件として「黄金株」を持つ",
+            "2027年3月期は実力利益7,000億円、純利益2,200億円を見込む",
+            "国内は八幡など3か所で高炉を電炉に置き換える（8,687億円、国の支援は最大2,514億円）"
+          ]
+        }
+      ],
+      "conclusion": "量では世界3位で、1位の中国宝武との差はまだ大きい。日本製鉄のねらいは「世界一の量」より、国内が縮むなかで米国・インドなど伸びる市場に足場を持ち、高級鋼で稼ぐことにある。",
+      "tag": "USスチール買収"
+    },
+    {
+      "title": "中国の鉄があふれて、日本の鉄鋼は負けている？",
+      "date": "2026-10-26",
+      "hypothesis": "中国の安い鉄が世界にあふれ、日本の鉄鋼メーカーはどこも苦しくなっている。",
+      "verdict": "partly",
+      "sections": [
+        {
+          "label": "合っている点",
+          "items": [
+            "中国の2025年の鋼材輸出は1億1,902万tで過去最高（それまでの最高は2015年の1億1,240万t）",
+            "アジアの鋼材の値段が下がり、電炉最大手の東京製鐵は売上−18%・営業利益−76%。2027年3月期は営業赤字を見込む",
+            "国内の粗鋼生産は4年連続で減少。JFEの2026年3月期の純利益は前期比−23.6%"
+          ]
+        },
+        {
+          "label": "負けていない会社もある",
+          "items": [
+            "大和工業は米国（ニューコアとの合弁）・タイなど海外で稼ぎ、海外比率は経常利益ベースで81%。純利益は2倍に",
+            "共英製鋼は海外売上が57%。国内でも鉄筋の約2割をつくる最大手",
+            "特殊鋼の大同特殊鋼は純利益+15%、愛知製鋼は売上が過去最高。電磁鋼板やハイテン（高張力鋼）など高級品は中国勢にまねされにくい"
+          ]
+        },
+        {
+          "label": "2026年の新しい逆風",
+          "items": [
+            "中東情勢で原油・原料炭が値上がり。神戸製鋼所は2026年4〜6月期に鉄鋼部門が赤字（経常損益▲77億円）になった",
+            "原料価格の上昇を鋼材の値段に転嫁しきれていない"
+          ]
+        }
+      ],
+      "conclusion": "汎用品を国内で売る会社ほど、中国の輸出と需要減の影響を強く受けている。反対に、海外に工場を持つ会社や、自動車向けの特殊鋼・高級鋼で勝負する会社は踏みとどまっている。「どこで・何を売るか」で明暗が分かれている。",
+      "tag": "中国の鋼材輸出"
+    }
+  ],
+  "companies": [
+    {
+      "id": "nipponsteel",
+      "name": "日本製鉄",
+      "kana": "にっぽんせいてつ",
+      "short": "日本製鉄",
+      "group": "blast",
+      "region": "jp",
+      "code": "5401",
+      "fy": "2026年3月期",
+      "tagline": "国内最大・世界3位。USスチールを買収",
+      "description": "官営八幡製鐵所の流れをくむ国内最大の鉄鋼メーカー。1970年の新日本製鐵の誕生、2012年の住友金属工業との合併を経て、2019年に日本製鉄へ。2025年6月に米国のUSスチールを約141億ドルで買収した。",
+      "metrics": {
+        "revenue": {
+          "value": 100632,
+          "note": "過去最高"
+        },
+        "op": {
+          "value": 5141,
+          "note": "事業利益。一時的な要素を除く実力利益は6,504億円、営業利益は2,429億円"
+        },
+        "crude": {
+          "value": 5778,
+          "period": "worldsteel 2025年（グループ合計）",
+          "note": "単独の粗鋼は3,234万t"
+        }
+      },
+      "brands": [
+        "USスチール（米国）",
+        "AM/NS India（インド・合弁）",
+        "山陽特殊製鋼",
+        "日鉄ステンレス"
+      ],
+      "points": [
+        "純利益は171億円。米国の合弁AM/NSカルバートの解消で2,321億円の損失",
+        "2027年3月期は実力利益7,000億円、純利益2,200億円を見込む",
+        "八幡・広畑・山口（周南）で高炉から電炉へ転換（8,687億円）。八幡の戸畑第4高炉は2030年度上期に休止予定",
+        "完全子会社の山陽特殊製鋼を2027年4月に吸収合併する予定"
+      ],
+      "facts": [
+        {
+          "label": "国内粗鋼シェア",
+          "value": "46%（2025年度）"
+        },
+        {
+          "label": "起源",
+          "value": "1901年 官営八幡製鐵所"
+        }
+      ],
+      "url": "https://www.nipponsteel.com/",
+      "tags": [
+        "高炉",
+        "自動車向け",
+        "電磁鋼板",
+        "USスチール買収",
+        "脱炭素（電炉転換）",
+        "海外で稼ぐ"
+      ]
+    },
+    {
+      "id": "jfe",
+      "name": "JFEホールディングス",
+      "kana": "じぇいえふいー",
+      "short": "JFE",
+      "group": "blast",
+      "region": "jp",
+      "code": "5411",
+      "fy": "2026年3月期",
+      "tagline": "国内2位。鉄鋼・エンジニアリング・商社の3本柱",
+      "description": "2002年に川崎製鉄とNKK（日本鋼管）が経営統合して発足。JFEスチール・JFEエンジニアリング・JFE商事を持つ。",
+      "metrics": {
+        "revenue": {
+          "value": 45393
+        },
+        "op": {
+          "value": 1353,
+          "note": "事業利益。在庫評価の影響などを除くと1,663億円"
+        },
+        "crude": {
+          "value": 2269,
+          "period": "worldsteel 2025年（グループ合計）",
+          "note": "単独の粗鋼は2,137万t"
+        }
+      },
+      "brands": [
+        "JFEスチール",
+        "JFEエンジニアリング",
+        "JFE商事"
+      ],
+      "points": [
+        "2026年3月期の純利益は702億円（前期比−23.6%）。2027年3月期は事業利益2,150億円・純利益1,500億円を見込む",
+        "倉敷（岡山）に世界最大級の「革新電気炉」を建設中（3,294億円、国の支援は最大1,045億円）。2028年度に稼働し、電磁鋼板などの高級鋼もつくる計画",
+        "国内は高炉を減らして生産能力を2,100万t程度に絞り、インドなど成長地域に投資する"
+      ],
+      "url": "https://www.jfe-holdings.co.jp/",
+      "tags": [
+        "高炉",
+        "自動車向け",
+        "電磁鋼板",
+        "脱炭素（電炉転換）"
+      ]
+    },
+    {
+      "id": "kobe",
+      "name": "神戸製鋼所",
+      "kana": "こうべせいこうしょ",
+      "short": "神戸製鋼",
+      "group": "blast",
+      "region": "jp",
+      "code": "5406",
+      "fy": "2026年3月期",
+      "tagline": "鉄・アルミ・機械・電力の複合経営",
+      "description": "鉄鋼のほか、アルミ・銅、建設機械（コベルコ建機）、圧縮機などの機械、発電所（電力事業）を持つ。自動車のエンジン部品に使う線材に強い。",
+      "metrics": {
+        "revenue": {
+          "value": 24366
+        },
+        "op": {
+          "value": 1299
+        }
+      },
+      "brands": [
+        "KOBELCO",
+        "コベルコ建機"
+      ],
+      "points": [
+        "2026年3月期は機械部門が過去最高益。純利益は937億円。アルミ板の設備で209億円の減損",
+        "2026年4〜6月期は原料炭の値上がりで鉄鋼部門が赤字（経常損益▲77億円）",
+        "国内粗鋼シェアは約7%"
+      ],
+      "url": "https://www.kobelco.co.jp/",
+      "tags": [
+        "高炉",
+        "自動車向け",
+        "中東ショック"
+      ]
+    },
+    {
+      "id": "tokyosteel",
+      "name": "東京製鐵",
+      "kana": "とうきょうせいてつ",
+      "short": "東京製鐵",
+      "group": "eaf",
+      "region": "jp",
+      "code": "5423",
+      "fy": "2026年3月期",
+      "tagline": "電炉の最大手。中国の安値で赤字見通し",
+      "description": "鉄スクラップから鋼材をつくる電炉の最大手。高炉メーカーと同じ熱延コイルなどの薄板もつくり、CO2の少ない鉄として売り込む。",
+      "metrics": {
+        "revenue": {
+          "value": 2681,
+          "note": "前期比−18%"
+        },
+        "op": {
+          "value": 72,
+          "note": "前期比−76%"
+        }
+      },
+      "points": [
+        "出荷量は295万tから276万tに減り、1tあたりの売値も10万6,700円から9万4,300円に下落",
+        "中国からの安い鋼材と、建築工事の遅れが響いた",
+        "2027年3月期は営業損益▲40億円の赤字を見込む"
+      ],
+      "url": "https://www.tokyosteel.co.jp/",
+      "tags": [
+        "電炉",
+        "建設向け",
+        "中国の鋼材輸出"
+      ]
+    },
+    {
+      "id": "yamato",
+      "name": "大和工業",
+      "kana": "やまとこうぎょう",
+      "short": "大和工業",
+      "group": "eaf",
+      "region": "jp",
+      "code": "5444",
+      "fy": "2026年3月期",
+      "tagline": "海外で稼ぐ電炉。純利益は売上の4割",
+      "description": "兵庫・姫路の電炉メーカー。米国（ニューコアとの合弁）・タイ・韓国などに出資し、利益の大半を海外で稼ぐ。",
+      "metrics": {
+        "revenue": {
+          "value": 1604
+        },
+        "op": {
+          "value": 45,
+          "note": "海外の利益は持分法投資利益（474億円）として営業外に入る"
+        }
+      },
+      "points": [
+        "経常利益652億円、純利益623億円（前期比+96%）",
+        "海外比率（経常利益ベース）は81%",
+        "中東事業から撤退し、総販売数量は376万t（−30.9%）"
+      ],
+      "url": "https://www.yamatokogyo.co.jp/",
+      "tags": [
+        "電炉",
+        "建設向け",
+        "海外で稼ぐ"
+      ]
+    },
+    {
+      "id": "kyoei",
+      "name": "共英製鋼",
+      "kana": "きょうえいせいこう",
+      "short": "共英製鋼",
+      "group": "eaf",
+      "region": "jp",
+      "code": "5440",
+      "fy": "2026年3月期",
+      "tagline": "鉄筋の国内最大手。ベトナム・北米に工場",
+      "description": "建物のコンクリートに入れる鉄筋で国内シェア約19%の最大手。ベトナム3拠点・米国・カナダに工場を持ち、海外売上が57%。医療廃棄物の処理などリサイクル事業も。",
+      "metrics": {
+        "revenue": {
+          "value": 3151
+        },
+        "op": {
+          "value": 170
+        }
+      },
+      "points": [
+        "純利益は99億円",
+        "鉄スクラップの使用量は年約147万t"
+      ],
+      "url": "https://www.kyoeisteel.co.jp/",
+      "tags": [
+        "電炉",
+        "建設向け",
+        "海外で稼ぐ"
+      ]
+    },
+    {
+      "id": "godo",
+      "name": "合同製鐵",
+      "kana": "ごうどうせいてつ",
+      "short": "合同製鐵",
+      "group": "eaf",
+      "region": "jp",
+      "code": "5410",
+      "fy": "2026年3月期",
+      "tagline": "電炉大手。鉄筋・形鋼",
+      "description": "鉄筋・形鋼など建設向けの鋼材をつくる電炉大手。",
+      "metrics": {
+        "revenue": {
+          "value": 1918
+        },
+        "op": {
+          "value": 98,
+          "note": "前期比−28.6%"
+        }
+      },
+      "points": [
+        "純利益は81億円（−28.9%）。2027年3月期は営業利益65億円を見込む"
+      ],
+      "url": "https://www.godo-steel.co.jp/",
+      "tags": [
+        "電炉",
+        "建設向け"
+      ]
+    },
+    {
+      "id": "daidosteel",
+      "name": "大同特殊鋼",
+      "kana": "だいどうとくしゅこう",
+      "short": "大同特殊鋼",
+      "group": "special",
+      "region": "jp",
+      "code": "5471",
+      "fy": "2026年3月期",
+      "tagline": "特殊鋼の最大手。自動車向けが主力",
+      "description": "名古屋の特殊鋼最大手。エンジン・変速機の部品になる特殊鋼、金型用の鋼、磁石材料などを手がける。電気炉の設備（エンジニアリング）も売る。",
+      "metrics": {
+        "revenue": {
+          "value": 5781
+        },
+        "op": {
+          "value": 421
+        }
+      },
+      "points": [
+        "純利益は326億円（+15.2%）",
+        "日本製鉄の広畑（姫路）の電炉転換で、電気炉プラントのエンジニアリングを受注"
+      ],
+      "url": "https://www.daido.co.jp/",
+      "tags": [
+        "特殊鋼",
+        "自動車向け",
+        "電炉"
+      ]
+    },
+    {
+      "id": "aichisteel",
+      "name": "愛知製鋼",
+      "kana": "あいちせいこう",
+      "short": "愛知製鋼",
+      "group": "special",
+      "region": "jp",
+      "code": "5482",
+      "fy": "2026年3月期",
+      "tagline": "トヨタグループの特殊鋼メーカー",
+      "description": "1940年に豊田自動織機の製鋼部から独立したトヨタグループの特殊鋼メーカー。自動車用の特殊鋼・鍛造品、磁石などをつくる。",
+      "metrics": {
+        "revenue": {
+          "value": 3043,
+          "note": "過去最高"
+        },
+        "op": {
+          "value": 174,
+          "note": "前期比+44.6%"
+        }
+      },
+      "url": "https://www.aichi-steel.co.jp/",
+      "tags": [
+        "特殊鋼",
+        "自動車向け"
+      ]
+    },
+    {
+      "id": "sanyosteel",
+      "name": "山陽特殊製鋼",
+      "kana": "さんようとくしゅせいこう",
+      "short": "山陽特殊製鋼",
+      "group": "special",
+      "region": "jp",
+      "fy": "2026年3月期",
+      "tagline": "ベアリング鋼の大手。日本製鉄に吸収合併へ",
+      "description": "兵庫・姫路の特殊鋼メーカーで、ベアリング（軸受）に使う鋼に強い。日本製鉄の完全子会社で、2027年4月1日に日本製鉄に吸収合併される予定。",
+      "metrics": {
+        "revenue": {
+          "value": 3418,
+          "note": "販売数量は前期比+12%"
+        }
+      },
+      "url": "https://www.sanyo-steel.co.jp/",
+      "tags": [
+        "特殊鋼",
+        "自動車向け"
+      ]
+    },
+    {
+      "id": "hanwa",
+      "name": "阪和興業",
+      "kana": "はんわこうぎょう",
+      "short": "阪和興業",
+      "group": "trade",
+      "region": "jp",
+      "code": "8078",
+      "fy": "2026年3月期",
+      "tagline": "独立系の鉄鋼商社最大手。売上2.7兆円",
+      "description": "大阪発祥の独立系の鉄鋼商社。鉄鋼のほか、ニッケルなどの非鉄金属、リサイクルメタル、食品、エネルギーまで扱う。",
+      "metrics": {
+        "revenue": {
+          "value": 26626
+        },
+        "op": {
+          "value": 584
+        }
+      },
+      "points": [
+        "純利益は383億円（−15.9%）。アルミなどリサイクルメタルの採算が悪化",
+        "2027年3月期は売上3兆円を見込む"
+      ],
+      "url": "https://www.hanwa.co.jp/",
+      "tags": [
+        "建設向け"
+      ]
+    },
+    {
+      "id": "baowu",
+      "name": "中国宝武鋼鉄集団",
+      "short": "中国宝武",
+      "group": "global",
+      "region": "overseas",
+      "country": "中国",
+      "tagline": "世界最大の鉄鋼グループ",
+      "description": "上海の宝鋼と武漢の武鋼が2016年に統合してできた国有の鉄鋼グループ。その後も国内の鉄鋼会社を次々に傘下に入れた。",
+      "metrics": {
+        "crude": {
+          "value": 12476,
+          "period": "worldsteel 2025年（グループ合計）"
+        }
+      },
+      "tags": [
+        "高炉",
+        "中国の鋼材輸出"
+      ]
+    },
+    {
+      "id": "arcelormittal",
+      "name": "アルセロール・ミタル",
+      "short": "アルセロール・ミタル",
+      "group": "global",
+      "region": "overseas",
+      "country": "ルクセンブルク",
+      "fy": "2025年12月期",
+      "tagline": "世界2位。欧州・インド・米州に工場",
+      "description": "インド出身のミタル家が率いる世界2位の鉄鋼グループ。日本製鉄とインドで合弁（AM/NS India）を組む。",
+      "metrics": {
+        "revenue": {
+          "value": 92100,
+          "approx": true,
+          "note": "614億ドル"
+        },
+        "crude": {
+          "value": 6343,
+          "period": "worldsteel 2025年（グループ合計）"
+        }
+      },
+      "url": "https://corporate.arcelormittal.com/",
+      "tags": [
+        "高炉",
+        "海外で稼ぐ"
+      ]
+    },
+    {
+      "id": "ansteel",
+      "name": "鞍鋼集団",
+      "short": "鞍鋼",
+      "group": "global",
+      "region": "overseas",
+      "country": "中国",
+      "tagline": "世界4位。中国東北の国有鉄鋼",
+      "description": "遼寧省・鞍山を本拠とする国有の鉄鋼グループ。2025年は日本製鉄に抜かれて4位に。",
+      "metrics": {
+        "crude": {
+          "value": 5761,
+          "period": "worldsteel 2025年（グループ合計）"
+        }
+      },
+      "tags": [
+        "高炉"
+      ]
+    },
+    {
+      "id": "posco",
+      "name": "POSCOホールディングス",
+      "short": "POSCO",
+      "group": "global",
+      "region": "overseas",
+      "country": "韓国",
+      "fy": "2025年12月期",
+      "tagline": "韓国最大の鉄鋼メーカー。電池材料にも",
+      "description": "1968年創業の韓国の鉄鋼最大手。日本の技術協力で建てた浦項製鉄所が出発点。いまはリチウムなど電池材料にも力を入れる。",
+      "metrics": {
+        "revenue": {
+          "value": 72555,
+          "approx": true,
+          "note": "69.1兆ウォン"
+        },
+        "op": {
+          "value": 1918,
+          "approx": true,
+          "note": "1.83兆ウォン"
+        }
+      },
+      "url": "https://www.posco-inc.com/",
+      "tags": [
+        "高炉"
+      ]
+    },
+    {
+      "id": "nucor",
+      "name": "ニューコア",
+      "short": "ニューコア",
+      "group": "global",
+      "region": "overseas",
+      "country": "米国",
+      "fy": "2025年12月期",
+      "tagline": "米国最大の鉄鋼メーカー。電炉で成長",
+      "description": "鉄スクラップを使う電炉で米国最大の鉄鋼メーカーになった。大和工業と米国で合弁（ニューコア・ヤマト・スチール）を持つ。",
+      "metrics": {
+        "revenue": {
+          "value": 48735,
+          "approx": true,
+          "note": "324.9億ドル"
+        }
+      },
+      "points": [
+        "2025年の純利益は17.4億ドル。製鋼所の稼働率は83%に上がった"
+      ],
+      "url": "https://nucor.com/",
+      "tags": [
+        "電炉"
+      ]
+    },
+    {
+      "id": "ussteel",
+      "name": "USスチール",
+      "short": "USスチール",
+      "group": "global",
+      "region": "overseas",
+      "country": "米国",
+      "tagline": "米国の名門。2025年から日本製鉄の完全子会社",
+      "description": "1901年創業の米国の名門鉄鋼会社。2025年6月に日本製鉄が約141億ドルで買収した。米国政府は経営の重要事項に関わる「黄金株」を持つ。",
+      "points": [
+        "日本製鉄は熱延設備の増強などに投資する計画"
+      ],
+      "url": "https://www.ussteel.com/",
+      "tags": [
+        "高炉",
+        "電炉",
+        "USスチール買収"
+      ]
+    },
+    {
+      "id": "jsw",
+      "name": "JSWスチール",
+      "short": "JSW",
+      "group": "global",
+      "region": "overseas",
+      "country": "インド",
+      "tagline": "成長するインドの鉄鋼大手",
+      "description": "インドの民間鉄鋼大手。インドの粗鋼生産は2025年に前年比+10%と大きく伸びている。JFEとインドで電磁鋼板の合弁事業を進める。",
+      "metrics": {
+        "crude": {
+          "value": 3028,
+          "period": "worldsteel 2025年（グループ合計）"
+        }
+      },
+      "url": "https://www.jsw.in/",
+      "tags": [
+        "高炉",
+        "電磁鋼板"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from": "nipponsteel",
+      "to": "ussteel",
+      "type": "subsidiary",
+      "label": "100%（2025年6月に買収）"
+    },
+    {
+      "from": "nipponsteel",
+      "to": "sanyosteel",
+      "type": "subsidiary",
+      "label": "100%（2027年4月に吸収合併予定）"
+    },
+    {
+      "from": "nipponsteel",
+      "to": "arcelormittal",
+      "type": "alliance",
+      "label": "インドで合弁（AM/NS India）"
+    },
+    {
+      "from": "yamato",
+      "to": "nucor",
+      "type": "alliance",
+      "label": "米国で合弁（ニューコア・ヤマト）"
+    },
+    {
+      "from": "jfe",
+      "to": "jsw",
+      "type": "alliance",
+      "label": "インドで電磁鋼板の合弁"
+    }
+  ],
+  "trends": [
+    {
+      "title": "縮む国内需要",
+      "text": "国内の粗鋼生産は2025年度に8,033万tと4年連続で減少。人口減に加え、建設現場の人手不足で工事が遅れ、鉄筋・形鋼の需要も弱い。"
+    },
+    {
+      "title": "中国の輸出攻勢",
+      "text": "中国の鋼材輸出は2025年に1億1,902万tと過去最高。アジアの鋼材価格が下がり、汎用品をつくる電炉メーカーの採算が悪化している。"
+    },
+    {
+      "title": "高炉から電炉へ",
+      "text": "鉄鋼は日本のCO2排出の約13%を占める。日本製鉄（8,687億円）とJFE（3,294億円）が国の支援を受けて高炉を電炉に置き換え、2028〜29年度に稼働させる。課題は電炉で自動車用などの高級鋼をつくる技術と、安い電力の確保。"
+    },
+    {
+      "title": "海外で成長",
+      "text": "日本製鉄はUSスチール・インドのAM/NS India、大和工業は米国・タイ、共英製鋼はベトナム・北米など、国内が縮むぶん海外で稼ぐ。"
+    },
+    {
+      "title": "原料高と中東情勢",
+      "text": "2026年は原油・原料炭が値上がりし、神戸製鋼所の鉄鋼部門が4〜6月期に赤字に。原料の値上がりを鋼材の値段に転嫁しきれるかが焦点。"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "1901",
+      "text": "官営八幡製鐵所が操業開始。日本の近代製鉄の始まり"
+    },
+    {
+      "date": "1970",
+      "text": "八幡製鐵と富士製鐵が合併し、新日本製鐵が誕生"
+    },
+    {
+      "date": "2002",
+      "text": "川崎製鉄とNKKが経営統合しJFEホールディングスが発足"
+    },
+    {
+      "date": "2012",
+      "text": "新日本製鐵と住友金属工業が合併し新日鐵住金に（2019年に日本製鉄へ社名変更）"
+    },
+    {
+      "date": "2015",
+      "text": "中国の鋼材輸出が1億1,240万tに（当時の最高）"
+    },
+    {
+      "date": "2025年4〜5月",
+      "text": "JFE（倉敷）と日本製鉄（八幡・広畑・周南）が、国の支援を受けて高炉から電炉への転換投資を決定"
+    },
+    {
+      "date": "2025年6月",
+      "text": "日本製鉄がUSスチールの買収を完了"
+    },
+    {
+      "date": "2025",
+      "text": "中国の鋼材輸出が1億1,902万tで過去最高。日本の粗鋼生産は米国に抜かれ世界4位に"
+    },
+    {
+      "date": "2026年4月",
+      "text": "日本製鉄が八幡で電炉への転換工事に着工"
+    },
+    {
+      "date": "2027年4月",
+      "text": "日本製鉄が山陽特殊製鋼を吸収合併する予定"
+    },
+    {
+      "date": "2028年度",
+      "text": "JFEの倉敷の革新電気炉が稼働する予定（日本製鉄の3拠点は2028年度後半〜2029年度後半）"
+    }
+  ],
+  "notes": [
+    "売上高・営業利益は各社の直近の通期決算（多くは2026年3月期）。日本製鉄・JFEは一時的な損益を除いた「事業利益」です。",
+    "粗鋼生産量はworldsteelの2025年の集計（出資比率に応じて子会社・合弁を含むグループ合計）。日本製鉄にはUSスチールなどが含まれます。",
+    "海外企業は2025年度を1ドル=150円・100ウォン=10.5円で円換算した概算です。中国の国有企業は売上を載せていません。"
+  ],
+  "sources": [
+    {
+      "title": "worldsteel：Top steel-producing companies 2025/2024",
+      "url": "https://worldsteel.org/data/top-steel-producers"
+    },
+    {
+      "title": "worldsteel：2025年の世界粗鋼生産",
+      "url": "https://worldsteel.org/media/press-releases/2026/december-2025-crude-steel-production-2025-global-crude-steel-production"
+    },
+    {
+      "title": "日本製鉄：統合報告書2026",
+      "url": "https://www.nipponsteel.com/ir/library/pdf/nsc_jp_ir_2026_all.pdf"
+    },
+    {
+      "title": "日本製鉄：九州製鉄所八幡地区 電炉プロセス転換工事に着工",
+      "url": "https://www.nipponsteel.com/newsroom/news/2026/20260415_100.html"
+    },
+    {
+      "title": "日本経済新聞：日本製鉄、電炉に8600億円",
+      "url": "https://www.nikkei.com/article/DGXZQOUC3057H0Q5A530C2000000"
+    },
+    {
+      "title": "JFEホールディングス：2026年3月期 決算説明会",
+      "url": "https://www.jfe-holdings.co.jp/common/pdf/investor/library/top/2025/2025-setumei260508-02.pdf"
+    },
+    {
+      "title": "JFEスチール：革新電気炉の導入決定について",
+      "url": "https://www.jfe-steel.co.jp/release/2025/04/250410-1.html"
+    },
+    {
+      "title": "神戸製鋼所：2026年3月期 決算",
+      "url": "https://www.kobelco.co.jp/english/ir/results/pdf/260511_4q.pdf"
+    },
+    {
+      "title": "日本経済新聞：神戸製鋼所の純利益68%減 4〜6月、鉄鋼事業が赤字転落",
+      "url": "https://www.nikkei.com/article/DGXZQOUB0398K0T00C26A8000000"
+    },
+    {
+      "title": "インベストーク：東京製鐵 2026年3月期",
+      "url": "https://investalk.jp/5423/tokyosteel-2026-03-earnings/"
+    },
+    {
+      "title": "インベストーク：大和工業 2026年3月期",
+      "url": "https://investalk.jp/5444/yamato-kogyo-2026-03-earnings"
+    },
+    {
+      "title": "共英製鋼：数字でわかる共英製鋼",
+      "url": "https://www.kyoeisteel.co.jp/ja/ir/individual/number.html"
+    },
+    {
+      "title": "大同特殊鋼：2026年3月期 決算短信",
+      "url": "https://www.daido.co.jp/common/pdf/pages/ir/library/result/2603_4q.pdf"
+    },
+    {
+      "title": "阪和興業：株主・投資家の皆様へ",
+      "url": "https://www.hanwa.co.jp/ir/greeting"
+    },
+    {
+      "title": "Mysteel：China's steel exports in '25 hit record high of 119 million t",
+      "url": "https://www.mysteel.net/news/5110103-gacc-chinas-steel-exports-in-25-hit-record-high-of-119-million-t"
+    },
+    {
+      "title": "ArcelorMittal：2025年通期決算",
+      "url": "https://www.globenewswire.com/news-release/2026/02/05/3232631/0/en/ArcelorMittal-reports-fourth-quarter-2025-and-full-year-2025-results.html"
+    },
+    {
+      "title": "Nucor：2025 Annual Report",
+      "url": "https://s202.q4cdn.com/531038915/files/doc_financials/2026/ar/2025-Nucor-Annual-Report.pdf"
+    },
+    {
+      "title": "POSCO：2025年決算",
+      "url": "https://newsroom.posco.com/en/posco-holdings-posts-krw-69-trillion-in-2025-sales-eyes-profit-rebound-with-lithium-production-and-overseas-steel-expansion/"
+    }
+  ]
+}
