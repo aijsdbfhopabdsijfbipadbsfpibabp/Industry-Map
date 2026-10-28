@@ -187,7 +187,17 @@ function renderHero() {
       </div>
     </div>
     ${s.summary ? `<p class="hero-summary">${esc(s.summary.split(/\n+/)[0])}</p>` : ''}
-    <div class="stats">${stats.join('')}</div>`;
+    <div class="stats">${stats.join('')}</div>
+    ${s.focusWorld && state.region === 'jp' ? worldCallout(s) : ''}`;
+}
+
+/** 海外が中心の業界を「日本」表示で開いたときの案内 */
+function worldCallout(s) {
+  const ov = s.companies.filter((c) => c.region === 'overseas').length;
+  return `<div class="hero-world">
+    <p>この業界は<b>海外の会社が中心</b>です（海外${ov}社）。いまは日本の会社だけを表示しています。</p>
+    <button type="button" class="hero-world-btn" data-set-region="world">世界で見る</button>
+  </div>`;
 }
 
 function statHtml(m, world) {
@@ -388,6 +398,10 @@ async function boot() {
   els.viewSwitch.addEventListener('click', (e) => {
     const b = e.target.closest('[data-view]');
     if (b && b.dataset.view !== state.view) navigate({ view: b.dataset.view }, { replace: true });
+  });
+  els.hero.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-set-region]');
+    if (b) setRegion(b.dataset.setRegion);
   });
   document.querySelector('.region').addEventListener('click', (e) => {
     const b = e.target.closest('[data-region]');

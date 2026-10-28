@@ -233,6 +233,7 @@ export function normalizeSector(raw, meta) {
     category: raw.category || meta.category,
     updated: raw.updated || '',
     summary: raw.summary || '',
+    focusWorld: raw.focus === 'world', // 海外が中心の業界（「日本」表示のときに「世界」への切り替えを案内する）
     market,
     metrics,
     metricMap,
@@ -252,6 +253,7 @@ export function normalizeSector(raw, meta) {
         note: b.note || '',
         source: b.source || '',
         url: b.url || '',
+        showShare: b.showShare !== false, // false にすると「合計に対する割合」を出さない（ブランド別の売上の並びなど）
         items: b.items.filter((it) => it && it.label && typeof it.value === 'number').map((it) => ({ label: it.label, value: it.value, share: typeof it.share === 'number' ? it.share : null, note: it.note || '' })),
       })),
     trends: (Array.isArray(raw.trends) ? raw.trends : []).map((t) => (typeof t === 'string' ? { title: t, text: '' } : t)).filter((t) => t && t.title),

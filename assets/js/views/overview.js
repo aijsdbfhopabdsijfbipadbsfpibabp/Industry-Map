@@ -55,7 +55,7 @@ export function renderOverview(root, ctx) {
       <ul class="bd">${b.items
         .map((it) => {
           const share = it.share ?? (total ? (it.value / total) * 100 : 0);
-          return `<li><span class="bd-label">${esc(it.label)}</span><span class="bd-bar"><i style="width:${((it.value / max) * 100).toFixed(1)}%"></i></span><span class="bd-val">${esc(formatValue(it.value, { unit: b.unit }))}<small>${share.toFixed(1)}%</small></span>${it.note ? `<span class="bd-note">${esc(it.note)}</span>` : ''}</li>`;
+          return `<li><span class="bd-label">${esc(it.label)}</span><span class="bd-bar"><i style="width:${((it.value / max) * 100).toFixed(1)}%"></i></span><span class="bd-val">${esc(formatValue(it.value, { unit: b.unit }))}${b.showShare ? `<small>${share.toFixed(1)}%</small>` : ''}</span>${it.note ? `<span class="bd-note">${esc(it.note)}</span>` : ''}</li>`;
         })
         .join('')}</ul>
       ${b.note || src ? `<p class="small muted" style="margin-top:8px">${esc(b.note)}${b.note && src ? ' ／ ' : ''}${src ? `出典：${src}` : ''}</p>` : ''}
