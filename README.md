@@ -33,10 +33,10 @@ python3 -m http.server 8000
 3. `data/index.json` の `sectors` に1行足す
 
 ```json
-{ "id": "convenience", "name": "コンビニ", "icon": "🏪", "category": "小売", "description": "一覧に出る短い説明" }
+{ "id": "convenience", "name": "コンビニ", "kana": "こんびに", "icon": "🏪", "category": "小売", "description": "一覧に出る短い説明" }
 ```
 
-`id` とファイル名をそろえるのがポイントです。並び順は `index.json` の順番どおりにタブに出ます。
+`id` とファイル名をそろえるのがポイントです。タブは `kana`（業界名のよみがな）のあいうえお順に自動で並びます。
 
 JSON の書き間違いがあると画面にエラーが出ます。企業のグループ名の打ち間違いなど、細かい不整合は「概要」タブの一番下に「データのチェック」として表示されます。
 

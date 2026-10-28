@@ -71,7 +71,7 @@ async function renderBody() {
     return;
   }
 
-  const sectorHits = index.sectors.filter((s) => normalizeText(`${s.name}${s.category}${s.description}`).includes(q));
+  const sectorHits = index.sectors.filter((s) => normalizeText(`${s.name}${s.kana}${s.category}${s.description}`).includes(q));
   const companyHits = [];
   await loadAllSectors(index);
   if (normalizeText(input.value) !== q) return; // 入力が変わっていたら破棄

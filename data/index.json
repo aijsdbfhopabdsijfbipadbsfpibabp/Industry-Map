@@ -2,88 +2,100 @@
   "title": "業界地図",
   "sectors": [
     {
-      "id": "cosmetics",
-      "name": "化粧品",
-      "icon": "💄",
-      "category": "生活・消費財",
-      "description": "資生堂・コーセー・花王、訪販・通販・製薬系、OEM、海外勢まで"
-    },
-    {
-      "id": "gyudon",
-      "name": "牛丼",
-      "icon": "🍚",
-      "category": "外食",
-      "description": "すき家・吉野家・松屋の3強と、グループ業態・海外展開"
-    },
-    {
-      "id": "toys",
-      "name": "おもちゃ",
-      "icon": "🧸",
-      "category": "エンタメ・ホビー",
-      "description": "バンダイナムコ・タカラトミー、トレカ、キャラクター、海外大手"
-    },
-    {
-      "id": "semiconductors",
-      "name": "半導体",
-      "icon": "🔬",
-      "category": "テクノロジー",
-      "description": "エヌビディア・TSMCから、日本の装置・材料、ラピダスまで"
-    },
-    {
-      "id": "paper",
-      "name": "紙・パルプ（和紙）",
-      "icon": "📜",
-      "category": "素材",
-      "description": "王子・日本製紙の2強、家庭紙・段ボール・特殊紙、和紙の産地と原料まで"
-    },
-    {
-      "id": "chemicals",
-      "name": "化学",
-      "icon": "🧪",
-      "category": "素材",
-      "description": "三菱ケミカル・信越化学など総合化学・半導体材料から、産業ガス・塗料、BASFなど海外勢まで"
-    },
-    {
-      "id": "steel",
-      "name": "鉄鋼",
-      "icon": "🔩",
-      "category": "素材",
-      "description": "日本製鉄・JFE・神戸製鋼の高炉から電炉・特殊鋼、中国宝武・USスチールまで"
-    },
-    {
-      "id": "nonferrous",
-      "name": "非鉄金属",
-      "icon": "⛏️",
-      "category": "素材",
-      "description": "住友金属鉱山・三菱マテリアルなどの製錬から、電線（住友電工・フジクラ）・アルミまで"
-    },
-    {
-      "id": "textiles",
-      "name": "繊維",
-      "icon": "🧵",
-      "category": "素材",
-      "description": "東レ・帝人の合繊、紡績から変身した会社、今治・尾州・播州などの産地、ユニクロまで"
-    },
-    {
-      "id": "glass",
-      "name": "ガラス・セラミックス",
-      "icon": "🏺",
-      "category": "素材",
-      "description": "AGC・日本板硝子、セメント、京セラ・村田などのファインセラミックス、やきもの産地まで"
-    },
-    {
       "id": "energy",
       "name": "エネルギー",
+      "kana": "えねるぎー",
       "icon": "⚡",
       "category": "エネルギー・インフラ",
       "description": "大手電力・JERA、都市ガス・LPガス、石油元売り、INPEXなど資源開発、海外の石油メジャーまで"
     },
     {
+      "id": "toys",
+      "name": "おもちゃ",
+      "kana": "おもちゃ",
+      "icon": "🧸",
+      "category": "エンタメ・ホビー",
+      "description": "バンダイナムコ・タカラトミー、トレカ、キャラクター、海外大手"
+    },
+    {
+      "id": "chemicals",
+      "name": "化学",
+      "kana": "かがく",
+      "icon": "🧪",
+      "category": "素材",
+      "description": "三菱ケミカル・信越化学など総合化学・半導体材料から、産業ガス・塗料、BASFなど海外勢まで"
+    },
+    {
+      "id": "paper",
+      "name": "紙・パルプ（和紙）",
+      "kana": "かみぱるぷ",
+      "icon": "📜",
+      "category": "素材",
+      "description": "王子・日本製紙の2強、家庭紙・段ボール・特殊紙、和紙の産地と原料まで"
+    },
+    {
+      "id": "glass",
+      "name": "ガラス・セラミックス",
+      "kana": "がらすせらみっくす",
+      "icon": "🏺",
+      "category": "素材",
+      "description": "AGC・日本板硝子、セメント、京セラ・村田などのファインセラミックス、やきもの産地まで"
+    },
+    {
+      "id": "gyudon",
+      "name": "牛丼",
+      "kana": "ぎゅうどん",
+      "icon": "🍚",
+      "category": "外食",
+      "description": "すき家・吉野家・松屋の3強と、グループ業態・海外展開"
+    },
+    {
+      "id": "cosmetics",
+      "name": "化粧品",
+      "kana": "けしょうひん",
+      "icon": "💄",
+      "category": "生活・消費財",
+      "description": "資生堂・コーセー・花王、訪販・通販・製薬系、OEM、海外勢まで"
+    },
+    {
       "id": "auto",
       "name": "自動車",
+      "kana": "じどうしゃ",
       "icon": "🚗",
       "category": "モビリティ",
       "description": "トヨタ・ホンダ・日産から部品・タイヤ、BYD・テスラなど海外勢まで"
+    },
+    {
+      "id": "textiles",
+      "name": "繊維",
+      "kana": "せんい",
+      "icon": "🧵",
+      "category": "素材",
+      "description": "東レ・帝人の合繊、紡績から変身した会社、今治・尾州・播州などの産地、ユニクロまで"
+    },
+    {
+      "id": "steel",
+      "name": "鉄鋼",
+      "kana": "てっこう",
+      "icon": "🔩",
+      "category": "素材",
+      "description": "日本製鉄・JFE・神戸製鋼の高炉から電炉・特殊鋼、中国宝武・USスチールまで"
+    },
+    {
+      "id": "semiconductors",
+      "name": "半導体",
+      "kana": "はんどうたい",
+      "icon": "🔬",
+      "category": "テクノロジー",
+      "description": "エヌビディア・TSMCから、日本の装置・材料、ラピダスまで"
+    },
+    {
+      "id": "nonferrous",
+      "name": "非鉄金属",
+      "kana": "ひてつきんぞく",
+      "icon": "⛏️",
+      "category": "素材",
+      "description": "住友金属鉱山・三菱マテリアルなどの製錬から、電線（住友電工・フジクラ）・アルミまで"
     }
   ]
 }

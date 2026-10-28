@@ -47,8 +47,12 @@ export function loadIndex() {
           icon: s.icon || '📁',
           category: s.category || 'その他',
           description: s.description || '',
+          kana: typeof s.kana === 'string' ? s.kana : '',
           file: s.file || `sectors/${s.id}.json`,
         }));
+      // タブは「よみがな（kana）」のあいうえお順。kana が無い業界は名前で並べる
+      const collator = new Intl.Collator('ja');
+      sectors.sort((a, b) => collator.compare(a.kana || a.name, b.kana || b.name));
       return { title: raw.title || '業界地図', sectors };
     });
     indexPromise.catch(() => { indexPromise = null; });
