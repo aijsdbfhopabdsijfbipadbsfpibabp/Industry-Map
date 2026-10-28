@@ -5,14 +5,18 @@ import { loadIndex, loadSector, visibleCompanies, DataError } from './data.js';
 import { renderMap, applyMapSelection, drawLines } from './views/map.js';
 import { renderRanking } from './views/ranking.js';
 import { renderOverview } from './views/overview.js';
+import { renderNetwork, focusNetworkNode } from './views/network.js';
 import { initSheet, renderSheet, openSheet, closeSheet } from './sheet.js';
 import { initDrawer, closeDrawer, isDrawerOpen } from './drawer.js';
 
+// when：その業界にデータがあるときだけ出すタブ
 const VIEWS = [
   { id: 'map', label: 'マップ' },
   { id: 'rank', label: 'ランキング' },
   { id: 'info', label: '概要' },
+  { id: 'net', label: 'つながり', when: (s) => !!s.network },
 ];
+const viewAvailable = (id, sector) => VIEWS.some((v) => v.id === id && (!v.when || (sector && v.when(sector))));
 
 const state = {
   index: null,
@@ -26,6 +30,7 @@ const state = {
   rankMetric: {},
   rankGroup: {},
   tagFilter: {},
+  net: {}, // つながりタブの選択・絞り込み（業界ごと）
 };
 
 let sheetPushed = false; // 詳細を開いたときに履歴を積んだか（戻るボタンで閉じるため）
@@ -83,7 +88,6 @@ async function applyRoute() {
 
   // popstate と hashchange が続けて来ることがあるので、読み込み中でも最新の呼び出しが描画を引き継ぐ
   const sectorChanged = r.sectorId !== state.sectorId || !state.sector;
-  const viewChanged = r.view !== state.view;
 
   if (sectorChanged) {
     if (pendingSectorId !== r.sectorId) {
@@ -114,6 +118,12 @@ async function applyRoute() {
     if (sector.warnings.length) console.warn(`[${sector.id}] データのチェック:`, sector.warnings);
   }
 
+  // 「つながり」のように、データがない業界では出さないタブはマップに戻す
+  if (!viewAvailable(r.view, state.sector)) {
+    r.view = 'map';
+    history.replaceState(null, '', buildHash(r));
+  }
+  const viewChanged = r.view !== state.view;
   state.view = r.view;
 
   let cid = r.companyId && state.sector.companyMap.has(r.companyId) ? r.companyId : null;
@@ -185,7 +195,7 @@ function statHtml(m, world) {
 }
 
 function renderViewSwitch() {
-  els.viewSwitch.innerHTML = VIEWS.map(
+  els.viewSwitch.innerHTML = VIEWS.filter((v) => viewAvailable(v.id, state.sector)).map(
     (v) => `<button type="button" class="seg-btn" role="tab" data-view="${v.id}" aria-selected="${v.id === state.view}">${v.label}</button>`,
   ).join('');
 }
@@ -232,6 +242,7 @@ function renderView() {
   const ctx = viewContext();
   if (state.view === 'map') renderMap(els.view, ctx);
   else if (state.view === 'rank') renderRanking(els.view, ctx);
+  else if (state.view === 'net') renderNetwork(els.view, ctx);
   else renderOverview(els.view, ctx);
 }
 
@@ -295,6 +306,17 @@ function closeCompany() {
   } else {
     navigate({ companyId: null }, { replace: true });
   }
+}
+
+/** 会社の詳細から「つながり」タブへ：その会社を選んだ状態で開く */
+function openNetworkFor(id) {
+  if (!state.sector?.network) return;
+  focusNetworkNode(state, state.sectorId, id);
+  const already = state.view === 'net';
+  sheetPushed = false;
+  navigate({ view: 'net', companyId: null }, { replace: true });
+  if (already) renderView();
+  window.scrollTo({ top: 0, behavior: already ? 'smooth' : 'auto' });
 }
 
 function setRegion(region) {
@@ -372,7 +394,7 @@ async function boot() {
     if (b) setRegion(b.dataset.region);
   });
 
-  initSheet({ onClose: closeCompany, onSelect: selectCompany });
+  initSheet({ onClose: closeCompany, onSelect: selectCompany, onNetwork: openNetworkFor });
   initDrawer({
     getState: () => state,
     onSector: (id) => {

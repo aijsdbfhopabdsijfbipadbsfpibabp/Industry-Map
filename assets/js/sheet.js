@@ -3,13 +3,15 @@ import { esc, formatValue, isDesktop } from './util.js';
 import { RELATION_TYPES } from './data.js';
 
 const sheet = document.getElementById('sheet');
-let handlers = { onClose: () => {}, onSelect: () => {} };
+let handlers = { onClose: () => {}, onSelect: () => {}, onNetwork: () => {} };
 let lastFocus = null;
 
 export function initSheet(h) {
   handlers = h;
   sheet.addEventListener('click', (e) => {
     if (e.target.closest('[data-close]')) return handlers.onClose();
+    const net = e.target.closest('[data-net]');
+    if (net) return handlers.onNetwork?.(net.dataset.net);
     const go = e.target.closest('[data-goto]');
     if (go) handlers.onSelect(go.dataset.goto);
   });
@@ -39,6 +41,8 @@ export function renderSheet(sector, c) {
   const g = sector.groupMap.get(c.group);
   const metrics = sector.metrics.filter((m) => typeof c.values[m.key] === 'number');
   const rels = relationRows(sector, c);
+  const netLinks = sector.network ? sector.network.links.filter((l) => l.a === c.id || l.b === c.id) : [];
+  const netRivals = netLinks.filter((l) => l.rivals).length;
   const url = safeUrl(c.url);
   const sub = [c.code && `${c.region === 'overseas' ? 'ティッカー' : '証券コード'} ${c.code}`, c.fy && `${c.fy}`].filter(Boolean).join(' ・ ');
 
@@ -85,6 +89,11 @@ export function renderSheet(sector, c) {
             <svg class="rel-go" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button></li>`)
         .join('')}</ul></section>` : ''}
+      ${netLinks.length ? `<section><h3>提携・特許・訴訟</h3>
+        <button type="button" class="net-jump" data-net="${esc(c.id)}">
+          <span class="net-jump-main"><b>つながりマップで見る</b><span>${netLinks.length}本${netRivals ? `（うち表向きは競合どうし ${netRivals}本）` : ''}</span></span>
+          <svg class="rel-go" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button></section>` : ''}
       ${c.facts.length ? `<section><h3>メモ</h3><table class="facts"><tbody>${c.facts
         .map((f) => `<tr><th>${esc(f.label)}</th><td>${esc(f.value ?? '')}</td></tr>`)
         .join('')}</tbody></table></section>` : ''}

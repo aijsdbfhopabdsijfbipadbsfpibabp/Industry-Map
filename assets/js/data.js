@@ -8,6 +8,16 @@ export const RELATION_TYPES = {
   other: { label: '関係', parent: '関係', child: '関係' },
 };
 
+/** 「つながり」タブの線の種類 */
+export const NET_TYPES = {
+  ally: { label: '提携・共同開発' },
+  license: { label: '特許ライセンス・和解' },
+  dispute: { label: '訴訟・対立' },
+  capital: { label: '出資・合弁' },
+  supply: { label: '製造委託・供給' },
+  deal: { label: '買収・統合の交渉' },
+};
+
 const DATA_ROOT = 'data/';
 const cache = new Map();
 let indexPromise = null;
@@ -250,7 +260,133 @@ export function normalizeSector(raw, meta) {
     sources: (Array.isArray(raw.sources) ? raw.sources : []).map((s) => (typeof s === 'string' ? { title: s, url: '' } : s)).filter((s) => s && (s.title || s.url)),
     tagGroups,
     insights,
+    network: normalizeNetwork(raw.network, companyMap, warnings),
     warnings,
+  };
+}
+
+/**
+ * 「つながり」データ（任意）。会社どうしの提携・特許・訴訟・出資などを線で結ぶ。
+ * 線の両端は companies の id か、network.nodes に書いた会社（業界地図に載せない会社）。
+ */
+function normalizeNetwork(raw, companyMap, warnings) {
+  if (!raw || typeof raw !== 'object' || !Array.isArray(raw.links) || !raw.links.length) return null;
+
+  const extra = new Map();
+  (Array.isArray(raw.nodes) ? raw.nodes : []).forEach((n, i) => {
+    if (!n || !n.id) { warnings.push(`network.nodes[${i}] に id がありません`); return; }
+    extra.set(String(n.id), n);
+  });
+
+  const nodeMap = new Map();
+  const getNode = (id) => {
+    if (nodeMap.has(id)) return nodeMap.get(id);
+    const c = companyMap.get(id) || null;
+    const x = extra.get(id);
+    if (!c && !(x && x.name)) return null;
+    const name = c ? c.name : x.name;
+    const node = {
+      id,
+      company: c,
+      name,
+      // 一覧では「三菱電機（半導体・デバイス）」→「三菱電機」のように、かっこ書きを外して短くする
+      display: name.replace(/（[^（）]*）$/, '') || name,
+      label: (x && x.label) || (c && c.short) || name,
+      region: c ? c.region : normalizeRegion(x.region),
+      country: (c ? c.country : x.country) || '',
+      description: (x && x.description) || (c ? c.tagline || c.description : ''),
+      url: c ? c.url : typeof x.url === 'string' ? x.url : '',
+      zone: null,
+      links: [],
+    };
+    nodeMap.set(id, node);
+    return node;
+  };
+
+  // 円の上の並び順（zones の順・ids の順）
+  const zones = [];
+  (Array.isArray(raw.zones) ? raw.zones : []).forEach((z, i) => {
+    if (!z || !Array.isArray(z.ids)) return;
+    const zone = { label: z.label || `グループ${i + 1}`, color: resolveColor(z.color, i), ids: [] };
+    for (const rawId of z.ids) {
+      const id = String(rawId);
+      const node = getNode(id);
+      if (!node) { warnings.push(`network.zones の「${id}」が companies にも network.nodes にもありません`); continue; }
+      if (node.zone) { warnings.push(`network.zones の「${id}」が重複しています`); continue; }
+      node.zone = zone;
+      zone.ids.push(id);
+    }
+    zones.push(zone);
+  });
+
+  const links = [];
+  const linkMap = new Map();
+  raw.links.forEach((l, i) => {
+    const what = `つながり「${(l && (l.title || l.id)) || i}」`;
+    if (!l || !l.a || !l.b) { warnings.push(`network.links[${i}] に a / b がありません`); return; }
+    const a = getNode(String(l.a));
+    const b = getNode(String(l.b));
+    if (!a || !b) { warnings.push(`${what}の「${!a ? l.a : l.b}」が companies にも network.nodes にもありません`); return; }
+    if (a === b) { warnings.push(`${what}の a と b が同じです`); return; }
+    if (!NET_TYPES[l.type]) warnings.push(`${what}の type「${l.type}」は不明です（${Object.keys(NET_TYPES).join(' / ')}）`);
+    let id = l.id ? String(l.id) : `link${i}`;
+    if (linkMap.has(id)) { warnings.push(`つながりの id「${id}」が重複しています`); id = `${id}-${i}`; }
+    const sources = (Array.isArray(l.source) ? l.source : l.source ? [l.source] : [])
+      .map((s) => (typeof s === 'string' ? { title: s, url: s } : s))
+      .filter((s) => s && (s.title || s.url))
+      .map((s) => ({ title: s.title || s.url, url: typeof s.url === 'string' ? s.url : '' }));
+    const link = {
+      id,
+      a: a.id,
+      b: b.id,
+      type: NET_TYPES[l.type] ? l.type : 'ally',
+      date: l.date ? String(l.date) : '',
+      title: l.title || '',
+      text: l.text || '',
+      rivals: l.rivals === true,
+      rivalNote: l.rivalNote || '',
+      status: l.status || '',
+      sources,
+    };
+    links.push(link);
+    linkMap.set(id, link);
+    a.links.push(link);
+    b.links.push(link);
+  });
+  if (!links.length) return null;
+
+  // zones に書かれていない会社は「その他」にまとめる。線が1本もない会社は円に出さない
+  const loose = [...nodeMap.values()].filter((n) => !n.zone && n.links.length);
+  if (loose.length) {
+    const zone = { label: 'その他', color: resolveColor('gray'), ids: [] };
+    loose.forEach((n) => { n.zone = zone; zone.ids.push(n.id); });
+    zones.push(zone);
+  }
+  for (const z of zones) z.ids = z.ids.filter((id) => nodeMap.get(id).links.length);
+  for (const [id, n] of nodeMap) if (!n.links.length) nodeMap.delete(id);
+
+  const stories = (Array.isArray(raw.stories) ? raw.stories : [])
+    .map((s, i) => {
+      if (!s || !s.title) return null;
+      const ids = (Array.isArray(s.links) ? s.links : []).map(String).filter((x) => {
+        if (linkMap.has(x)) return true;
+        warnings.push(`見どころ「${s.title}」のつながり「${x}」が links にありません`);
+        return false;
+      });
+      return ids.length ? { id: String(s.id || `story${i}`), title: s.title, text: s.text || '', links: ids } : null;
+    })
+    .filter(Boolean);
+
+  return {
+    title: raw.title || 'つながり',
+    lead: raw.lead || '',
+    note: raw.note || '',
+    updated: raw.updated || '',
+    nodeMap,
+    zones: zones.filter((z) => z.ids.length),
+    links,
+    linkMap,
+    stories,
   };
 }
 
